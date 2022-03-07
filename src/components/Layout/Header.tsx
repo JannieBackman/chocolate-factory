@@ -1,5 +1,5 @@
 import { CSSProperties } from "react";
-import Cart from "./cart";
+import Cart from "../cart";
 
 function Header() {
   return (

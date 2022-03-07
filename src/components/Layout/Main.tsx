@@ -1,5 +1,5 @@
 import { CSSProperties } from "react";
-import "./App.css";
+import DetailPage from "../DetailPage";
 
 function Main() {
   return (
@@ -24,6 +24,7 @@ function Main() {
           quas iure repellendus repellat. Quaerat voluptates facilis provident
           nisi totam a?
         </p>
+        <DetailPage />
       </main>
     </div>
   );

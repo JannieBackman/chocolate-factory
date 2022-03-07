@@ -1,4 +1,4 @@
-import { Card, Card } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import { FaIdCardAlt } from "react-icons/fa";
 
 <Card></Card>;
