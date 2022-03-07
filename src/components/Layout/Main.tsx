@@ -1,5 +1,5 @@
 import { CSSProperties } from "react";
-import "./App.css";
+import "./Layout.css";
 
 function Main() {
   return (

@@ -1,10 +1,11 @@
 import { CSSProperties } from "react";
-import Cart from "./cart";
+import Cart from "../cart";
+import {Link} from "react-router-dom";
 
 function Header() {
   return (
     <div style={rootStyle}>
-      <h1>Chocolate Factory</h1>
+      {/*<Link to="/">Chocolate Factory</Link>*/}
       <Cart />
     </div>
   );
