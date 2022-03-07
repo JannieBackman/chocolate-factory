@@ -1,27 +1,19 @@
 import { Navbar, Container, Nav } from "react-bootstrap";
-import { CSSProperties } from "react";
+import {Link} from "react-router-dom";
 
-export default function Navigationbar() {
+export default function NavigationBar() {
   return (
-    <Navbar style={rootStyle} bg="light" variant="light">
+    <Navbar className="NavBarContainer" bg="light" variant="light">
       <Container>
-        <Nav.Link style={linkStyle} href="#home">
-          Home
-        </Nav.Link>
-        <Nav.Link style={linkStyle} href="#chocolates">
-          Chocolates
-        </Nav.Link>
+        {/*<Link className="navLinks" to="/home">*/}
+        {/*  Home*/}
+        {/*</Link>*/}
+        {/*<Link className="navLinks" to="/chocolates">*/}
+        {/*  Chocolates*/}
+        {/*</Link>*/}
       </Container>
     </Navbar>
   );
 }
 
-const rootStyle: CSSProperties = {
-  textDecoration: "none",
-  display: "flex",
-  justifyContent: "center",
-};
 
-const linkStyle: CSSProperties = {
-  marginLeft: "2rem",
-};

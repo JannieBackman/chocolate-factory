@@ -1,5 +1,7 @@
 import { CSSProperties } from "react";
+import "./Layout.css";
 import ChocoCards from "../chocoCard";
+
 
 function Main() {
   return (
