@@ -6,7 +6,7 @@ import {Link} from "react-router-dom";
 function Header() {
   return (
     <div style={rootStyle}>
-      {/*<Link to="/">Chocolate Factory</Link>*/}
+     <h1>Chocolate Factory</h1>
       <Cart />
     </div>
   );
