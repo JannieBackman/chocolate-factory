@@ -1,9 +1,11 @@
 import { CSSProperties } from "react";
+import Cart from "./cart";
 
 function Header() {
   return (
     <div style={rootStyle}>
       <h1>Chocolate Factory</h1>
+      <Cart />
     </div>
   );
 }

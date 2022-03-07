@@ -1,3 +1,9 @@
 .MainContainer {
-  back
+  background-image: url(https://images.pexels.com/photos/4110100/pexels-photo-4110100.jpeg?cs=srgb&dl=pexels-polina-tankilevitch-4110100.jpg&fm=jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  height: 100vh;
 }
