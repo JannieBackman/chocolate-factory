@@ -1,29 +1,27 @@
 import { CSSProperties } from "react";
-import "./App.css";
+import ChocoCards from "../chocoCard";
 
 function Main() {
   return (
     <div style={rootStyle}>
-      <main className="MainContainer">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
-          impedit modi voluptates asperiores ex iste vero ullam corrupti! Fugiat
-          quas iure repellendus repellat. Quaerat voluptates facilis provident
-          nisi totam a?
-        </p>
-
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
-          impedit modi voluptates asperiores ex iste vero ullam corrupti! Fugiat
-          quas iure repellendus repellat. Quaerat voluptates facilis provident
-          nisi totam a?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
-          impedit modi voluptates asperiores ex iste vero ullam corrupti! Fugiat
-          quas iure repellendus repellat. Quaerat voluptates facilis provident
-          nisi totam a?
-        </p>
+      <main
+        className="MainContainer"
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          gap: "1rem",
+          padding: "2rem",
+        }}
+      >
+        <div>
+          <ChocoCards />
+        </div>
+        <div>
+          <ChocoCards />
+        </div>
+        <div>
+          <ChocoCards />
+        </div>
       </main>
     </div>
   );
