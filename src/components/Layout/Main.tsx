@@ -24,7 +24,6 @@ function Main() {
           quas iure repellendus repellat. Quaerat voluptates facilis provident
           nisi totam a?
         </p>
-        <DetailPage />
       </main>
     </div>
   );
