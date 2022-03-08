@@ -21,7 +21,7 @@ const rootStyle: CSSProperties = {
 };
 
 const linkStyle:CSSProperties = {
-    color: "black",
+    color: "white",
     fontSize: "3rem",
     textDecoration: "none",
 
