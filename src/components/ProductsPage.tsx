@@ -5,7 +5,7 @@ import ChocoCards from "./chocoCard";
 export default function Chocolates() {
     return (
         <div style={productsContainer}>
-            <h3 style={productPageTitle}>Buy Chocolate</h3>
+            <h3 style={productPageTitle}>Products</h3>
             <div style={productPageCards}>
 
                 <div>
