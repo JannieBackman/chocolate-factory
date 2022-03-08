@@ -6,7 +6,7 @@ import {Link} from "react-router-dom";
 function Header() {
   return (
     <div style={rootStyle}>
-     <h1>Chocolate Factory</h1>
+     <Link style={linkStyle} to="/">Chocolate Factory</Link>
       <Cart />
     </div>
   );
@@ -17,5 +17,13 @@ const rootStyle: CSSProperties = {
   justifyContent: "center",
   backgroundColor: "#333",
   color: "whitesmoke",
+    height: "7rem"
 };
+
+const linkStyle:CSSProperties = {
+    color: "black",
+    fontSize: "3rem",
+    textDecoration: "none",
+
+}
 export default Header;

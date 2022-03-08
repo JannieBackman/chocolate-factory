@@ -6,6 +6,7 @@ import Main from "./Layout/Main";
 import NavigationBar from "./Layout/Navbar";
 import Chocolates from "./ProductsPage";
 import AboutUs from "./AboutUs";
+import PaymentBasket from "./PaymentBasket";
 
 function App() {
     return (
@@ -15,8 +16,10 @@ function App() {
 
                 <Routes>
                     <Route path="/" element={<Main/>}/>
+                    <Route path="/" element={<Header/>}/>
                     <Route path="/Chocolates" element={<Chocolates />} />
-                    <Route path="aboutUs" element={<AboutUs />} />
+                    <Route path="/aboutUs" element={<AboutUs />} />
+                    <Route path="/cart" element={<PaymentBasket />} />
                 </Routes>
 
             <Footer/>
