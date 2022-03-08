@@ -4,7 +4,7 @@ import { Button, Card } from "react-bootstrap";
 import { FaIdCardAlt } from "react-icons/fa";
 import { text } from "stream/consumers";
 import chocolate from "../assets/chocolateBerry.jpg";
-import { Product } from "../data";
+import { Product } from "../products";
 
 interface Props {
   product: Product;

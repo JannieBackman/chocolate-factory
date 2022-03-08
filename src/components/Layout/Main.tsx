@@ -2,7 +2,7 @@ import { CSSProperties } from "react";
 import DetailPage from "../DetailPage";
 import "./Layout.css";
 import ChocoCard from "../chocoCard";
-import { mockedProducts } from "../../data";
+import { mockedProducts } from "../../products";
 
 function Main() {
   return (
