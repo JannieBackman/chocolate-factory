@@ -3,7 +3,6 @@ import DetailPage from "../DetailPage";
 import "./Layout.css";
 import ChocoCards from "../Products/chocoCard";
 
-
 function Main() {
   return (
     <div style={rootStyle}>
