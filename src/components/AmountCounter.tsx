@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./AmountCounter.css";
-import Cart from "./cart";
+import Cart from "./Cart/cart";
 
 function AmountCounter() {
   const [count, setCount] = useState(0);

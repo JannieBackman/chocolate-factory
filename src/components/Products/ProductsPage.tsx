@@ -1,6 +1,7 @@
 import {Link} from "react-router-dom";
 import React, {CSSProperties} from "react";
-import ChocoCards from "./chocoCard";
+import ChocoCard from "./chocoCard";
+import {mockedProducts} from "../../products";
 
 export default function Chocolates() {
     return (
@@ -9,22 +10,22 @@ export default function Chocolates() {
             <div style={productPageCards}>
 
                 <div>
-                <ChocoCards />
+               <ChocoCard product={mockedProducts[4]}/>
 
-                <ChocoCards />
+                <ChocoCard product={mockedProducts[4]} />
 
-                <ChocoCards />
+                <ChocoCard product={mockedProducts[4]} />
 
-                <ChocoCards />
+                <ChocoCard product={mockedProducts[4]} />
                 </div>
                 <div>
-                <ChocoCards />
+                <ChocoCard product={mockedProducts[4]} />
 
-                <ChocoCards />
+                <ChocoCard product={mockedProducts[4]} />
 
-                <ChocoCards />
+                <ChocoCard product={mockedProducts[4]} />
 
-                <ChocoCards />
+                <ChocoCard product={mockedProducts[4]} />
                 </div>
                 </div>
 
