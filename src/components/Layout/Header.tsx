@@ -2,11 +2,10 @@ import { CSSProperties } from "react";
 import Cart from "../cart";
 import {Link} from "react-router-dom";
 
-
 function Header() {
   return (
     <div style={rootStyle}>
-      {/*<Link to="/">Chocolate Factory</Link>*/}
+      <Link to="/">Chocolate Factory</Link>
       <Cart />
     </div>
   );
