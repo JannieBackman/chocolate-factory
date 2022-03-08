@@ -2,7 +2,8 @@ import { CSSProperties } from "react";
 import DetailPage from "../DetailPage";
 import "./Layout.css";
 import ChocoCard from "../Products/chocoCard";
-import {mockedProducts} from "../../products";
+import { mockedProducts } from "../../products";
+import AmountCounter from "../AmountCounter";
 
 function Main() {
   return (
@@ -16,8 +17,7 @@ function Main() {
           padding: "2rem",
         }}
       >
-
-          <h3>Popular product</h3>
+        <h3>Popular product</h3>
         <div>
           <ChocoCard product={mockedProducts[4]} />
         </div>
@@ -35,7 +35,6 @@ function Main() {
 const rootStyle: CSSProperties = {
   display: "flex",
   justifyContent: "center",
-
 };
 
 export default Main;

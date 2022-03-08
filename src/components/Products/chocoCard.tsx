@@ -5,6 +5,7 @@ import { FaIdCardAlt } from "react-icons/fa";
 import { text } from "stream/consumers";
 import chocolate from "../assets/chocolateBerry.jpg";
 import { Product } from "../../products";
+import AmountCounter from "../AmountCounter";
 
 interface Props {
   product: Product;
@@ -18,6 +19,7 @@ function ChocoCard({ product }: Props) {
         <Card.Title>{product.title}</Card.Title>
         <Card.Text style={{ textAlign: "center" }}>{product.text}</Card.Text>
         <Button variant="primary">Läs mer</Button>
+        <AmountCounter />
       </Card.Body>
     </Card>
   );
