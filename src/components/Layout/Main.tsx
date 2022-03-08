@@ -1,4 +1,5 @@
 import { CSSProperties } from "react";
+import DetailPage from "../DetailPage";
 import "./Layout.css";
 import ChocoCards from "../chocoCard";
 
