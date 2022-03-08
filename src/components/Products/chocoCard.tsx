@@ -2,7 +2,7 @@ import { CSSProperties } from "react";
 import { Button, Card } from "react-bootstrap";
 import { FaIdCardAlt } from "react-icons/fa";
 import { text } from "stream/consumers";
-import chocolate from "../assets/chocolateBerry.jpg";
+import chocolate from "../../assets/chocolateBerry.jpg";
 
 function ChocoCards() {
   return (

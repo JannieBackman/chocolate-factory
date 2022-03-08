@@ -4,9 +4,9 @@ import Footer from "./Layout/Footer";
 import Header from "./Layout/Header";
 import Main from "./Layout/Main";
 import NavigationBar from "./Layout/Navbar";
-import Chocolates from "./ProductsPage";
-import AboutUs from "./AboutUs";
-import PaymentBasket from "./PaymentBasket";
+import Chocolates from "./Products/ProductsPage";
+import AboutUs from "./About/AboutUs";
+import PaymentBasket from "./Cart/PaymentBasket";
 
 function App() {
     return (
