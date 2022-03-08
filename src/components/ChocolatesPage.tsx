@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import React from "react";
 import { mockedProducts } from "../products";
-import ChocoCard from "./chocoCard";
+import ChocoCard from "./Products/chocoCard";
 
 export default function Chocolates() {
   return (

@@ -1,7 +1,7 @@
 import { CSSProperties } from "react";
 import DetailPage from "../DetailPage";
 import "./Layout.css";
-import ChocoCard from "../chocoCard";
+import ChocoCard from "../Products/chocoCard";
 import {mockedProducts} from "../../products";
 
 function Main() {
@@ -22,10 +22,10 @@ function Main() {
           <ChocoCard product={mockedProducts[4]} />
         </div>
         <div>
-          <ChocoCard product={mockedProducts[4]} />
+          <ChocoCard product={mockedProducts[2]} />
         </div>
         <div>
-          <ChocoCard product={mockedProducts[4]} />
+          <ChocoCard product={mockedProducts[3]} />
         </div>
       </main>
     </div>
