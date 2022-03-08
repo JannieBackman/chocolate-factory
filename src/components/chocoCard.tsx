@@ -1,6 +1,6 @@
 import { Card } from "react-bootstrap";
 import { CSSProperties } from "react";
-import { Button, Card } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import { FaIdCardAlt } from "react-icons/fa";
 import { text } from "stream/consumers";
 import chocolate from "../assets/chocolateBerry.jpg";

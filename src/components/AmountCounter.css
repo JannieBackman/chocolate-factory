@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.button {
+  border: none;
+  text-align: center;
+  padding: 0.7rem;
+  cursor: pointer;
+}
+
+.amount {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.decrement-button {
+  margin-right: 0.5rem;
+}
