@@ -9,17 +9,14 @@ import Chocolates from "./ChocolatesPage";
 function App() {
     return (
         <div>
-
-            {/*<BrowserRouter>*/}
-            {/*    <Routes>*/}
-            {/*        <Route path="/" element={<Header />}/>*/}
-            {/*        <Route path="/Chocolates" element={<Chocolates />} />*/}
-            {/*    </Routes>*/}
-            {/*</BrowserRouter>*/}
-
             <Header/>
             <NavigationBar/>
-            <Main/>
+
+                <Routes>
+                    <Route path="/" element={<Main/>}/>
+                    <Route path="/Chocolates" element={<Chocolates />} />
+                </Routes>
+
             <Footer/>
         </div>
     );

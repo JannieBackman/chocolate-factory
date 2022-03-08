@@ -5,12 +5,12 @@ export default function NavigationBar() {
   return (
     <Navbar className="NavBarContainer" bg="light" variant="light">
       <Container>
-        {/*<Link className="navLinks" to="/home">*/}
-        {/*  Home*/}
-        {/*</Link>*/}
-        {/*<Link className="navLinks" to="/chocolates">*/}
-        {/*  Chocolates*/}
-        {/*</Link>*/}
+        <Link className="navLinks" to="/">
+          Home
+        </Link>
+        <Link className="navLinks" to="/chocolates">
+          Chocolates
+        </Link>
       </Container>
     </Navbar>
   );
