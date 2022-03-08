@@ -1,7 +1,7 @@
 import { CSSProperties } from "react";
 import DetailPage from "../DetailPage";
 import "./Layout.css";
-import ChocoCards from "../chocoCard";
+import ChocoCards from "../Products/chocoCard";
 
 
 function Main() {
@@ -16,6 +16,8 @@ function Main() {
           padding: "2rem",
         }}
       >
+
+          <h3>Popular product</h3>
         <div>
           <ChocoCards />
         </div>
@@ -33,6 +35,7 @@ function Main() {
 const rootStyle: CSSProperties = {
   display: "flex",
   justifyContent: "center",
+
 };
 
 export default Main;

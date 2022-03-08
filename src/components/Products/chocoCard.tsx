@@ -3,14 +3,14 @@ import { CSSProperties } from "react";
 import { Button, Card } from "react-bootstrap";
 import { FaIdCardAlt } from "react-icons/fa";
 import { text } from "stream/consumers";
-import chocolate from "../assets/chocolateBerry.jpg";
+import chocolate from "../../assets/chocolateBerry.jpg";
 
 function ChocoCards() {
   return (
     <Card border="dark" style={{ width: "20rem" }}>
       <Card.Img variant="top" src={chocolate} style={{ width: "20rem" }} />
       <Card.Body style={cardBody}>
-        <Card.Title>Belgisk Choklad</Card.Title>
+        <Card.Title>Belgian Chocolate</Card.Title>
         <Card.Text style={{ textAlign: "center" }}>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas,
         </Card.Text>
