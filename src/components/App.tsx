@@ -4,7 +4,8 @@ import Footer from "./Layout/Footer";
 import Header from "./Layout/Header";
 import Main from "./Layout/Main";
 import NavigationBar from "./Layout/Navbar";
-import Chocolates from "./ChocolatesPage";
+import Chocolates from "./ProductsPage";
+import AboutUs from "./AboutUs";
 
 function App() {
     return (
@@ -15,6 +16,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Main/>}/>
                     <Route path="/Chocolates" element={<Chocolates />} />
+                    <Route path="aboutUs" element={<AboutUs />} />
                 </Routes>
 
             <Footer/>
