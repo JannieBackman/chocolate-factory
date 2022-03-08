@@ -1,24 +1,25 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {Routes, Route, BrowserRouter} from "react-router-dom";
 import Footer from "./Layout/Footer";
 import Header from "./Layout/Header";
 import Main from "./Layout/Main";
-import Navigationbar from "./Layout/Navbar";
+import NavigationBar from "./Layout/Navbar";
+import Chocolates from "./ChocolatesPage";
 
 function App() {
-  return (
-    <div>
-      {/* <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<App />} />
-        </Routes>
-      </BrowserRouter> */}
-      <Header />
-      <Navigationbar />
-      <Main />
-      <Footer />
-    </div>
-  );
+    return (
+        <div>
+            <Header/>
+            <NavigationBar/>
+
+                <Routes>
+                    <Route path="/" element={<Main/>}/>
+                    <Route path="/Chocolates" element={<Chocolates />} />
+                </Routes>
+
+            <Footer/>
+        </div>
+    );
 }
 
 export default App;
