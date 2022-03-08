@@ -4,15 +4,19 @@ import { Button, Card } from "react-bootstrap";
 import { FaIdCardAlt } from "react-icons/fa";
 import { text } from "stream/consumers";
 import chocolate from "../assets/chocolateBerry.jpg";
-import Cards from "./data";
+import { Product } from "../data";
 
-function ChocoCards(cards: Cards) {
+interface Props {
+  product: Product;
+}
+
+function ChocoCard({ product }: Props) {
   return (
     <Card border="dark" style={{ width: "20rem" }}>
-      <Card.Img variant="top" src={cards.image} style={{ width: "20rem" }} />
+      <Card.Img variant="top" src={product.image} style={{ width: "20rem" }} />
       <Card.Body style={cardBody}>
-        <Card.Title>{cards.title}</Card.Title>
-        <Card.Text style={{ textAlign: "center" }}>{cards.text}</Card.Text>
+        <Card.Title>{product.title}</Card.Title>
+        <Card.Text style={{ textAlign: "center" }}>{product.text}</Card.Text>
         <Button variant="primary">Läs mer</Button>
       </Card.Body>
     </Card>
@@ -38,4 +42,4 @@ const cardBody: CSSProperties = {
   alignItems: "center",
 };
 
-export default ChocoCards;
+export default ChocoCard;

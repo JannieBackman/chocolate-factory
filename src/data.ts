@@ -1,12 +1,10 @@
-import { Card } from "react-bootstrap";
-
-interface Cards {
+export interface Product {
   image: string;
   title: string;
   text: string;
 }
 
-const contentCards: Cards[] = [
+export const mockedProducts: Product[] = [
   {
     image: "../assets/chocolateBerry.jpg",
     title: "BerryChocolate",
@@ -38,5 +36,3 @@ const contentCards: Cards[] = [
     text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas,",
   },
 ];
-
-export default Card;
