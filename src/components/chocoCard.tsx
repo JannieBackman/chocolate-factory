@@ -9,7 +9,7 @@ function ChocoCards() {
     <Card border="dark" style={{ width: "20rem" }}>
       <Card.Img variant="top" src={chocolate} style={{ width: "20rem" }} />
       <Card.Body style={cardBody}>
-        <Card.Title>Belgisk Choklad</Card.Title>
+        <Card.Title>Belgian Chocolate</Card.Title>
         <Card.Text style={{ textAlign: "center" }}>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas,
         </Card.Text>
