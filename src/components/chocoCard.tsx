@@ -1,4 +1,3 @@
-import { Card } from "react-bootstrap";
 import { CSSProperties } from "react";
 import { Button, Card } from "react-bootstrap";
 import { FaIdCardAlt } from "react-icons/fa";
