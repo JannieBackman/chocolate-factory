@@ -3,7 +3,7 @@ import { CSSProperties } from "react";
 function Footer() {
   return (
     <div style={rootStyle}>
-      <h3>Kontakta oss</h3>
+      <h3>Contact us</h3>
     </div>
   );
 }
