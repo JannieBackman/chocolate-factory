@@ -52,4 +52,9 @@ export const mockedProducts: Product[] = [
     title: "MilkChocolate",
     text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas,",
   },
+  {
+    image: milkChocolate,
+    title: "MilkChocolate",
+    text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas,",
+  },
 ];

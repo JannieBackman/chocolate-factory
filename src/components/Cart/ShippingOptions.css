@@ -12,7 +12,7 @@
 
 .postnord-container {
   height: auto;
-  width: 25%;
+  width: 75%;
   background-color: #005d92;
   border-radius: 1rem;
   margin-left: 2rem;
@@ -25,7 +25,7 @@
 .dhl-container {
   margin-top: 1rem;
   height: auto;
-  width: 25%;
+  width: 75%;
   border-radius: 1rem;
   margin-left: 2rem;
   background-color: #ffcc00;
@@ -34,7 +34,7 @@
 .bring-container {
   margin-top: 1rem;
   height: auto;
-  width: 25%;
+  width: 75%;
   border-radius: 1rem;
   margin-left: 2rem;
   background-color: #395a20;

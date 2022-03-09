@@ -1,28 +1,41 @@
 import { CSSProperties } from "react";
 import Cart from "../Cart/cart";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
+import NavigationBar from "./Navbar";
+import Basket from "./BasketCart";
 
 function Header() {
   return (
-    <div style={rootStyle}>
-     <Link style={linkStyle} to="/">Chocolate Factory</Link>
-      <Cart />
+    <div className="header" style={rootStyle}>
+      <div>
+        <Link style={linkStyle} to="/">
+          Chocolate Factory
+        </Link>
+      </div>
+      <div style={cartStyle}>
+        <Basket />
+      </div>
     </div>
   );
 }
 
 const rootStyle: CSSProperties = {
   display: "flex",
-  justifyContent: "center",
+  justifyContent: "space-around",
+  alignItems: "center",
   backgroundColor: "#333",
   color: "whitesmoke",
-    height: "7rem"
+  height: "7rem",
 };
 
-const linkStyle:CSSProperties = {
-    color: "white",
-    fontSize: "3rem",
-    textDecoration: "none",
+const linkStyle: CSSProperties = {
+  color: "whitesmoke",
+  fontSize: "3rem",
+  textDecoration: "none",
+};
 
-}
+const cartStyle: CSSProperties = {
+  fontSize: "2rem",
+  color: "whitesmoke",
+};
 export default Header;

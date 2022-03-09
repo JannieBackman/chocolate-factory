@@ -4,7 +4,11 @@ import { propTypes } from "react-bootstrap/esm/Image";
 import PaymentOptionKlarna from "./PaymentOptionKlarna";
 import PaymentOptionMastercard from "./PaymentOptionMastercard";
 import PaymentOptionSwish from "./PaymentOptionSwish";
+import {Link} from "react-router-dom";
 import ShippingOptions from "./ShippingOptions";
+import OrderInformation from "./OrderInformation";
+import { Button } from "react-bootstrap";
+
 
 export default function PaymentBasket() {
   return (
@@ -66,8 +70,29 @@ export default function PaymentBasket() {
       </div>
     </div>
   );
-}
 
 const cartStyle: CSSProperties = {
-  fontSize: "2rem",
-};
+    fontSize: "2rem",
+    marginLeft: "2rem"
+
+}
+
+const basketBtn: CSSProperties = {
+    height: "2rem",
+    width: "6rem",
+    margin: "0 0 1rem 2rem"
+}
+
+const basketContainer: CSSProperties = {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center"
+
+}
+
+
+
+
+
+
+

@@ -11,9 +11,6 @@ export default function NavigationBar() {
         <Link className="navLinks" to="/chocolates">
           Products
         </Link>
-        <Link className="navLinks" to={"/aboutUs"}>
-          About Us
-        </Link>
       </Container>
     </Navbar>
   );
