@@ -29,4 +29,5 @@ const productPageCards: CSSProperties = {
   display: "flex",
   justifyContent: "center",
   flexWrap: "wrap",
+  gap: "1rem",
 };
