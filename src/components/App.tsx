@@ -31,7 +31,7 @@ function App() {
             {/* </ErrorBoundary> ---- if you want to see 404page*/}
             <Route
               path="/cart"
-              element={<PaymentBasket onSubmit={handleSubmit} />}
+              element={<PaymentBasket />}
             />
             <Route path="/OrderConfirmation" element={<OrderConfirmation />} />
             <Route path="/CheckOut" element={<Checkout />} />
