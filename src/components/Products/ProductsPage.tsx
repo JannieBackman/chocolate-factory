@@ -19,6 +19,7 @@ export default function Chocolates() {
 const productsContainer: CSSProperties = {
   display: "flex",
   flexDirection: "column",
+    marginBottom: "2rem"
 };
 
 const productPageTitle: CSSProperties = {
