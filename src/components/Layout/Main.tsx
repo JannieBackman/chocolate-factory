@@ -22,7 +22,7 @@ function Main() {
           <ChocoCard product={mockedProducts[4]} />
         </div>
         <div>
-          <ChocoCard product={mockedProducts[2]} />
+          <ChocoCard product={mockedProducts[1]} />
         </div>
         <div>
           <ChocoCard product={mockedProducts[3]} />

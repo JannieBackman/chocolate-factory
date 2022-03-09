@@ -3,7 +3,6 @@ import { CSSProperties, useState } from "react";
 import { Button, Card } from "react-bootstrap";
 import { FaIdCardAlt } from "react-icons/fa";
 import { text } from "stream/consumers";
-import chocolate from "../assets/chocolateBerry.jpg";
 import { Product } from "../../products";
 import AmountCounter from "../AmountCounter";
 
@@ -23,18 +22,6 @@ function ChocoCard({ product }: Props) {
       </Card.Body>
     </Card>
   );
-  // return (
-  //   <Card border="dark" style={{ width: "20rem" }}>
-  //     <Card.Img variant="top" src={chocolate} style={{ width: "20rem" }} />
-  //     <Card.Body style={cardBody}>
-  //       <Card.Title>Belgisk Choklad</Card.Title>
-  //       <Card.Text style={{ textAlign: "center" }}>
-  //       Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-  //       </Card.Text>
-  //       <Button variant="primary">Läs mer</Button>
-  //     </Card.Body>
-  //   </Card>
-  // );
 }
 
 const cardBody: CSSProperties = {
