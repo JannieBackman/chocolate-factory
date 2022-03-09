@@ -79,7 +79,6 @@ export default function PaymentBasket(props: Props) {
                 <InputField
                     className="contactInputField"
                     label="firstname"
-                    placeholder="First Name"
                     name="firstName"
                     onChange={handleChange}
                     id="firstName"
@@ -91,7 +90,6 @@ export default function PaymentBasket(props: Props) {
                 <InputField
                     className="contactInputField"
                     label="lastname"
-                    placeholder="Last Name"
                     name="lastName"
                     onChange={handleChange}
                     id="lastName"
@@ -103,7 +101,6 @@ export default function PaymentBasket(props: Props) {
                 <InputField
                     className="contactInputField"
                     label="address"
-                    placeholder="Address"
                     name="address"
                     onChange={handleChange}
                     id="address"
@@ -115,7 +112,6 @@ export default function PaymentBasket(props: Props) {
                 <InputField
                     className="contactInputField"
                     label="city"
-                    placeholder="City"
                     name="city"
                     onChange={handleChange}
                     id="city"
@@ -127,7 +123,6 @@ export default function PaymentBasket(props: Props) {
                 <InputField
                     className="contactInputField"
                     label="zip"
-                    placeholder="Zip code"
                     name="zip"
                     onChange={handleChange}
                     id="zip"
@@ -139,7 +134,6 @@ export default function PaymentBasket(props: Props) {
                 <InputField
                     className="contactInputField"
                     label="phoneNumber"
-                    placeholder="Phone Number"
                     name="phoneNumber"
                     onChange={handleChange}
                     id="phoneNumber"
@@ -151,7 +145,6 @@ export default function PaymentBasket(props: Props) {
                 <InputField
                     className="contactInputField"
                     label="email"
-                    placeholder="Email"
                     name="email"
                     onChange={handleChange}
                     id="email"

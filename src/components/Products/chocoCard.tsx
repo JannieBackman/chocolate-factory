@@ -5,6 +5,7 @@ import { FaIdCardAlt } from "react-icons/fa";
 import { text } from "stream/consumers";
 import { Product } from "../../products";
 import AmountCounter from "../AmountCounter";
+import { Link } from "react-router-dom";
 
 interface Props {
   product: Product;
@@ -17,7 +18,10 @@ function ChocoCard({ product }: Props) {
       <Card.Body style={cardBody}>
         <Card.Title>{product.title}</Card.Title>
         <Card.Text style={{ textAlign: "center" }}>{product.text}</Card.Text>
-        <Button variant="primary">Läs mer</Button>
+          <Link to="/DetailsChocolate">
+              <Button variant="primary">More info</Button>
+          </Link>
+
         <AmountCounter />
       </Card.Body>
     </Card>
