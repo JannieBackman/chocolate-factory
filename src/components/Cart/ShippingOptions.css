@@ -1,0 +1,42 @@
+.shipping-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.img-styling {
+  width: 7rem;
+  height: auto;
+  margin-left: 0.3rem;
+  margin-top: 1rem;
+}
+
+.postnord-container {
+  height: auto;
+  width: 25%;
+  background-color: #005d92;
+  border-radius: 1rem;
+  margin-left: 2rem;
+}
+
+.shipping-info {
+  margin-left: 1rem;
+}
+
+.dhl-container {
+  margin-top: 1rem;
+  height: auto;
+  width: 25%;
+  border-radius: 1rem;
+  margin-left: 2rem;
+  background-color: #ffcc00;
+}
+
+.bring-container {
+  margin-top: 1rem;
+  height: auto;
+  width: 25%;
+  border-radius: 1rem;
+  margin-left: 2rem;
+  background-color: #395a20;
+  margin-bottom: 1rem;
+}
