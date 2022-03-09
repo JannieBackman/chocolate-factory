@@ -35,6 +35,7 @@ function Main() {
 const rootStyle: CSSProperties = {
   display: "flex",
   justifyContent: "center",
+  height: "100vh",
 };
 
 export default Main;

@@ -32,6 +32,7 @@ const rootStyle: CSSProperties = {
   backgroundColor: "#333",
   color: "whitesmoke",
   padding: "1rem",
-  fontSize: "smaller",
+  position: "sticky",
+  bottom: "0",
 };
 export default Footer;

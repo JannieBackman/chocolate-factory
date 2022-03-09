@@ -1,32 +1,26 @@
 import { FaShoppingCart } from "react-icons/fa";
-import {CSSProperties} from "react";
-import {Link} from "react-router-dom";
+import { CSSProperties } from "react";
+import { Link } from "react-router-dom";
 
 function Cart() {
   return (
-<div>
+    <div>
       <div style={cartStyle}>
         <Link style={linkStyle} to="/cart">
-            <FaShoppingCart />
+          <FaShoppingCart />
         </Link>
       </div>
-
-
-
-</div>
-)
+    </div>
+  );
 }
 
 const cartStyle: CSSProperties = {
-    display: "flex",
+  display: "flex",
+};
 
-}
-
-const linkStyle:CSSProperties = {
-    color: "black",
-    textDecoration: "none",
-}
-
-
+const linkStyle: CSSProperties = {
+  color: "whitesmoke",
+  textDecoration: "none",
+};
 
 export default Cart;

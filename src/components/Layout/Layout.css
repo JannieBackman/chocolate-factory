@@ -1,7 +1,10 @@
 .navLinks {
   margin-left: 2rem;
   text-decoration: none;
-  color: #000000;
+  color: #333;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+  font-size: 1.5rem;
 }
 
 .navLinks:hover {
@@ -16,4 +19,8 @@
 .header {
   font-family: "Cormorant Garamond", serif;
   padding-top: 1rem;
+}
+
+h3 {
+  font-family: "Cormorant Garamond", serif;
 }
