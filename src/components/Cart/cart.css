@@ -1,0 +1,11 @@
+.errorMessage {
+    color: #FF0000;
+}
+
+.contactInputField {
+    margin: 0 0 1rem 2rem;
+}
+
+.saveBtn {
+    margin: .5rem 0 0 6rem;
+}
