@@ -1,0 +1,11 @@
+.payment-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.img-style {
+  width: 7rem;
+  height: auto;
+  margin-left: 0.3rem;
+  margin-top: 1rem;
+}

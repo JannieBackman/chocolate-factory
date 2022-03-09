@@ -1,5 +1,6 @@
 import React, { CSSProperties } from "react";
 import { Form, Row, Col, Button } from "react-bootstrap";
+import PaymentOptions from "./PaymentOptions";
 import ShippingOptions from "./ShippingOptions";
 
 export default function PaymentBasket() {
@@ -54,6 +55,7 @@ export default function PaymentBasket() {
         </Form>
 
         <p style={cartStyle}>Choice payment</p>
+        <PaymentOptions />
         <p style={cartStyle}>Shipping options</p>
         <ShippingOptions />
       </div>
