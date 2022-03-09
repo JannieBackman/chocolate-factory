@@ -2,6 +2,7 @@ import React, { CSSProperties } from "react";
 import { Form, Row, Col, Button } from "react-bootstrap";
 import { propTypes } from "react-bootstrap/esm/Image";
 import PaymentOptionKlarna from "./PaymentOptionKlarna";
+import PaymentOptionMastercard from "./PaymentOptionMastercard";
 import PaymentOptionSwish from "./PaymentOptionSwish";
 import ShippingOptions from "./ShippingOptions";
 
@@ -59,6 +60,7 @@ export default function PaymentBasket() {
         <p style={cartStyle}>Payment options</p>
         <PaymentOptionSwish />
         <PaymentOptionKlarna />
+        <PaymentOptionMastercard />
         <p style={cartStyle}>Shipping options</p>
         <ShippingOptions />
       </div>

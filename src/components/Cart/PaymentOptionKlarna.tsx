@@ -1,5 +1,5 @@
 import "./PaymentOptions.css";
-import { Modal, Button, Form } from "react-bootstrap";
+import { Modal, Button, Form, Row } from "react-bootstrap";
 import { useState } from "react";
 import Klarna from "../../assets/klarna-logo.png";
 
@@ -10,9 +10,15 @@ function PaymentOptionKlarna() {
   const handleShow = () => setShow(true);
   return (
     <>
-      <Button className="btn btn-light" variant="primary" onClick={handleShow}>
-        <img className="img-style" src={Klarna} alt="" />
-      </Button>
+      <div className="payment-button-container">
+        <Button
+          className="btn btn-light"
+          variant="primary"
+          onClick={handleShow}
+        >
+          <img className="img-style" src={Klarna} alt="" />
+        </Button>
+      </div>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
@@ -20,10 +26,20 @@ function PaymentOptionKlarna() {
         </Modal.Header>
         <Modal.Body>
           <Form>
-            <Form.Group className="mb-3" controlId="formGridPhone">
-              <Form.Control type="" placeholder="Phone number" />
+            <Form.Group controlId="formGridName">
+              <div>
+                <input type="radio" value="30days" name="pay-klarna" /> Pay
+                within 30 days
+              </div>
+              <div>
+                <input type="radio" value="now" name="pay-klarna" /> Pay now
+              </div>
+              <Form.Control
+                type="personalnumber"
+                placeholder="Personal number (YYMMDD-XXXX)"
+              />
               <Form.Text className="text-muted">
-                Enter your information to pay with Klarna.
+                Enter your personal number to pay using Klarna.
               </Form.Text>
             </Form.Group>
           </Form>
