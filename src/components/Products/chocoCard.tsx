@@ -1,8 +1,5 @@
-import { title } from "process";
-import { CSSProperties, useState } from "react";
+import { CSSProperties } from "react";
 import { Button, Card } from "react-bootstrap";
-import { FaIdCardAlt } from "react-icons/fa";
-import { text } from "stream/consumers";
 import { Product } from "../../products";
 import AmountCounter from "../AmountCounter";
 import { Link } from "react-router-dom";

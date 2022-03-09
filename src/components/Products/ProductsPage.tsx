@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import React, { CSSProperties } from "react";
 import ChocoCard from "./chocoCard";
 import { mockedProducts } from "../../products";

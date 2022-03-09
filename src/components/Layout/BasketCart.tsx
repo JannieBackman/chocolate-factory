@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Button, Offcanvas } from "react-bootstrap";
-import { render } from "react-dom";
 import { FaShoppingCart } from "react-icons/fa";
 import OrderInformation from "../Cart/OrderInformation";
 import "bootstrap/dist/css/bootstrap.min.css";

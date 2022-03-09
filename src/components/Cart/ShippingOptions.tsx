@@ -31,7 +31,9 @@ function ShippingOptions() {
           24h shipping time. Expected delivery March 10.
         </p>
         <p className="shipping-info">Shipping fee: 40sek.</p>
+
       </div>
+        <button>Check Out</button>
     </div>
   );
 }
