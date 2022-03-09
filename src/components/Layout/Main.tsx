@@ -4,17 +4,24 @@ import "./Layout.css";
 import ChocoCard from "../Products/chocoCard";
 import { mockedProducts } from "../../products";
 import AmountCounter from "../AmountCounter";
+import { Container, Row, Col } from "react-bootstrap";
 
 function Main() {
   return (
     <div style={rootStyle}>
       <main className="MainContainer">
         <h3 style={pageTitle}>Popular product</h3>
-        <div style={{ display: "flex" }}>
-          <ChocoCard product={mockedProducts[4]} />
-          <ChocoCard product={mockedProducts[1]} />
-          <ChocoCard product={mockedProducts[3]} />
-        </div>
+        <Container>
+          <Row>
+            <Col>
+              <div style={productPageCards}>
+                <ChocoCard product={mockedProducts[4]} />
+                <ChocoCard product={mockedProducts[1]} />
+                <ChocoCard product={mockedProducts[3]} />
+              </div>
+            </Col>
+          </Row>
+        </Container>
       </main>
       <div style={pageStyle}>
         <h2>About Chocolate Factory</h2>
@@ -43,5 +50,11 @@ const pageTitle: CSSProperties = {
 const pageStyle: CSSProperties = {
   textAlign: "center",
   padding: "1rem",
+};
+const productPageCards: CSSProperties = {
+  display: "flex",
+  justifyContent: "center",
+  flexWrap: "wrap",
+  gap: "2rem",
 };
 export default Main;
