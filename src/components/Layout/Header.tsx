@@ -2,6 +2,7 @@ import { CSSProperties } from "react";
 import Cart from "../Cart/cart";
 import { Link } from "react-router-dom";
 import NavigationBar from "./Navbar";
+import Basket from "./BasketCart";
 
 function Header() {
   return (
@@ -12,7 +13,7 @@ function Header() {
         </Link>
       </div>
       <div style={cartStyle}>
-        <Cart />
+        <Basket />
       </div>
     </div>
   );
