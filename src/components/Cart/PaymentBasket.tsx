@@ -3,6 +3,7 @@ import {Form, useFormik} from "formik";
 import * as Yup from "yup";
 import InputField from "./InputFields";
 import { Link } from "react-router-dom";
+import ShippingOptions from "./ShippingOptions";
 
 type PostSchemaType = Record<keyof Form, Yup.AnySchema>
 
@@ -150,26 +151,24 @@ export default function PaymentBasket(props: Props) {
                             <button className="saveBtn" type="submit">Save</button>
 
                         </form>
+            <p style={cartStyle}>Choice payment</p>
+            <p style={cartStyle}>Shipping options</p>
+            <ShippingOptions />
         </div>
     )
-}
+};
 
- 
-
-        <p style={cartStyle}>Choice payment</p>
-        <p style={cartStyle}>Shipping options</p>
-        <ShippingOptions />
-      </div>
-    </div>
-  );
-}
 
 const cartStyle: CSSProperties = {
-  fontSize: "2rem",
-};
-   const cartStyle: CSSProperties = {
-        fontSize: "2rem",
-        marginLeft: "2rem"
+    fontSize: "2rem",
+    marginLeft: "2rem"
 
-    }
+}
+ 
+
+
+
+
+
+
 
