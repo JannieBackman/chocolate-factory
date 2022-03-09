@@ -150,17 +150,26 @@ export default function PaymentBasket(props: Props) {
                             <button className="saveBtn" type="submit">Save</button>
 
                         </form>
-
-
-                    <p style={cartStyle}>Choice payment</p>
-                    <p style={cartStyle}>Choice shipping</p>
-
         </div>
     )
 }
 
-    const cartStyle: CSSProperties = {
+ 
+
+        <p style={cartStyle}>Choice payment</p>
+        <p style={cartStyle}>Shipping options</p>
+        <ShippingOptions />
+      </div>
+    </div>
+  );
+}
+
+const cartStyle: CSSProperties = {
+  fontSize: "2rem",
+};
+   const cartStyle: CSSProperties = {
         fontSize: "2rem",
         marginLeft: "2rem"
 
     }
+
