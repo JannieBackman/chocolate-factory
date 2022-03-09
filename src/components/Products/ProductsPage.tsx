@@ -2,16 +2,23 @@ import { Link } from "react-router-dom";
 import React, { CSSProperties } from "react";
 import ChocoCard from "./chocoCard";
 import { mockedProducts } from "../../products";
+import { Container, Row, Col } from "react-bootstrap";
 
 export default function Chocolates() {
   return (
     <div style={productsContainer}>
       <h3 style={productPageTitle}>Products</h3>
-      <div style={productPageCards}>
-        {mockedProducts.map((product) => (
-          <ChocoCard product={product} />
-        ))}
-      </div>
+      <Container>
+        <Row>
+          <Col>
+            <div style={productPageCards}>
+              {mockedProducts.map((product) => (
+                <ChocoCard product={product} />
+              ))}
+            </div>
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 }
@@ -19,7 +26,8 @@ export default function Chocolates() {
 const productsContainer: CSSProperties = {
   display: "flex",
   flexDirection: "column",
-    marginBottom: "2rem"
+  alignItems: "center",
+  marginBottom: "2rem",
 };
 
 const productPageTitle: CSSProperties = {
@@ -30,5 +38,5 @@ const productPageCards: CSSProperties = {
   display: "flex",
   justifyContent: "center",
   flexWrap: "wrap",
-  gap: "1rem",
+  gap: "2rem",
 };
