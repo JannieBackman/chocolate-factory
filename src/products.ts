@@ -1,7 +1,7 @@
 import berryChocolate from "./assets/chocolateBerry.jpg";
 import darkChocolate from "./assets/chocolateDark.jpg";
 import goldenChocolate from "./assets/chocolateGold.jpg";
-import hazelnutChocolate from "./assets/chocolateHazelnut.jpg";
+import whiteChocolate from "./assets/chocolateWhite.jpg";
 import milkChocolate from "./assets/chocolateMilk.jpg";
 import orangeChocolate from "./assets/chocolateOrange.jpg";
 
@@ -28,8 +28,8 @@ export const mockedProducts: Product[] = [
     text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas,",
   },
   {
-    image: hazelnutChocolate,
-    title: "HazelnutChocolate",
+    image: whiteChocolate,
+    title: "WhiteChocolate",
     text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas,",
   },
   {
