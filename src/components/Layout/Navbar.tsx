@@ -1,5 +1,5 @@
 import { Navbar, Container, Nav } from "react-bootstrap";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function NavigationBar() {
   return (
@@ -11,12 +11,7 @@ export default function NavigationBar() {
         <Link className="navLinks" to="/chocolates">
           Products
         </Link>
-        <Link className="navLinks" to={"/aboutUs"}>
-            About Us
-        </Link>
       </Container>
     </Navbar>
   );
 }
-
-
