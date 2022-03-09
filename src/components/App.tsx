@@ -7,7 +7,8 @@ import NavigationBar from "./Layout/Navbar";
 import Chocolates from "./Products/ProductsPage";
 import AboutUs from "./About/AboutUs";
 import PaymentBasket from "./Cart/PaymentBasket";
-import OrderConfirmation from "./Cart/OrderConfirmation";
+import OrderConfirmation from "./Cart/OrderInformation";
+import Checkout from "./Cart/Checkout";
 
 function App() {
     const handleSubmit = () => {};
@@ -24,6 +25,7 @@ function App() {
                     <Route path="/aboutUs" element={<AboutUs />} />
                     <Route path="/cart" element={<PaymentBasket onSubmit={handleSubmit}/>} />
                     <Route path="/OrderConfirmation" element={<OrderConfirmation/>} />
+                    <Route path="/CheckOut" element={<Checkout/>} />
                 </Routes>
 
             <Footer/>
