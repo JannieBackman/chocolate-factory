@@ -19,7 +19,7 @@ const cartStyle: CSSProperties = {
 };
 
 const linkStyle: CSSProperties = {
-  color: "whitesmoke",
+  color: "black",
   textDecoration: "none",
 };
 
