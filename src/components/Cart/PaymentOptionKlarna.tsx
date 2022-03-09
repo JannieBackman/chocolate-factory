@@ -1,5 +1,5 @@
 import "./PaymentOptions.css";
-import { Modal, Button, Form, Row } from "react-bootstrap";
+import { Modal, Button, Form } from "react-bootstrap";
 import { useState } from "react";
 import Klarna from "../../assets/klarna-logo.png";
 
