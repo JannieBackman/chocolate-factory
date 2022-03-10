@@ -2,6 +2,7 @@ import React, { CSSProperties } from "react";
 import ChocoCard from "../components/Products/ProductCard";
 import { mockedProducts } from "../products";
 import { Container, Row, Col } from "react-bootstrap";
+import { FooterProductPage } from "../components/Layout/Footer";
 
 export default function Chocolates() {
   return (
@@ -18,6 +19,8 @@ export default function Chocolates() {
           </Col>
         </Row>
       </Container>
+
+      <FooterProductPage />
     </div>
   );
 }
@@ -26,7 +29,6 @@ const productsContainer: CSSProperties = {
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
-  marginBottom: "2rem",
 };
 
 const productPageTitle: CSSProperties = {

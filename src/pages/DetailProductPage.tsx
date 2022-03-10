@@ -1,4 +1,5 @@
 import React, { CSSProperties } from "react";
+import { Footer } from "../components/Layout/Footer";
 import ChocoCard from "../components/Products/ProductCard";
 import { mockedProducts, Product } from "../products";
 
@@ -12,6 +13,7 @@ export default function DetailsChocolate({ product }: Props) {
       <h3>{product.title}</h3>
       <img src={product.image} alt="chocolate" style={{ width: "20rem" }} />
       <p>{product.text}</p>
+      <Footer />
     </div>
   );
 }

@@ -8,6 +8,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import OrderInformation from "../components/Cart/OrderInformation";
 import { CSSProperties } from "react";
 import { mockedProducts, Product } from "../products";
+import { Footer } from "../components/Layout/Footer";
 
 export default function AccordionMenu() {
   return (
@@ -43,6 +44,7 @@ export default function AccordionMenu() {
           </Accordion.Body>
         </Accordion.Item>
       </Accordion>
+      <Footer />;
     </div>
   );
 }

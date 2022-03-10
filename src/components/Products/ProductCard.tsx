@@ -11,7 +11,11 @@ interface Props {
 function ChocoCard({ product }: Props) {
   return (
     <Card border="dark" style={{ width: "20rem" }}>
-      <Card.Img variant="top" src={product.image} style={{ width: "20rem" }} />
+      <Card.Img
+        variant="top"
+        src={product.image}
+        style={{ width: "19.9rem" }}
+      />
       <Card.Body style={cardBody}>
         <Card.Title>{product.title}</Card.Title>
         <Card.Text style={{ textAlign: "center" }}>{product.text}</Card.Text>

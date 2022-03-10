@@ -5,6 +5,7 @@ import ChocoCard from "../components/Products/ProductCard";
 import { mockedProducts } from "../products";
 import AmountCounter from "../components/AmountCounter";
 import { Container, Row, Col } from "react-bootstrap";
+import { Footer } from "../components/Layout/Footer";
 
 function Main() {
   return (
@@ -33,6 +34,7 @@ function Main() {
           Voluptas dolorum ratione adipisci!
         </p>
       </div>
+      <Footer />
     </div>
   );
 }

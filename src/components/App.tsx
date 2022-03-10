@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Footer from "./Layout/Footer";
+
 import Header from "./Layout/Header";
 import Main from "../pages/MainPage";
 import NavigationBar from "./Layout/Navbar";
@@ -42,7 +42,6 @@ function App() {
             />
           </Routes>
         </ErrorBoundary>
-        <Footer />
       </ErrorBoundary>
     </div>
   );
