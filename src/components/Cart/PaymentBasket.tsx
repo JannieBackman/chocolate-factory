@@ -82,7 +82,6 @@ export default function PaymentBasket() {
             </Button>
           </Form>
 
-        </Form>
       </div>
     </div>
   );

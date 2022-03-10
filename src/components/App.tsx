@@ -14,7 +14,6 @@ import {mockedProducts} from "../products";
 
 function App() {
 
-
   return (
     <div>
       <ErrorBoundary>
@@ -35,6 +34,8 @@ function App() {
             />
             <Route path="/OrderConfirmation" element={<OrderConfirmation />} />
             <Route path="/CheckOut" element={<Checkout />} />
+
+            {/*Ändra så att det inte är hårdkodat vilken man trycker på*/}
             <Route path="/DetailsChocolate" element={<DetailsChocolate product={mockedProducts[1]} />} />
           </Routes>
         </ErrorBoundary>
