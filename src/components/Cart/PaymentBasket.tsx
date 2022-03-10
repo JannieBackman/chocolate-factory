@@ -67,7 +67,7 @@ export default function PaymentBasket() {
                 Please provide a phone number.
               </Form.Control.Feedback>
             </Form.Group>
-
+            
             <Form.Group as={Col} className="mb-3" controlId="formGridEmail">
               <Form.Label>Email</Form.Label>
               <Form.Control required placeholder="Email" />
@@ -76,10 +76,12 @@ export default function PaymentBasket() {
               </Form.Control.Feedback>
             </Form.Group>
           </Row>
+          
+             <Button variant="dark" type="submit">
+              Submit
+            </Button>
+          </Form>
 
-          <Button variant="primary" type="submit">
-            Submit
-          </Button>
         </Form>
       </div>
     </div>

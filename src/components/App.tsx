@@ -10,9 +10,10 @@ import Checkout from "./Cart/Checkout";
 import DetailsChocolate from "./Products/DetailsChocolate";
 import ErrorBoundary from "./ErrorBoundary";
 import AccordionMenu from "./Layout/AccordionMenu";
+import {mockedProducts} from "../products";
 
 function App() {
-  const handleSubmit = () => {};
+
 
   return (
     <div>
@@ -34,7 +35,7 @@ function App() {
             />
             <Route path="/OrderConfirmation" element={<OrderConfirmation />} />
             <Route path="/CheckOut" element={<Checkout />} />
-            <Route path="/DetailsChocolate" element={<DetailsChocolate />} />
+            <Route path="/DetailsChocolate" element={<DetailsChocolate product={mockedProducts[1]} />} />
           </Routes>
         </ErrorBoundary>
         <Footer />

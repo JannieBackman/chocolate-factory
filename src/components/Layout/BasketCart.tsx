@@ -12,7 +12,7 @@ function Basket() {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+      <Button variant="dark" onClick={handleShow}>
         <FaShoppingCart />
       </Button>
 
@@ -23,7 +23,7 @@ function Basket() {
         <Offcanvas.Body>
           <OrderInformation />
           <div className="d-grid gap-2">
-            <Button variant="primary" size="lg" href="/cart">
+            <Button variant="dark" size="lg" href="/cart">
               Checkout
             </Button>
           </div>
