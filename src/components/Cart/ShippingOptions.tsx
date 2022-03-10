@@ -2,6 +2,8 @@ import "./ShippingOptions.css";
 import Postnord from "../../assets/postnord-logo.png";
 import DHL from "../../assets/DHL-logo.png";
 import Bring from "../../assets/bring-logo.png";
+import { Button } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function ShippingOptions() {
   return (
@@ -33,7 +35,7 @@ function ShippingOptions() {
         <p className="shipping-info">Shipping fee: 40sek.</p>
 
       </div>
-        <button>Check Out</button>
+        <Button variant="dark">Check Out</Button>
     </div>
   );
 }
