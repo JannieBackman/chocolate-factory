@@ -9,6 +9,18 @@ function PaymentOptionSwish() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const [validated, setValidated] = useState(false);
+
+  const handleSubmit = (event: any) => {
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    setValidated(true);
+  };
+
   return (
     <>
       <div className="payment-button-container">
@@ -26,23 +38,29 @@ function PaymentOptionSwish() {
           <Modal.Title>Pay with Swish</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form>
+          <Form noValidate validated={validated} onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="formGridPhone">
-              <Form.Control type="" placeholder="Phone number" />
+              <Form.Control required type="" placeholder="Phone number" />
+              <Form.Control.Feedback type="invalid">
+                Please provide a phone number.
+              </Form.Control.Feedback>
               <Form.Text className="text-muted">
                 Enter your phone number to pay using Swish.
               </Form.Text>
             </Form.Group>
           </Form>
-        </Modal.Body>
-        <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={handleClose}>
+          <Button
+            className="margin-left"
+            type="submit"
+            variant="primary"
+            onClick={handleSubmit}
+          >
             Save
           </Button>
-        </Modal.Footer>
+        </Modal.Body>
       </Modal>
     </>
   );
