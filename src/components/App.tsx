@@ -2,15 +2,16 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Footer from "./Layout/Footer";
 import Header from "./Layout/Header";
-import Main from "../pages/Main";
+import Main from "../pages/MainPage";
 import NavigationBar from "./Layout/Navbar";
 import Chocolates from "../pages/ProductsPage";
 import OrderConfirmation from "./Cart/OrderInformation";
 import Checkout from "../pages/ConfirmationPage";
-import DetailsChocolate from "../pages/DetailsChocolate";
+import DetailsChocolate from "../pages/DetailProductPage";
 import ErrorBoundary from "./ErrorBoundary";
-import AccordionMenu from "./Layout/AccordionMenu";
+import AccordionMenu from "../pages/AccordionMenuPage";
 import { mockedProducts } from "../products";
+import ProductsPage from "../pages/ProductsPage";
 
 function App() {
   return (
@@ -25,10 +26,13 @@ function App() {
             {/* <ErrorBoundary>      ---- if you want to see 404page*/}
             <Route path="/" element={<Main />} />
             <Route path="/" element={<Header />} />
-            <Route path="/Chocolates" element={<Chocolates />} />
+            <Route path="/Chocolates" element={<ProductsPage />} />
             {/* </ErrorBoundary> ---- if you want to see 404page*/}
             <Route path="/cart" element={<AccordionMenu />} />
-            <Route path="/OrderConfirmation" element={<OrderConfirmation />} />
+            <Route
+              path="/OrderConfirmation"
+              element={<OrderConfirmation product={mockedProducts[1]} />}
+            />
             <Route path="/CheckOut" element={<Checkout />} />
 
             {/*Ändra så att det inte är hårdkodat vilken man trycker på*/}

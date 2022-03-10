@@ -1,12 +1,13 @@
 import { Accordion } from "react-bootstrap";
-import ShippingOptions from "../Cart/ShippingOptions";
-import PaymentOptionKlarna from "../Cart/PaymentOptionKlarna";
-import PaymentOptionMastercard from "../Cart/PaymentOptionMastercard";
-import PaymentOptionSwish from "../Cart/PaymentOptionSwish";
-import PaymentBasket from "../Cart/ShippingAdressForm";
+import ShippingOptions from "../components/Cart/ShippingOptions";
+import PaymentOptionKlarna from "../components/Cart/PaymentOptionKlarna";
+import PaymentOptionMastercard from "../components/Cart/PaymentOptionMastercard";
+import PaymentOptionSwish from "../components/Cart/PaymentOptionSwish";
+import PaymentBasket from "../components/Cart/ShippingAdressForm";
 import "bootstrap/dist/css/bootstrap.min.css";
-import OrderInformation from "../Cart/OrderInformation";
+import OrderInformation from "../components/Cart/OrderInformation";
 import { CSSProperties } from "react";
+import { mockedProducts, Product } from "../products";
 
 export default function AccordionMenu() {
   return (
@@ -15,7 +16,7 @@ export default function AccordionMenu() {
         <Accordion.Item eventKey="0">
           <Accordion.Header>Your order</Accordion.Header>
           <Accordion.Body>
-            <OrderInformation />
+            <OrderInformation product={mockedProducts[1]} />
           </Accordion.Body>
         </Accordion.Item>
 

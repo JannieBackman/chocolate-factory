@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button, Offcanvas } from "react-bootstrap";
 import { FaShoppingCart } from "react-icons/fa";
 import OrderInformation from "../Cart/OrderInformation";
+import { mockedProducts, Product } from "../../products";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function Basket() {
@@ -21,7 +22,8 @@ function Basket() {
           <Offcanvas.Title>Your Basket</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          <OrderInformation />
+          <OrderInformation product={mockedProducts[1]} />
+
           <div className="d-grid gap-2">
             <Button variant="dark" size="lg" href="/cart">
               Checkout
