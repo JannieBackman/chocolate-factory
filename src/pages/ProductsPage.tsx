@@ -1,6 +1,6 @@
 import React, { CSSProperties } from "react";
-import ChocoCard from "./chocoCard";
-import { mockedProducts } from "../../products";
+import ChocoCard from "../components/Products/ProductCard";
+import { mockedProducts } from "../products";
 import { Container, Row, Col } from "react-bootstrap";
 
 export default function Chocolates() {
