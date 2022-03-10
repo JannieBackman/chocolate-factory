@@ -2,6 +2,7 @@ import React, { CSSProperties } from "react";
 import { Footer } from "../components/Layout/Footer";
 import ChocoCard from "../components/Products/ProductCard";
 import { mockedProducts, Product } from "../products";
+import background from "../assets/background_chocolateFactory.jpg";
 
 interface Props {
   product: Product;
@@ -23,4 +24,6 @@ const detailsPage: CSSProperties = {
   alignItems: "center",
   margin: "2rem 0",
   flexDirection: "column",
+  backgroundImage: `url(${background})`,
+  height: "100vh",
 };

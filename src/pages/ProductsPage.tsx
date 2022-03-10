@@ -3,6 +3,7 @@ import ChocoCard from "../components/Products/ProductCard";
 import { mockedProducts } from "../products";
 import { Container, Row, Col } from "react-bootstrap";
 import { FooterProductPage } from "../components/Layout/Footer";
+import background from "../assets/background_chocolateFactory.jpg";
 
 export default function Chocolates() {
   return (
@@ -29,6 +30,7 @@ const productsContainer: CSSProperties = {
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
+  backgroundImage: `url(${background})`,
 };
 
 const productPageTitle: CSSProperties = {
