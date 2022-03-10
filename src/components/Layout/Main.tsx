@@ -1,5 +1,5 @@
 import { CSSProperties } from "react";
-import DetailPage from "../DetailPage";
+
 import "./Layout.css";
 import ChocoCard from "../Products/chocoCard";
 import { mockedProducts } from "../../products";
