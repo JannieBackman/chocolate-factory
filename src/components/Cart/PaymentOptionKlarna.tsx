@@ -46,7 +46,7 @@ function PaymentOptionKlarna() {
                   type="radio"
                   value="30days"
                   name="pay-klarna"
-                />{" "}
+                />
                 Pay within 30 days
               </div>
               <div>
@@ -77,8 +77,6 @@ function PaymentOptionKlarna() {
             Save
           </Button>
         </Modal.Body>
-        {/* <Modal.Footer> */}
-        {/* </Modal.Footer> */}
       </Modal>
     </>
   );
