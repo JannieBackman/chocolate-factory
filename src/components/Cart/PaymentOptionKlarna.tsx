@@ -8,6 +8,7 @@ function PaymentOptionKlarna() {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
   return (
     <>
       <div className="payment-button-container">
