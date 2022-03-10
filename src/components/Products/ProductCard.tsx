@@ -11,13 +11,19 @@ interface Props {
 function ChocoCard({ product }: Props) {
   return (
     <Card border="dark" style={{ width: "20rem" }}>
-     <Card.Img variant="top" src={product.image} style={{ width: "20rem" }} />
-        <Card.Body style={cardBody}>
+      <Card.Img
+        variant="top"
+        src={product.image}
+        style={{ width: "19.9rem" }}
+      />
+      <Card.Body style={cardBody}>
         <Card.Title>{product.title}</Card.Title>
         <Card.Text style={{ textAlign: "center" }}>{product.text}</Card.Text>
-          <Link to="/DetailsChocolate">
-              <Button style={infoBtn} variant="dark">More info</Button>
-          </Link>
+        <Link to="/DetailsChocolate">
+          <Button style={infoBtn} variant="dark">
+            More info
+          </Button>
+        </Link>
 
         <AmountCounter />
       </Card.Body>
@@ -32,8 +38,8 @@ const cardBody: CSSProperties = {
   alignItems: "center",
 };
 
-const infoBtn:CSSProperties = {
-    marginBottom: "1rem"
-}
+const infoBtn: CSSProperties = {
+  marginBottom: "1rem",
+};
 
 export default ChocoCard;

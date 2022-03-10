@@ -1,10 +1,12 @@
 import { CSSProperties } from "react";
 
-import "./Layout.css";
-import ChocoCard from "../Products/chocoCard";
-import { mockedProducts } from "../../products";
-import AmountCounter from "../AmountCounter";
+import "../components/Layout/Layout.css";
+import ChocoCard from "../components/Products/ProductCard";
+import { mockedProducts } from "../products";
+import AmountCounter from "../components/AmountCounter";
 import { Container, Row, Col } from "react-bootstrap";
+import { Footer } from "../components/Layout/Footer";
+import background from "../assets/background_chocolateFactory.jpg";
 
 function Main() {
   return (
@@ -33,6 +35,7 @@ function Main() {
           Voluptas dolorum ratione adipisci!
         </p>
       </div>
+      <Footer />
     </div>
   );
 }
@@ -42,6 +45,8 @@ const rootStyle: CSSProperties = {
   flexDirection: "column",
   alignItems: "center",
   height: "100vh",
+
+  backgroundImage: `url(${background})`,
 };
 
 const pageTitle: CSSProperties = {
