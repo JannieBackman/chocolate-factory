@@ -8,6 +8,19 @@ function PaymentOptionMastercard() {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const [validated, setValidated] = useState(false);
+
+  const handleSubmit = (event: any) => {
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    setValidated(true);
+  };
+
   return (
     <>
       <div className="payment-button-container">
@@ -25,30 +38,42 @@ function PaymentOptionMastercard() {
           <Modal.Title>Pay with Mastercard</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form>
+          <Form noValidate validated={validated} onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="formGridCardNr">
-              <Form.Control type="" placeholder="Card number" />
+              <Form.Control required type="" placeholder="Card number" />
+              <Form.Control.Feedback type="invalid">
+                Please provide a card number.
+              </Form.Control.Feedback>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formGridCardExpDate">
-              <input type="date" />
+              <input required type="date" />
+              <Form.Control.Feedback type="invalid">
+                Please provide an expiration date.
+              </Form.Control.Feedback>
               <Form.Text className="text-muted"> Expiration date</Form.Text>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formGridCardExpDate">
-              <Form.Control type="" placeholder="CVC" />
+              <Form.Control required type="" placeholder="CVC" />
+              <Form.Control.Feedback type="invalid">
+                Please provide a CVC.
+              </Form.Control.Feedback>
               <Form.Text className="text-muted">
                 Enter your card information to pay using Mastercard.
               </Form.Text>
             </Form.Group>
           </Form>
-        </Modal.Body>
-        <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={handleClose}>
+          <Button
+            className="margin-left"
+            type="submit"
+            variant="primary"
+            onClick={handleSubmit}
+          >
             Save
           </Button>
-        </Modal.Footer>
+        </Modal.Body>
       </Modal>
     </>
   );

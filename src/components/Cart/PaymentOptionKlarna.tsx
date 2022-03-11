@@ -9,6 +9,18 @@ function PaymentOptionKlarna() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const [validated, setValidated] = useState(false);
+
+  const handleSubmit = (event: any) => {
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    setValidated(true);
+  };
+
   return (
     <>
       <div className="payment-button-container">
@@ -26,33 +38,45 @@ function PaymentOptionKlarna() {
           <Modal.Title>Pay with Klarna</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form>
+          <Form noValidate validated={validated} onSubmit={handleSubmit}>
             <Form.Group controlId="formGridName">
               <div>
-                <input type="radio" value="30days" name="pay-klarna" /> Pay
-                within 30 days
+                <input
+                  defaultChecked
+                  type="radio"
+                  value="30days"
+                  name="pay-klarna"
+                />
+                Pay within 30 days
               </div>
               <div>
                 <input type="radio" value="now" name="pay-klarna" /> Pay now
               </div>
               <Form.Control
+                required
                 type="personalnumber"
                 placeholder="Personal number (YYMMDD-XXXX)"
               />
+              <Form.Control.Feedback type="invalid">
+                Please provide a personal number.
+              </Form.Control.Feedback>
               <Form.Text className="text-muted">
                 Enter your personal number to pay using Klarna.
               </Form.Text>
             </Form.Group>
           </Form>
-        </Modal.Body>
-        <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={handleClose}>
+          <Button
+            className="margin-left"
+            type="submit"
+            variant="primary"
+            onClick={handleSubmit}
+          >
             Save
           </Button>
-        </Modal.Footer>
+        </Modal.Body>
       </Modal>
     </>
   );
