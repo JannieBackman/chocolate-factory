@@ -24,7 +24,9 @@ function ChocoCard({ product }: Props) {
             More info
           </Button>
         </Link>
-
+        <Card.Subtitle style={{ paddingBottom: "1rem" }}>
+          {product.price} {product.valuta}
+        </Card.Subtitle>
         <AmountCounter />
       </Card.Body>
     </Card>
