@@ -6,7 +6,7 @@ import { mockedProducts } from "../products";
 import AmountCounter from "../components/AmountCounter";
 import { Container, Row, Col } from "react-bootstrap";
 import { Footer } from "../components/Layout/Footer";
-import background from "../assets/background_chocolateFactory.jpg";
+import background from "../assets/Background.jpg";
 
 function Main() {
   return (
@@ -45,8 +45,9 @@ const rootStyle: CSSProperties = {
   flexDirection: "column",
   alignItems: "center",
   height: "100vh",
-
   backgroundImage: `url(${background})`,
+  backgroundSize: "cover",
+  WebkitBackgroundSize: "cover",
 };
 
 const pageTitle: CSSProperties = {
