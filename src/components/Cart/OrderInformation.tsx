@@ -2,6 +2,7 @@ import React from "react";
 import AmountCounter from "../AmountCounter";
 import { ListGroup } from "react-bootstrap";
 import { mockedProducts, Product } from "../../products";
+import CartProvider from "../../context/CartProvider";
 
 interface Props {
   product: Product;
@@ -15,6 +16,7 @@ export default function OrderInformation({ product }: Props) {
         <ListGroup.Item>
           <div style={{ display: "flex" }}>
             {product.title}
+            <CartProvider />
             <AmountCounter />
           </div>
           <div style={{ display: "flex" }}>
