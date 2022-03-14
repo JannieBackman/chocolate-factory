@@ -3,6 +3,8 @@ import { Button, Card } from "react-bootstrap";
 import { Product } from "../../products";
 import AmountCounter from "../AmountCounter";
 import { Link } from "react-router-dom";
+import Cart from "../Cart/cartIcon";
+import CartProvider from "../../context/CartProvider";
 
 interface Props {
   product: Product;
@@ -27,7 +29,7 @@ function ChocoCard({ product }: Props) {
         <Card.Subtitle style={{ paddingBottom: "1rem" }}>
           {product.price} {product.valuta}
         </Card.Subtitle>
-        <AmountCounter />
+        <CartProvider />
       </Card.Body>
     </Card>
   );
