@@ -1,6 +1,7 @@
 import { CSSProperties } from "react";
 
 import "../components/Layout/Layout.css";
+import { Props } from "../components/Products/ProductCard";
 import ChocoCard from "../components/Products/ProductCard";
 import { mockedProducts } from "../products";
 import AmountCounter from "../components/AmountCounter";
@@ -17,9 +18,18 @@ function Main() {
           <Row>
             <Col>
               <div style={productPageCards}>
-                <ChocoCard product={mockedProducts[4]} />
-                <ChocoCard product={mockedProducts[1]} />
-                <ChocoCard product={mockedProducts[3]} />
+                <ChocoCard
+                  handleAddToCart={handleAddToCart(product)}
+                  product={mockedProducts[1]}
+                />
+                <ChocoCard
+                  handleAddToCart={handleAddToCart(product)}
+                  product={mockedProducts[1]}
+                />
+                <ChocoCard
+                  handleAddToCart={handleAddToCart(product)}
+                  product={mockedProducts[3]}
+                />
               </div>
             </Col>
           </Row>
@@ -64,3 +74,10 @@ const productPageCards: CSSProperties = {
   gap: "2rem",
 };
 export default Main;
+function handleAddToCart(product: any): () => void {
+  throw new Error("Function not implemented.");
+}
+
+function product(product: any): () => void {
+  throw new Error("Function not implemented.");
+}

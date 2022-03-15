@@ -1,16 +1,38 @@
-import React, { useContext } from "react";
-import { mockedProducts, Product } from "../products";
+import { State } from "history";
+import React, {
+  createContext,
+  Dispatch,
+  Props,
+  SetStateAction,
+  useContext,
+  useState,
+} from "react";
+import { Product } from "../products";
+import { FC } from "react";
 
-interface CartContext {
-  addItem: (newItem: Product) => void;
-  removeItem: (itemID: number) => void;
-
-  items: Product[];
+interface ContextValue {
+  addToCart: Dispatch<SetStateAction<Product[]>>;
+  cart: Product[];
 }
 
-export const CartItemContext = React.createContext<CartContext>({
-  addItem: () => {},
+export const CartContext = createContext<ContextValue>({
+  cart: [],
 
-  removeItem: () => {},
-  items: [],
+  // product: {title: "", price: 0},
+  addToCart: () => {},
 });
+
+const CartProvider: FC = (props) => {
+  const [cart, setCart] = useState<Product[]>([]);
+
+  let contextData: ContextValue = { cart: cart, addToCart: setCart };
+  return (
+    <CartContext.Provider value={contextData}>
+      {props.children}
+    </CartContext.Provider>
+  );
+};
+
+export default CartProvider;
+
+export const useCartContext = () => useContext(CartContext);

@@ -22,7 +22,7 @@ function Basket() {
           <Offcanvas.Title>Your Basket</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          <OrderInformation product={mockedProducts[1]} />
+          {/* <OrderInformation product={mockedProducts[1]} /> */}
 
           <div className="d-grid gap-2">
             <Button variant="dark" size="lg" href="/cart">
