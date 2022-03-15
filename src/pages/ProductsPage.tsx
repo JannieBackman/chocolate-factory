@@ -1,9 +1,10 @@
 import React, { CSSProperties } from "react";
 import ChocoCard from "../components/Products/ProductCard";
-import { mockedProducts } from "../products";
+import { mockedProducts, Product } from "../products";
 import { Container, Row, Col } from "react-bootstrap";
 import { FooterProductPage } from "../components/Layout/Footer";
 import background from "../assets/Background.jpg";
+
 
 export default function Chocolates() {
   return (
@@ -14,8 +15,13 @@ export default function Chocolates() {
           <Col>
             <div style={productPageCards}>
               {mockedProducts.map((product) => (
-                <ChocoCard product={product} />
-              ))}
+                <ChocoCard
+                handleAddToCart={handleAddToCart(product)}>
+            
+</ChocoCard>
+              )
+              
+
             </div>
           </Col>
         </Row>
@@ -45,3 +51,7 @@ const productPageCards: CSSProperties = {
   flexWrap: "wrap",
   gap: "2rem",
 };
+function handleAddToCart(product: Product): () => void {
+  throw new Error("Function not implemented.");
+}
+
