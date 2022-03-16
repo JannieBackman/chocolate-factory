@@ -5,7 +5,6 @@ import { Container, Row, Col } from "react-bootstrap";
 import { FooterProductPage } from "../components/Layout/Footer";
 import background from "../assets/Background.jpg";
 
-
 export default function Chocolates() {
   return (
     <div style={productsContainer}>
@@ -15,13 +14,8 @@ export default function Chocolates() {
           <Col>
             <div style={productPageCards}>
               {mockedProducts.map((product) => (
-                <ChocoCard
-                handleAddToCart={handleAddToCart(product)}>
-            
-</ChocoCard>
-              )
-              
-
+                <ChocoCard product={product} />
+              ))}
             </div>
           </Col>
         </Row>
@@ -51,7 +45,3 @@ const productPageCards: CSSProperties = {
   flexWrap: "wrap",
   gap: "2rem",
 };
-function handleAddToCart(product: Product): () => void {
-  throw new Error("Function not implemented.");
-}
-

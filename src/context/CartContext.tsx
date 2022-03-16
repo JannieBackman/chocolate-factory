@@ -10,13 +10,13 @@ import React, {
 import { Product } from "../products";
 import { FC } from "react";
 
-interface ContextValue {
+export interface ContextValue {
   addToCart: Dispatch<SetStateAction<Product[]>>;
   cart: Product[];
 }
 
 export const CartContext = createContext<ContextValue>({
-  cart: [],
+  cart: [...cart, product],
 
   // product: {title: "", price: 0},
   addToCart: () => {},
