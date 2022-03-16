@@ -10,11 +10,12 @@ import Checkout from "../pages/ConfirmationPage";
 import DetailsChocolate from "../pages/DetailProductPage";
 import ErrorBoundary from "./ErrorBoundary";
 import AccordionMenu from "../pages/AccordionMenuPage";
-import { mockedProducts } from "../products";
+import { mockedProducts, Product } from "../products";
 import ProductsPage from "../pages/ProductsPage";
 import CartProvider from "../context/CartContext";
 
 function App() {
+  const handleAddToCart = (clickedItem: Product) => null;
   return (
     <div>
       <ErrorBoundary>

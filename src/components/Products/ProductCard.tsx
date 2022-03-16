@@ -8,12 +8,12 @@ import { CartContext } from "../../context/CartContext";
 
 export interface Props {
   product: Product;
-  handleAddToCart: () => void;
 }
 
 function ChocoCard({ product }: Props) {
   let context = useContext(CartContext);
-  context.cart[0].title;
+  // context.cart[0].title;
+
   return (
     <Card border="dark" style={{ width: "20rem" }}>
       <Card.Img
@@ -33,7 +33,13 @@ function ChocoCard({ product }: Props) {
         <Card.Subtitle style={{ paddingBottom: "1rem" }}>
           {product.price} {product.valuta}
         </Card.Subtitle>
-        <Button onClick={() => handleAddToCart()} variant="dark">
+
+        <Button
+          onClick={() => context.addToCart([])}
+          type="submit"
+          variant="dark"
+          key={1}
+        >
           Add to Cart
         </Button>
       </Card.Body>
@@ -53,6 +59,3 @@ const infoBtn: CSSProperties = {
 };
 
 export default ChocoCard;
-function handleAddToCart(): void {
-  throw new Error("Function not implemented.");
-}

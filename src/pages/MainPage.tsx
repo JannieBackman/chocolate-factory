@@ -18,18 +18,9 @@ function Main() {
           <Row>
             <Col>
               <div style={productPageCards}>
-                <ChocoCard
-                  handleAddToCart={handleAddToCart(product)}
-                  product={mockedProducts[1]}
-                />
-                <ChocoCard
-                  handleAddToCart={handleAddToCart(product)}
-                  product={mockedProducts[1]}
-                />
-                <ChocoCard
-                  handleAddToCart={handleAddToCart(product)}
-                  product={mockedProducts[3]}
-                />
+                <ChocoCard product={mockedProducts[1]} />
+                <ChocoCard product={mockedProducts[1]} />
+                <ChocoCard product={mockedProducts[3]} />
               </div>
             </Col>
           </Row>
@@ -73,11 +64,5 @@ const productPageCards: CSSProperties = {
   flexWrap: "wrap",
   gap: "2rem",
 };
-export default Main;
-function handleAddToCart(product: any): () => void {
-  throw new Error("Function not implemented.");
-}
 
-function product(product: any): () => void {
-  throw new Error("Function not implemented.");
-}
+export default Main;

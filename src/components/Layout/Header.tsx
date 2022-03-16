@@ -1,5 +1,6 @@
 import { CSSProperties } from "react";
 import { Link } from "react-router-dom";
+import { mockedProducts } from "../../products";
 import Basket from "./BasketCart";
 
 function Header() {
