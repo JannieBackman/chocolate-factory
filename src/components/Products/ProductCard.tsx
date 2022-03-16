@@ -1,16 +1,19 @@
-import { CSSProperties } from "react";
+import { CSSProperties, useContext } from "react";
 import { Button, Card } from "react-bootstrap";
 import { Product } from "../../products";
 import AmountCounter from "../AmountCounter";
 import { Link } from "react-router-dom";
 import Cart from "../Cart/cartIcon";
-import CartProvider from "../../context/CartProvider";
+import { CartContext } from "../../context/CartContext";
 
-interface Props {
+export interface Props {
   product: Product;
 }
 
 function ChocoCard({ product }: Props) {
+  let context = useContext(CartContext);
+  // context.cart[0].title;
+
   return (
     <Card border="dark" style={{ width: "20rem" }}>
       <Card.Img
@@ -26,10 +29,19 @@ function ChocoCard({ product }: Props) {
             More info
           </Button>
         </Link>
+
         <Card.Subtitle style={{ paddingBottom: "1rem" }}>
           {product.price} {product.valuta}
         </Card.Subtitle>
-        <CartProvider />
+
+        <Button
+          onClick={() => context.addToCart([])}
+          type="submit"
+          variant="dark"
+          key={1}
+        >
+          Add to Cart
+        </Button>
       </Card.Body>
     </Card>
   );
