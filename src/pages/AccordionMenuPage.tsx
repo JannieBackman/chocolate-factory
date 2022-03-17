@@ -6,18 +6,27 @@ import PaymentOptionSwish from "../components/Cart/PaymentOptionSwish";
 import PaymentBasket from "../components/Cart/ShippingAdressForm";
 import "bootstrap/dist/css/bootstrap.min.css";
 import OrderInformation from "../components/Cart/OrderInformation";
-import { CSSProperties } from "react";
+import { CSSProperties, useContext } from "react";
 import { mockedProducts, Product } from "../products";
 import { Footer } from "../components/Layout/Footer";
+import { CartContext } from "../context/CartContext";
 
 export default function AccordionMenu() {
+  const cart = useContext(CartContext).cart;
   return (
     <div>
       <Accordion defaultActiveKey="0">
         <Accordion.Item eventKey="0">
           <Accordion.Header>Your order</Accordion.Header>
           <Accordion.Body>
-            <OrderInformation product={mockedProducts[1]} />
+            {cart.map((product) => (
+              <div>
+                <p>
+                  {product.title} {product.price} {product.valuta}
+                </p>
+              </div>
+            ))}
+            {/* <OrderInformation product={} /> */}
           </Accordion.Body>
         </Accordion.Item>
 
@@ -44,7 +53,7 @@ export default function AccordionMenu() {
           </Accordion.Body>
         </Accordion.Item>
       </Accordion>
-      <Footer />;
+      <Footer />
     </div>
   );
 }
