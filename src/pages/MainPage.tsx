@@ -13,7 +13,7 @@ function Main() {
   return (
     <div style={rootStyle}>
       <main className="MainContainer">
-        <h3 style={pageTitle}>Popular product</h3>
+        <h3 style={pageTitle}>Popular products</h3>
         <Container>
           <Row>
             <Col>
