@@ -13,9 +13,10 @@ import AccordionMenu from "../pages/AccordionMenuPage";
 import { mockedProducts, Product } from "../products";
 import ProductsPage from "../pages/ProductsPage";
 import CartProvider from "../context/CartContext";
+import { CartContext } from "../context/CartContext";
+import OrderInformation from "./Cart/OrderInformation";
 
 function App() {
-  const handleAddToCart = (clickedItem: Product) => null;
   return (
     <div>
       <ErrorBoundary>
@@ -32,10 +33,7 @@ function App() {
               <Route path="/Chocolates" element={<ProductsPage />} />
               {/* </ErrorBoundary> ---- if you want to see 404page*/}
               <Route path="/cart" element={<AccordionMenu />} />
-              <Route
-                path="/OrderConfirmation"
-                element={<OrderConfirmation product={mockedProducts[1]} />}
-              />
+              {/* <Route path="/OrderInformation" element={<OrderInformation product={} />} /> */}
               <Route path="/CheckOut" element={<Checkout />} />
 
               <Route

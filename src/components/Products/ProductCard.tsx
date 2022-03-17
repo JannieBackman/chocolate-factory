@@ -35,7 +35,7 @@ function ChocoCard({ product }: Props) {
         </Card.Subtitle>
 
         <Button
-          onClick={() => context.addToCart([])}
+          onClick={() => context.addToCart(product)}
           type="submit"
           variant="dark"
           key={1}

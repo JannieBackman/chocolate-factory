@@ -1,9 +1,10 @@
 import { useState } from "react";
+import { FaProductHunt } from "react-icons/fa";
 import "./AmountCounter.css";
 import Cart from "./Cart/cartIcon";
 
 function AmountCounter() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(1);
 
   const handleIncrement = () => {
     setCount(count + 1);
@@ -24,7 +25,6 @@ function AmountCounter() {
       <button className="button decrement-button" onClick={handleDecrement}>
         -
       </button>
-      <Cart />
     </div>
   );
 }
