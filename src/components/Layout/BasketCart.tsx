@@ -6,6 +6,7 @@ import { mockedProducts, Product } from "../../products";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { CartContext } from "../../context/CartContext";
 import AmountCounter from "../AmountCounter";
+import { Link } from "react-router-dom";
 
 function Basket() {
   const [show, setShow] = useState(false);
@@ -29,6 +30,7 @@ function Basket() {
         </Offcanvas.Header>
         <Offcanvas.Body>
           {cart.map((product) => (
+            // if (cart.map()) {}
             <div>
               <p>
                 {product.title} {product.price} {product.valuta}
@@ -38,9 +40,11 @@ function Basket() {
           ))}
           <p>Total price: </p>
           <div className="d-grid gap-2">
-            <Button variant="dark" size="lg" href="/cart">
-              Checkout
-            </Button>
+            <Link to="/cart">
+              <Button variant="dark" size="lg">
+                Checkout
+              </Button>
+            </Link>
           </div>
         </Offcanvas.Body>
       </Offcanvas>

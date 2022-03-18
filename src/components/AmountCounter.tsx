@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { FaProductHunt } from "react-icons/fa";
-import { number } from "yup";
-import { Product } from "../products";
 import "./AmountCounter.css";
 import Cart from "./Cart/cartIcon";
+import { Product } from "../products";
+import { number } from "yup";
 
 export interface Props {
   product: Product;
@@ -28,10 +28,6 @@ function AmountCounter({ product }: Props) {
     }
   };
 
-  // const incrementTotalPrice = () => {
-  //   setTotalPrice(count * product.price);
-  // };
-
   return (
     <div className="container">
       <button className="button" onClick={handleIncrement}>
@@ -41,9 +37,8 @@ function AmountCounter({ product }: Props) {
       <button className="button decrement-button" onClick={handleDecrement}>
         -
       </button>
-
       <div>
-        <p> {totalPrice} SEK</p>
+        <p>{totalPrice}</p>
       </div>
     </div>
   );

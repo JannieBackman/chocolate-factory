@@ -10,7 +10,7 @@ import { CSSProperties, useContext } from "react";
 import { mockedProducts, Product } from "../products";
 import { Footer } from "../components/Layout/Footer";
 import { CartContext } from "../context/CartContext";
-import { Button } from "react-bootstrap";
+import { Button, Spinner } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useBuy } from "../context/BuyContext";
 
@@ -21,27 +21,13 @@ export default function AccordionMenu() {
     <div>
       <Accordion defaultActiveKey="0">
         <Accordion.Item eventKey="0">
-          <Accordion.Header>Your order</Accordion.Header>
-          <Accordion.Body>
-            {cart.map((product) => (
-              <div>
-                <p>
-                  {product.title} {product.price} {product.valuta}
-                </p>
-              </div>
-            ))}
-            {/* <OrderInformation product={} /> */}
-          </Accordion.Body>
-        </Accordion.Item>
-
-        <Accordion.Item eventKey="1">
           <Accordion.Header>Shipping Address</Accordion.Header>
           <Accordion.Body>
             <PaymentBasket />
           </Accordion.Body>
         </Accordion.Item>
 
-        <Accordion.Item eventKey="2">
+        <Accordion.Item eventKey="1">
           <Accordion.Header>Payment options</Accordion.Header>
           <Accordion.Body>
             <PaymentOptionKlarna />
@@ -53,17 +39,36 @@ export default function AccordionMenu() {
           </Accordion.Body>
         </Accordion.Item>
 
-        <Accordion.Item eventKey="3">
+        <Accordion.Item eventKey="2">
           <Accordion.Header>Shipping options</Accordion.Header>
           <Accordion.Body>
             <ShippingOptions />
+          </Accordion.Body>
+        </Accordion.Item>
+
+        <Accordion.Item eventKey="3">
+          <Accordion.Header>Your order</Accordion.Header>
+          <Accordion.Body>
+            {cart.map((product) => (
+              <div>
+                <p>
+                  {product.title} {product.price} {product.valuta}
+                </p>
+              </div>
+            ))}
+            <div>
+              Shipping: 40 SEK <br /> Total Price: 100 SEK
+            </div>
+            {/* <OrderInformation product={} /> */}
           </Accordion.Body>
         </Accordion.Item>
       </Accordion>
 
       <div style={confirmStyle}>
         {isLoading ? (
-          <span>loading...</span>
+          <Spinner animation="border" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </Spinner>
         ) : buy ? (
           <span>
             {buy.paymentValid} <br /> {buy.confirmation}
