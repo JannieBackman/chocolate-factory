@@ -10,11 +10,12 @@ import { CSSProperties, useContext } from "react";
 import { mockedProducts, Product } from "../products";
 import { Footer } from "../components/Layout/Footer";
 import { CartContext } from "../context/CartContext";
+import { Button } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { useBuy } from "../context/BuyContext";
-import Submit from "./SubmitPurchase";
-import ShippingOptions from "../components/Cart/ShippingOptions";
 
 export default function AccordionMenu() {
+  const { buy, isLoading, submit } = useBuy();
   const cart = useContext(CartContext).cart;
   return (
     <div>
@@ -46,6 +47,9 @@ export default function AccordionMenu() {
             <PaymentOptionKlarna />
             <PaymentOptionMastercard />
             <PaymentOptionSwish />
+            <Button variant="dark" type="submit" style={{ marginTop: "1rem" }}>
+              Next
+            </Button>
           </Accordion.Body>
         </Accordion.Item>
 
@@ -56,7 +60,30 @@ export default function AccordionMenu() {
           </Accordion.Body>
         </Accordion.Item>
       </Accordion>
+
+      <div style={confirmStyle}>
+        {isLoading ? (
+          <span>loading...</span>
+        ) : buy ? (
+          <span>
+            {buy.paymentValid} <br /> {buy.confirmation}
+          </span>
+        ) : (
+          <Button variant="dark" onClick={submit}>
+            Confirm purchase
+          </Button>
+        )}
+      </div>
       {/* <Footer /> */}
     </div>
   );
 }
+
+const confirmStyle: CSSProperties = {
+  display: "flex",
+  justifyContent: "center",
+  paddingTop: "2rem",
+  fontWeight: "bold",
+  fontSize: "1.5rem",
+  textAlign: "center",
+};

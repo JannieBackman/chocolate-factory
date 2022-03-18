@@ -1,5 +1,6 @@
 import React, { CSSProperties, useState } from "react";
 import { Form, Row, Col, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 export default function PaymentBasket() {
   const [validated, setValidated] = useState(false);
@@ -67,7 +68,7 @@ export default function PaymentBasket() {
                 Please provide a phone number.
               </Form.Control.Feedback>
             </Form.Group>
-            
+
             <Form.Group as={Col} className="mb-3" controlId="formGridEmail">
               <Form.Label>Email</Form.Label>
               <Form.Control required placeholder="Email" />
@@ -76,12 +77,11 @@ export default function PaymentBasket() {
               </Form.Control.Feedback>
             </Form.Group>
           </Row>
-          
-             <Button variant="dark" type="submit">
-              Submit
-            </Button>
-          </Form>
 
+          <Button variant="dark" type="submit">
+            Next
+          </Button>
+        </Form>
       </div>
     </div>
   );

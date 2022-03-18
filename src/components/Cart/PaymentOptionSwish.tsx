@@ -28,6 +28,7 @@ function PaymentOptionSwish() {
           className="btn btn-light"
           variant="primary"
           onClick={handleShow}
+          active
         >
           <img className="img-style" src={Swish} alt="" />
         </Button>
@@ -40,7 +41,6 @@ function PaymentOptionSwish() {
         <Modal.Body>
           <Form noValidate validated={validated} onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="formGridPhone">
-              <Form.Control required type="" placeholder="Phone number" />
               <Form.Control.Feedback type="invalid">
                 Please provide a phone number.
               </Form.Control.Feedback>

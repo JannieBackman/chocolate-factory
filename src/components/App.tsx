@@ -15,33 +15,36 @@ import ProductsPage from "../pages/ProductsPage";
 import CartProvider from "../context/CartContext";
 import { CartContext } from "../context/CartContext";
 import OrderInformation from "./Cart/OrderInformation";
+import BuyProvider from "../context/BuyContext";
 
 function App() {
   return (
     <div>
       <ErrorBoundary>
         <CartProvider>
-          <ErrorBoundary>
-            <Header />
-          </ErrorBoundary>
-          <NavigationBar />
-          <ErrorBoundary>
-            <Routes>
-              {/* <ErrorBoundary>      ---- if you want to see 404page*/}
-              <Route path="/" element={<Main />} />
-              <Route path="/" element={<Header />} />
-              <Route path="/Chocolates" element={<ProductsPage />} />
-              {/* </ErrorBoundary> ---- if you want to see 404page*/}
-              <Route path="/cart" element={<AccordionMenu />} />
-              {/* <Route path="/OrderInformation" element={<OrderInformation product={} />} /> */}
-              <Route path="/CheckOut" element={<Checkout />} />
+          <BuyProvider>
+            <ErrorBoundary>
+              <Header />
+            </ErrorBoundary>
+            <NavigationBar />
+            <ErrorBoundary>
+              <Routes>
+                {/* <ErrorBoundary>      ---- if you want to see 404page*/}
+                <Route path="/" element={<Main />} />
+                <Route path="/" element={<Header />} />
+                <Route path="/Chocolates" element={<ProductsPage />} />
+                {/* </ErrorBoundary> ---- if you want to see 404page*/}
+                <Route path="/cart" element={<AccordionMenu />} />
+                {/* <Route path="/OrderInformation" element={<OrderInformation product={} />} /> */}
+                <Route path="/CheckOut" element={<Checkout />} />
 
-              <Route
-                path="/DetailsChocolate"
-                element={<DetailsChocolate product={mockedProducts[1]} />}
-              />
-            </Routes>
-          </ErrorBoundary>
+                <Route
+                  path="/DetailsChocolate"
+                  element={<DetailsChocolate product={mockedProducts[1]} />}
+                />
+              </Routes>
+            </ErrorBoundary>
+          </BuyProvider>
         </CartProvider>
       </ErrorBoundary>
     </div>

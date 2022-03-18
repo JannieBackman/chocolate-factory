@@ -9,7 +9,7 @@ interface ContextValue {
 
 export const BuyContext = createContext<ContextValue>({
   isLoading: false,
-  buy: { paymentValid: "", paymentInvalid: "" },
+  buy: { paymentValid: "", paymentInvalid: "", confirmation: "" },
   submit: () => {},
 });
 
