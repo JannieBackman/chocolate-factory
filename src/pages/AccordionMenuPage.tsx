@@ -21,27 +21,13 @@ export default function AccordionMenu() {
     <div>
       <Accordion defaultActiveKey="0">
         <Accordion.Item eventKey="0">
-          <Accordion.Header>Your order</Accordion.Header>
-          <Accordion.Body>
-            {cart.map((product) => (
-              <div>
-                <p>
-                  {product.title} {product.price} {product.valuta}
-                </p>
-              </div>
-            ))}
-            {/* <OrderInformation product={} /> */}
-          </Accordion.Body>
-        </Accordion.Item>
-
-        <Accordion.Item eventKey="1">
           <Accordion.Header>Shipping Address</Accordion.Header>
           <Accordion.Body>
             <PaymentBasket />
           </Accordion.Body>
         </Accordion.Item>
 
-        <Accordion.Item eventKey="2">
+        <Accordion.Item eventKey="1">
           <Accordion.Header>Payment options</Accordion.Header>
           <Accordion.Body>
             <PaymentOptionKlarna />
@@ -53,10 +39,27 @@ export default function AccordionMenu() {
           </Accordion.Body>
         </Accordion.Item>
 
-        <Accordion.Item eventKey="3">
+        <Accordion.Item eventKey="2">
           <Accordion.Header>Shipping options</Accordion.Header>
           <Accordion.Body>
             <ShippingOptions />
+          </Accordion.Body>
+        </Accordion.Item>
+
+        <Accordion.Item eventKey="3">
+          <Accordion.Header>Your order</Accordion.Header>
+          <Accordion.Body>
+            {cart.map((product) => (
+              <div>
+                <p>
+                  {product.title} {product.price} {product.valuta}
+                </p>
+              </div>
+            ))}
+            <div>
+              Shipping: 40 SEK <br /> Total Price: 100 SEK
+            </div>
+            {/* <OrderInformation product={} /> */}
           </Accordion.Body>
         </Accordion.Item>
       </Accordion>
