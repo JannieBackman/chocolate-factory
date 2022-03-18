@@ -4,8 +4,11 @@ import DHL from "../../assets/DHL-logo.png";
 import Bring from "../../assets/bring-logo.png";
 import { Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useBuy } from "../../context/BuyContext";
+import { Buy, fakeFetch } from "../../components/fakeFetch";
 
 function ShippingOptions() {
+  const { buy, isLoading, submit } = useBuy();
   return (
     <div className="shipping-container">
       <div className="postnord-container">
@@ -33,9 +36,16 @@ function ShippingOptions() {
           24h shipping time. Expected delivery March 10.
         </p>
         <p className="shipping-info">Shipping fee: 40sek.</p>
-
       </div>
-        <Button variant="dark">Check Out</Button>
+      <div style={{ backgroundColor: "red" }}>
+        {isLoading ? (
+          <span>laddar...</span>
+        ) : buy ? (
+          <span>{buy.paymentValid}</span>
+        ) : (
+          <button onClick={submit}>Confirm purchase</button>
+        )}
+      </div>
     </div>
   );
 }
