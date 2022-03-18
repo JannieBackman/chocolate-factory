@@ -10,6 +10,9 @@ import { CSSProperties, useContext } from "react";
 import { mockedProducts, Product } from "../products";
 import { Footer } from "../components/Layout/Footer";
 import { CartContext } from "../context/CartContext";
+import { useBuy } from "../context/BuyContext";
+import Submit from "./SubmitPurchase";
+import ShippingOptions from "../components/Cart/ShippingOptions";
 
 export default function AccordionMenu() {
   const cart = useContext(CartContext).cart;
@@ -53,7 +56,7 @@ export default function AccordionMenu() {
           </Accordion.Body>
         </Accordion.Item>
       </Accordion>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
