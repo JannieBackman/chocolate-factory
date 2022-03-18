@@ -33,10 +33,10 @@ function Basket() {
               <p>
                 {product.title} {product.price} {product.valuta}
               </p>
-              <AmountCounter />
+              <AmountCounter product={product} />
             </div>
           ))}
-          <p>Total price:</p>
+          <p>Total price: </p>
           <div className="d-grid gap-2">
             <Button variant="dark" size="lg" href="/cart">
               Checkout
