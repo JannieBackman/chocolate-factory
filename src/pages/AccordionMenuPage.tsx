@@ -10,7 +10,7 @@ import { CSSProperties, useContext } from "react";
 import { mockedProducts, Product } from "../products";
 import { Footer } from "../components/Layout/Footer";
 import { CartContext } from "../context/CartContext";
-import { Button } from "react-bootstrap";
+import { Button, Spinner } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useBuy } from "../context/BuyContext";
 
@@ -63,7 +63,9 @@ export default function AccordionMenu() {
 
       <div style={confirmStyle}>
         {isLoading ? (
-          <span>loading...</span>
+          <Spinner animation="border" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </Spinner>
         ) : buy ? (
           <span>
             {buy.paymentValid} <br /> {buy.confirmation}
