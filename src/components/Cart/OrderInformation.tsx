@@ -18,7 +18,7 @@ export default function OrderInformation({ product }: Props) {
       <ListGroup.Item>
         <div style={{ display: "flex" }}>
           {product.title}
-          <AmountCounter />
+          {/* <AmountCounter /> */}
         </div>
         <h2>Your order</h2>
         <p> Items in cart</p>
@@ -34,7 +34,7 @@ export default function OrderInformation({ product }: Props) {
         </div>
         <div style={{ display: "flex" }}>
           {product.title}
-          <AmountCounter />
+          {/* <AmountCounter /> */}
         </div>
       </ListGroup.Item>
     </ListGroup>
