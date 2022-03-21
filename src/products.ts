@@ -65,7 +65,7 @@ export const mockedProducts: Product[] = [
   },
   {
     image: milkChocolate,
-    title: "MilkChocolate",
+    title: "MilkChocolate with SeaSalt",
     text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas,",
     id: 7,
     price: 20,
@@ -73,7 +73,7 @@ export const mockedProducts: Product[] = [
   },
   {
     image: milkChocolate,
-    title: "MilkChocolate",
+    title: "MilkChocolate with Almonds",
     text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas,",
     id: 8,
     price: 20,
