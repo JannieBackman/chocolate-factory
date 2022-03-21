@@ -13,25 +13,53 @@ import { FC } from "react";
 export interface ContextValue {
   addToCart: (product: Product) => void;
   removeFromCart: (id: number) => void;
-  cart: Product[];
+  clearCart: (id: number) => void;
+  cart: CartItem[];
+}
+
+export interface CartItem {
+  product: Product;
+  quantity: number;
 }
 
 export const CartContext = createContext<ContextValue>({
   cart: [],
   removeFromCart: () => {},
   addToCart: () => {},
+  clearCart: () => {},
 });
 
 const CartProvider: FC = (props) => {
-  const [cart, setCart] = useState<Product[]>([]);
+  const [cart, setCart] = useState<CartItem[]>([]);
 
   let contextData: ContextValue = {
     cart: cart,
     addToCart: (product) => {
-      setCart([...cart, product]);
+      let productListToUpdate = [...cart];
+      let foundIndex = cart.findIndex(
+        (cartItem) => product.id === cartItem.product.id
+      );
+      if (foundIndex >= 0) {
+        productListToUpdate[foundIndex].quantity++;
+      } else {
+        productListToUpdate.push({ product, quantity: 1 });
+      }
+      setCart(productListToUpdate);
     },
     removeFromCart: (id) => {
-      const newCart = cart.filter((product) => product.id !== id);
+      let productListToUpdate = [...cart];
+      let foundIndex = cart.findIndex((cartItem) => id === cartItem.product.id);
+      if (foundIndex >= 0 && productListToUpdate[foundIndex].quantity > 1) {
+        productListToUpdate[foundIndex].quantity--;
+      } else {
+        productListToUpdate = cart.filter(
+          (cartItem) => cartItem.product.id !== id
+        );
+      }
+      setCart(productListToUpdate);
+    },
+    clearCart: (id) => {
+      const newCart = cart.filter((cartItem) => cartItem.product.id !== id);
       setCart(newCart);
     },
   };

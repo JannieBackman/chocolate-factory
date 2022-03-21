@@ -1,40 +1,47 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaProductHunt } from "react-icons/fa";
 import "./AmountCounter.css";
 import Cart from "./Cart/cartIcon";
 import { Product } from "../products";
 import { number } from "yup";
+import { propTypes } from "react-bootstrap/esm/Image";
+import { CartContext } from "../context/CartContext";
 
 export interface Props {
   product: Product;
+  quantity: number;
 }
 
-function AmountCounter({ product }: Props) {
-  const [count, setCount] = useState(1);
+function AmountCounter({ product, quantity }: Props) {
+  const cart = useContext(CartContext);
+
   const [totalPrice, setTotalPrice] = useState(product.price);
 
-  const handleIncrement = () => {
-    setCount(count + 1);
+  /* const handleIncrement = () => {
+    setCount(quantity + 1);
 
-    setTotalPrice(count * product.price);
+    setTotalPrice(quantity * product.price);
   };
 
   const handleDecrement = () => {
-    if (count > 0) {
-      setCount(count - 1);
+    if (quantity > 0) {
+      setCount(quantity - 1);
     }
-    if (count > 1) {
-      setTotalPrice(count - product.price);
+    if (quantity > 1) {
+      setTotalPrice(quantity - product.price);
     }
-  };
+  }; */
 
   return (
     <div className="container">
-      <button className="button" onClick={handleIncrement}>
+      <button className="button" onClick={() => cart.addToCart(product)}>
         +
       </button>
-      <p className="amount">{count}</p>
-      <button className="button decrement-button" onClick={handleDecrement}>
+      <p className="amount">{quantity}</p>
+      <button
+        className="button decrement-button"
+        onClick={() => cart.removeFromCart(product.id)}
+      >
         -
       </button>
       <div>

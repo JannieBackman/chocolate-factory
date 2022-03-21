@@ -30,16 +30,19 @@ function Basket() {
           <Offcanvas.Title>Your Basket</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          {cart.map((product) => (
-            // if (cart.map()) {}
+          {cart.map((cartItem) => (
             <div>
               <p>
-                {product.title} {product.price} {product.valuta}
+                {cartItem.product.title} {cartItem.product.price}{" "}
+                {cartItem.product.valuta}
               </p>
-              <AmountCounter product={product} />
+              <AmountCounter
+                product={cartItem.product}
+                quantity={cartItem.quantity}
+              />
               <span>
                 <FaTrashAlt
-                  onClick={() => context.removeFromCart(product.id)}
+                  onClick={() => context.clearCart(cartItem.product.id)}
                 />
               </span>
             </div>

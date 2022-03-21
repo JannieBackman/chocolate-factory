@@ -41,11 +41,16 @@ function PaymentOptionSwish() {
         <Modal.Body>
           <Form noValidate validated={validated} onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="formGridPhone">
+              <Form.Control
+                required
+                type="personalnumber"
+                placeholder="Phone number"
+              />
               <Form.Control.Feedback type="invalid">
                 Please provide a phone number.
               </Form.Control.Feedback>
               <Form.Text className="text-muted">
-                Enter your phone number to pay using Swish.
+                Enter your phone number to pay with Swish.
               </Form.Text>
             </Form.Group>
           </Form>
