@@ -36,15 +36,17 @@ function Basket() {
                 {cartItem.product.title} {cartItem.product.price}{" "}
                 {cartItem.product.valuta}
               </p>
-              <AmountCounter
-                product={cartItem.product}
-                quantity={cartItem.quantity}
-              />
-              <span>
-                <FaTrashAlt
-                  onClick={() => context.clearCart(cartItem.product.id)}
+              <div style={{ display: "flex", paddingRight: "1rem" }}>
+                <AmountCounter
+                  product={cartItem.product}
+                  quantity={cartItem.quantity}
                 />
-              </span>
+                <span>
+                  <FaTrashAlt
+                    onClick={() => context.clearCart(cartItem.product.id)}
+                  />
+                </span>
+              </div>
             </div>
           ))}
           <p>Total price: </p>
