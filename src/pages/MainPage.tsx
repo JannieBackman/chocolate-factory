@@ -19,7 +19,7 @@ function Main() {
             <Col>
               <div style={productPageCards}>
                 <ChocoCard product={mockedProducts[1]} />
-                <ChocoCard product={mockedProducts[1]} />
+                <ChocoCard product={mockedProducts[2]} />
                 <ChocoCard product={mockedProducts[3]} />
               </div>
             </Col>
