@@ -11,13 +11,11 @@ import { Link } from "react-router-dom";
 import { FaTrashAlt } from "react-icons/fa";
 
 function Basket() {
-  let context = useContext(CartContext);
+  let { cart, getTotalPrice, clearCart } = useContext(CartContext);
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
-  const cart = useContext(CartContext).cart;
 
   return (
     <>
@@ -31,7 +29,7 @@ function Basket() {
         </Offcanvas.Header>
         <Offcanvas.Body>
           {cart.map((cartItem) => (
-            <div>
+            <div key={cartItem.product.id}>
               <p>
                 {cartItem.product.title} {cartItem.product.price}{" "}
                 {cartItem.product.valuta}
@@ -42,14 +40,12 @@ function Basket() {
                   quantity={cartItem.quantity}
                 />
                 <span>
-                  <FaTrashAlt
-                    onClick={() => context.clearCart(cartItem.product.id)}
-                  />
+                  <FaTrashAlt onClick={() => clearCart(cartItem.product.id)} />
                 </span>
               </div>
             </div>
           ))}
-          <p>Total price: </p>
+          <p>Total price: {getTotalPrice()}</p>
           <div className="d-grid gap-2">
             <Link to="/cart">
               <Button variant="dark" size="lg">

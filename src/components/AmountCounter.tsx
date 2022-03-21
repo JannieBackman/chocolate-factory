@@ -44,9 +44,6 @@ function AmountCounter({ product, quantity }: Props) {
       >
         -
       </button>
-      <div>
-        <p>{totalPrice}</p>
-      </div>
     </div>
   );
 }
