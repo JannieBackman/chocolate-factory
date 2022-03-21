@@ -49,10 +49,11 @@ export default function AccordionMenu() {
         <Accordion.Item eventKey="3">
           <Accordion.Header>Your order</Accordion.Header>
           <Accordion.Body>
-            {cart.map((product) => (
+            {cart.map((cartItem) => (
               <div>
                 <p>
-                  {product.title} {product.price} {product.valuta}
+                  {cartItem.product.title} {cartItem.product.price}{" "}
+                  {cartItem.product.valuta}
                 </p>
               </div>
             ))}
