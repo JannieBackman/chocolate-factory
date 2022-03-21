@@ -28,11 +28,11 @@ const CartProvider: FC = (props) => {
   let contextData: ContextValue = {
     cart: cart,
     addToCart: (product) => {
-      console.log("Lägg till produkt");
       setCart([...cart, product]);
     },
     removeFromCart: (id) => {
-      console.log("Ta bort produkt");
+      const newCart = cart.filter((product) => product.id !== id);
+      setCart(newCart);
     },
   };
   return (

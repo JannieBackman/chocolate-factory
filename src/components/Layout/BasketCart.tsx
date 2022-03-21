@@ -6,16 +6,16 @@ import { mockedProducts, Product } from "../../products";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { CartContext } from "../../context/CartContext";
 import AmountCounter from "../AmountCounter";
+import { FaTrashAlt } from "react-icons/fa";
 
 function Basket() {
+  let context = useContext(CartContext);
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   const cart = useContext(CartContext).cart;
-
-  console.log(cart);
 
   return (
     <>
@@ -34,6 +34,11 @@ function Basket() {
                 {product.title} {product.price} {product.valuta}
               </p>
               <AmountCounter product={product} />
+              <span>
+                <FaTrashAlt
+                  onClick={() => context.removeFromCart(product.id)}
+                />
+              </span>
             </div>
           ))}
           <p>Total price: </p>
