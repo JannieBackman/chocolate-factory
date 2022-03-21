@@ -50,7 +50,7 @@ export default function AccordionMenu() {
           <Accordion.Header>Your order</Accordion.Header>
           <Accordion.Body>
             {cart.map((cartItem) => (
-              <div>
+              <div key={cartItem.product.id}>
                 <p>
                   {cartItem.product.title} {cartItem.product.price}{" "}
                   {cartItem.product.valuta}

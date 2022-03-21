@@ -9,11 +9,13 @@ import React, {
 } from "react";
 import { Product } from "../products";
 import { FC } from "react";
+import { FaProductHunt } from "react-icons/fa";
 
 export interface ContextValue {
   addToCart: (product: Product) => void;
   removeFromCart: (id: number) => void;
   clearCart: (id: number) => void;
+  getTotalPrice: () => number;
   cart: CartItem[];
 }
 
@@ -27,6 +29,7 @@ export const CartContext = createContext<ContextValue>({
   removeFromCart: () => {},
   addToCart: () => {},
   clearCart: () => {},
+  getTotalPrice: () => 0,
 });
 
 const CartProvider: FC = (props) => {
@@ -62,7 +65,15 @@ const CartProvider: FC = (props) => {
       const newCart = cart.filter((cartItem) => cartItem.product.id !== id);
       setCart(newCart);
     },
+    getTotalPrice: () => {
+      let totalPrice = 0;
+      cart.forEach((cartItem) => {
+        totalPrice += cartItem.product.price * cartItem.quantity;
+      });
+      return totalPrice;
+    },
   };
+
   return (
     <CartContext.Provider value={contextData}>
       {props.children}
