@@ -6,6 +6,7 @@ import { mockedProducts, Product } from "../../products";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { CartContext } from "../../context/CartContext";
 import AmountCounter from "../AmountCounter";
+
 import { FaTrashAlt } from "react-icons/fa";
 
 function Basket() {
