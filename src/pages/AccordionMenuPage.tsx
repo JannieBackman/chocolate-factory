@@ -13,10 +13,11 @@ import { CartContext } from "../context/CartContext";
 import { Button, Spinner } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useBuy } from "../context/BuyContext";
+import AmountCounter from "../components/AmountCounter";
 
 export default function AccordionMenu() {
   const { buy, isLoading, submit } = useBuy();
-  const cart = useContext(CartContext).cart;
+  let { cart, getTotalPrice } = useContext(CartContext);
   return (
     <div>
       <Accordion defaultActiveKey="0">
@@ -54,11 +55,15 @@ export default function AccordionMenu() {
                 <p>
                   {cartItem.product.title} {cartItem.product.price}{" "}
                   {cartItem.product.valuta}
+                  <AmountCounter
+                    product={cartItem.product}
+                    quantity={cartItem.quantity}
+                  />
                 </p>
               </div>
             ))}
             <div>
-              Shipping: 40 SEK <br /> Total Price: 100 SEK
+              Shipping: 40 SEK <br /> Total Price: {getTotalPrice()}:-
             </div>
             {/* <OrderInformation product={} /> */}
           </Accordion.Body>
