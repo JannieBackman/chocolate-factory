@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Button, Offcanvas } from "react-bootstrap";
+import { Button, Offcanvas, Badge } from "react-bootstrap";
 import { FaProductHunt, FaShoppingCart } from "react-icons/fa";
 import OrderInformation from "../Cart/OrderInformation";
 import { mockedProducts, Product } from "../../products";
@@ -9,6 +9,7 @@ import AmountCounter from "../AmountCounter";
 import { Link } from "react-router-dom";
 
 import { FaTrashAlt } from "react-icons/fa";
+import { createNoSubstitutionTemplateLiteral } from "typescript";
 
 function Basket() {
   let { cart, getTotalPrice, clearCart } = useContext(CartContext);
@@ -21,6 +22,7 @@ function Basket() {
     <>
       <Button variant="dark" onClick={handleShow}>
         <FaShoppingCart />
+        <Badge bg="danger">{cart.length}</Badge>
       </Button>
 
       <Offcanvas placement="end" show={show} onHide={handleClose}>
@@ -45,7 +47,7 @@ function Basket() {
               </div>
             </div>
           ))}
-          <p>Total price: {getTotalPrice()}</p>
+          <p>Total price: {getTotalPrice()}:-</p>
           <div className="d-grid gap-2">
             <Link to="/cart">
               <Button variant="dark" size="lg">

@@ -10,6 +10,7 @@ import React, {
 import { Product } from "../products";
 import { FC } from "react";
 import { FaProductHunt } from "react-icons/fa";
+import { createTypePredicateNodeWithModifier } from "typescript";
 
 export interface ContextValue {
   addToCart: (product: Product) => void;
