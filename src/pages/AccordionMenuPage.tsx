@@ -12,7 +12,7 @@ import { Footer } from "../components/Layout/Footer";
 import { CartContext } from "../context/CartContext";
 import { Button, Spinner } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useBuy } from "../context/BuyContext";
+import BuyProvider, { useBuy } from "../context/BuyContext";
 import AmountCounter from "../components/AmountCounter";
 
 export default function AccordionMenu() {
@@ -77,7 +77,8 @@ export default function AccordionMenu() {
           </Spinner>
         ) : buy ? (
           <span>
-            {buy.paymentValid} <br /> {buy.confirmation}
+            {buy.paymentValid} <br /> {buy.confirmation} <br />{" "}
+            {buy.yourOrderNumber} {buy.orderNr}
           </span>
         ) : (
           <Button variant="dark" onClick={submit}>
