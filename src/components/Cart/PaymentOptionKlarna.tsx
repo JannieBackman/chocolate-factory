@@ -1,6 +1,6 @@
 import "./PaymentOptions.css";
 import { Modal, Button, Form } from "react-bootstrap";
-import { useState } from "react";
+import React, { useState } from "react";
 import Klarna from "../../assets/klarna-logo.png";
 
 function PaymentOptionKlarna() {
@@ -24,6 +24,14 @@ function PaymentOptionKlarna() {
   return (
     <>
       <div className="payment-button-container">
+        <Form.Check
+            required
+            label="Choose payment option"
+            feedback="You must choose a shipping option"
+            feedbackType="invalid"
+            name="shipping"
+            type="radio"
+        />
         <Button
           className="btn btn-light"
           variant="primary"

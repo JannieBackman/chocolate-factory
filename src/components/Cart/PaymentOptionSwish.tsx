@@ -1,7 +1,7 @@
 import "./PaymentOptions.css";
 import Swish from "../../assets/swish-logo.png";
 import { Modal, Button, Form } from "react-bootstrap";
-import { useState } from "react";
+import React, { useState } from "react";
 
 function PaymentOptionSwish() {
   const [show, setShow] = useState(false);
@@ -24,6 +24,14 @@ function PaymentOptionSwish() {
   return (
     <>
       <div className="payment-button-container">
+        <Form.Check
+            required
+            label="Choose payment option"
+            feedback="You must choose a shipping option"
+            feedbackType="invalid"
+            name="shipping"
+            type="radio"
+        />
         <Button
           className="btn btn-light"
           variant="primary"
