@@ -78,9 +78,7 @@ export default function PaymentBasket() {
             </Form.Group>
           </Row>
 
-          <Button variant="dark" type="submit">
-            Next
-          </Button>
+
         </Form>
       </div>
     </div>

@@ -6,10 +6,14 @@ import { Button, Form } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useBuy } from "../../context/BuyContext";
 import { Buy, fakeFetch } from "../../components/fakeFetch";
-import { useState } from "react";
+import {useState} from "react";
+
+
+
 
 function ShippingOptions() {
   const [validated, setValidated] = useState(false);
+
 
   const handleSubmit = (event: any) => {
     const form = event.currentTarget;
@@ -25,12 +29,7 @@ function ShippingOptions() {
     <div className="shipping-container">
       <Form noValidate validated={validated} onSubmit={handleSubmit}>
         <div className="postnord-container">
-          {/* <input
-            required={true}
-            type="radio"
-            value="Postnord"
-            name="shipping"
-          /> */}{" "}
+
           <Form.Check
             required
             label="Choose shipping option"
@@ -44,11 +43,11 @@ function ShippingOptions() {
             48h shipping time. Expected delivery on March 11.
           </p>
           <p className="shipping-info">
-            Shipping fee: 25sek. Free if you shop for over 100sek.
+            Shipping fee: {25} sek. Free if you shop for over 100sek.
           </p>
         </div>
         <div className="dhl-container">
-          {/* <input type="radio" value="DHL" name="shipping" /> */}
+
           <Form.Check
             required
             label="Choose shipping option"
@@ -64,7 +63,7 @@ function ShippingOptions() {
           <p className="shipping-info">Free shipping!</p>
         </div>
         <div className="bring-container">
-          {/* <input type="radio" value="Bring" name="shipping" /> */}
+
           <Form.Check
             required
             label="Choose shipping option"
@@ -77,12 +76,10 @@ function ShippingOptions() {
           <p className="shipping-info">
             24h shipping time. Expected delivery March 10.
           </p>
-          <p className="shipping-info">Shipping fee: 40sek.</p>
+          <p className="shipping-info">Shipping fee: {40} sek.</p>
         </div>
 
-        <Button variant="dark" type="submit">
-          Submit
-        </Button>
+
       </Form>
     </div>
   );
