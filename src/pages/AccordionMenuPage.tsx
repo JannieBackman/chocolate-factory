@@ -10,6 +10,7 @@ import {CartContext} from "../context/CartContext";
 import {Button, Spinner} from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {useBuy} from "../context/BuyContext";
+import BuyProvider from "../context/BuyContext";
 import AmountCounter from "../components/AmountCounter";
 import Postnord from "../assets/postnord-logo.png";
 import DHL from "../assets/DHL-logo.png";
@@ -84,6 +85,7 @@ export default function AccordionMenu() {
                             <p className="shipping-info">Free shipping!</p>
                         </div>
 
+
                         <div className="bring-container">
                             <Form.Check
                                 required
@@ -123,15 +125,17 @@ export default function AccordionMenu() {
                     <div>
                         Shipping: 25 SEK <br/> Total Price: {getTotalPrice()}:-
                     </div>
-
-                    <div>
-                        {isLoading ? (
-                            <Spinner animation="border" role="status">
-                                <span className="visually-hidden">Loading...</span>
-                            </Spinner>
-                        ) : buy ? (
-                            <span>
-            {buy.paymentValid} <br/> {buy.confirmation}
+                  
+      <div style={confirmStyle}>
+        {isLoading ? (
+          <Spinner animation="border" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </Spinner>
+        ) : buy ? (
+          <span>
+            {buy.paymentValid} <br /> {buy.confirmation} <br />{" "}
+            {buy.yourOrderNumber} {buy.orderNr}
+            
           </span>
                         ) : (
                             <Button variant="dark" onClick={submit} type="submit">
