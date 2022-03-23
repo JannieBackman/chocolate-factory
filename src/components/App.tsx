@@ -35,7 +35,7 @@ function App() {
                 <Route path="/Chocolates" element={<ProductsPage />} />
                 {/* </ErrorBoundary> ---- if you want to see 404page*/}
                 <Route path="/cart" element={<AccordionMenu />} />
-                {/*<Route path="/OrderInformation" element={<OrderInformation/>} />*/}
+                <Route path="/OrderInformation" element={<OrderInformation/>} />
                 <Route path="/CheckOut" element={<Checkout />} />
 
                 <Route
