@@ -9,7 +9,7 @@ import OrderConfirmation from "./Cart/OrderInformation";
 import Checkout from "../pages/ConfirmationPage";
 import DetailsChocolate from "../pages/DetailProductPage";
 import ErrorBoundary from "./ErrorBoundary";
-import AccordionMenu from "../pages/AccordionMenuPage";
+import AccordionMenu from "../pages/PaymentPage";
 import { mockedProducts, Product } from "../products";
 import ProductsPage from "../pages/ProductsPage";
 import CartProvider from "../context/CartContext";
@@ -35,7 +35,7 @@ function App() {
                 <Route path="/Chocolates" element={<ProductsPage />} />
                 {/* </ErrorBoundary> ---- if you want to see 404page*/}
                 <Route path="/cart" element={<AccordionMenu />} />
-                {/* <Route path="/OrderInformation" element={<OrderInformation product={} />} /> */}
+                {/*<Route path="/OrderInformation" element={<OrderInformation/>} />*/}
                 <Route path="/CheckOut" element={<Checkout />} />
 
                 <Route

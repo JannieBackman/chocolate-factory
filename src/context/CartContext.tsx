@@ -12,12 +12,14 @@ import { FC } from "react";
 import { FaProductHunt } from "react-icons/fa";
 import { createTypePredicateNodeWithModifier } from "typescript";
 
+
 export interface ContextValue {
   addToCart: (product: Product) => void;
   removeFromCart: (id: number) => void;
   clearCart: (id: number) => void;
   getTotalPrice: () => number;
   cart: CartItem[];
+
 }
 
 export interface CartItem {
@@ -31,10 +33,12 @@ export const CartContext = createContext<ContextValue>({
   addToCart: () => {},
   clearCart: () => {},
   getTotalPrice: () => 0,
+
 });
 
 const CartProvider: FC = (props) => {
   const [cart, setCart] = useState<CartItem[]>([]);
+  let shippingCost = 25;
 
   let contextData: ContextValue = {
     cart: cart,
@@ -66,13 +70,16 @@ const CartProvider: FC = (props) => {
       const newCart = cart.filter((cartItem) => cartItem.product.id !== id);
       setCart(newCart);
     },
+
     getTotalPrice: () => {
       let totalPrice = 0;
       cart.forEach((cartItem) => {
-        totalPrice += cartItem.product.price * cartItem.quantity;
+        totalPrice += cartItem.product.price * cartItem.quantity + shippingCost;
       });
       return totalPrice;
     },
+
+
   };
 
   return (
