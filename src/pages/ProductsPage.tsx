@@ -1,11 +1,13 @@
-import React, { CSSProperties } from "react";
+import React, { CSSProperties} from "react";
 import ChocoCard from "../components/Products/ProductCard";
 import { mockedProducts, Product } from "../products";
 import { Container, Row, Col } from "react-bootstrap";
 import { FooterProductPage } from "../components/Layout/Footer";
 import background from "../assets/Background.jpg";
 
+
 export default function Chocolates() {
+  
   return (
     <div style={productsContainer}>
       <h3 style={productPageTitle}>Products</h3>

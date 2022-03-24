@@ -8,7 +8,7 @@ import {useBuy} from "../../context/BuyContext";
 
 
 export default function OrderInformation() {
-    const {buy, isLoading, submit} = useBuy();
+    const {buy, isLoading} = useBuy();
     let {cart, getTotalPrice} = useContext(CartContext);
     return (
         <div>
@@ -35,10 +35,12 @@ export default function OrderInformation() {
                     </Spinner>
                 ) : buy ? (
                     <span>
-            {buy.paymentValid} <br/> {buy.confirmation}
+                        {buy.paymentValid} <br /> {buy.confirmation} <br />{" "}
+                        {buy.yourOrderNumber} {buy.orderNr}
+                        
           </span>
                 ) : (
-                    <Button variant="dark" onClick={submit} type="submit">
+                    <Button variant="dark" type="submit">
                         Confirm purchase
                     </Button>
                 )}

@@ -1,5 +1,6 @@
-import {Accordion, Col, Form, Modal, Row} from "react-bootstrap";
-import ShippingOptions from "../components/Cart/ShippingOptions";
+import {Form} from "react-bootstrap";
+import "../components/Cart/ShippingOptions.css";
+import "../components/Layout/Layout.css";
 import PaymentOptionKlarna from "../components/Cart/PaymentOptionKlarna";
 import PaymentOptionMastercard from "../components/Cart/PaymentOptionMastercard";
 import PaymentOptionSwish from "../components/Cart/PaymentOptionSwish";
@@ -10,13 +11,11 @@ import {CartContext} from "../context/CartContext";
 import {Button, Spinner} from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {useBuy} from "../context/BuyContext";
-import BuyProvider from "../context/BuyContext";
 import AmountCounter from "../components/AmountCounter";
 import Postnord from "../assets/postnord-logo.png";
 import DHL from "../assets/DHL-logo.png";
 import Bring from "../assets/bring-logo.png";
 import { Link } from "react-router-dom";
-
 
 export default function AccordionMenu() {
     const {buy, isLoading, submit} = useBuy();
@@ -26,9 +25,11 @@ export default function AccordionMenu() {
 
     const handleSubmit = (event: any) => {
         const form = event.currentTarget;
+
         if (form.checkValidity() === false) {
             event.preventDefault();
             event.stopPropagation();
+            
         }
 
         setValidated(true);
@@ -36,20 +37,21 @@ export default function AccordionMenu() {
 
     return (
         <div>
-            <h2>Shipping Address</h2>
+            
+            <h2 className="paymentPageTitle">Shipping Address</h2>
             <div>
                 <Form noValidate validated={validated} onSubmit={handleSubmit}>
                     <PaymentBasket/>
 
-                    <h2>Payment options</h2>
-                    <Form>
+                    <h2 className="paymentPageTitle">Payment options</h2>
+                    {/* <Form.Group> */}
                         <PaymentOptionKlarna/>
                         <PaymentOptionMastercard/>
                         <PaymentOptionSwish/>
-                    </Form>
+                    {/* </Form.Group> */}
 
                     <div>
-                        <h2>Shipping options</h2>
+                        <h2 className="paymentPageTitle">Shipping options</h2>
                         <div className="postnord-container">
 
                             <Form.Check
@@ -101,15 +103,16 @@ export default function AccordionMenu() {
                             </p>
                             <p className="shipping-info">Shipping fee: {40} sek.</p>
                         </div>
-                        {/*<Link to="/OrderInformation">*/}
-                            <Button variant="dark" type="submit">
-                                Submit
-                            </Button>
-                        {/*</Link>*/}
+                        <Link to="/OrderInformation">
+                        <Button onClick={submit} variant="dark" type="submit">
+                            Confirm purchase
+                        </Button> 
+                        </Link>
+                      
 
                     </div>
 
-                    <h2>Your order</h2>
+                    {/* <h2 className="paymentPageTitle">Your order</h2>
                     {cart.map((cartItem) => (
                         <div key={cartItem.product.id}>
                             <p>
@@ -124,10 +127,10 @@ export default function AccordionMenu() {
                     ))}
                     <div>
                         Shipping: 25 SEK <br/> Total Price: {getTotalPrice()}:-
-                    </div>
-                  
-      <div style={confirmStyle}>
-        {isLoading ? (
+                    </div> */}
+                  {/* <div> */}
+      {/*<div style={confirmStyle}>*/}
+        {/* {isLoading ? (
           <Spinner animation="border" role="status">
             <span className="visually-hidden">Loading...</span>
           </Spinner>
@@ -143,11 +146,12 @@ export default function AccordionMenu() {
                             </Button>
                         )}
 
-                    </div>
+                    </div> */}
                 </Form>
                 {
                 }
             </div>
+            
         </div>
     )
 }
