@@ -14,6 +14,7 @@ export default function PaymentBasket() {
 
     setValidated(true);
   };
+
   return (
     <div>
       <div style={paymentContainer}>
@@ -77,8 +78,6 @@ export default function PaymentBasket() {
               </Form.Control.Feedback>
             </Form.Group>
           </Row>
-
-
         </Form>
       </div>
     </div>
