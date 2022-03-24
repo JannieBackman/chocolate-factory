@@ -6,14 +6,10 @@ import { Button, Form } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useBuy } from "../../context/BuyContext";
 import { Buy, fakeFetch } from "../../components/fakeFetch";
-import {useState} from "react";
-
-
-
+import { useState } from "react";
 
 function ShippingOptions() {
   const [validated, setValidated] = useState(false);
-
 
   const handleSubmit = (event: any) => {
     const form = event.currentTarget;
@@ -27,60 +23,53 @@ function ShippingOptions() {
 
   return (
     <div className="shipping-container">
-      <Form noValidate validated={validated} onSubmit={handleSubmit}>
-        <div className="postnord-container">
-
-          <Form.Check
-            required
-            label="Choose shipping option"
-            feedback="You must choose a shipping option"
-            feedbackType="invalid"
-            name="shipping"
-            type="radio"
-          />
-          <img className="img-styling" src={Postnord} alt="" />
-          <p className="shipping-info">
-            48h shipping time. Expected delivery on March 11.
-          </p>
-          <p className="shipping-info">
-            Shipping fee: {25} sek. Free if you shop for over 100sek.
-          </p>
-        </div>
-        <div className="dhl-container">
-
-          <Form.Check
-            required
-            label="Choose shipping option"
-            feedback="You must choose a shipping option"
-            feedbackType="invalid"
-            name="shipping"
-            type="radio"
-          />
-          <img className="img-styling" src={DHL} alt="" />
-          <p className="shipping-info">
-            72h shipping time. Expected delivery on March 12.
-          </p>
-          <p className="shipping-info">Free shipping!</p>
-        </div>
-        <div className="bring-container">
-
-          <Form.Check
-            required
-            label="Choose shipping option"
-            feedback="You must choose a shipping option"
-            feedbackType="invalid"
-            name="shipping"
-            type="radio"
-          />
-          <img className="img-styling" src={Bring} alt="" />
-          <p className="shipping-info">
-            24h shipping time. Expected delivery March 10.
-          </p>
-          <p className="shipping-info">Shipping fee: {40} sek.</p>
-        </div>
-
-
-      </Form>
+      <div className="postnord-container">
+        <Form.Check
+          required
+          label="Choose shipping option"
+          feedback="You must choose a shipping option"
+          feedbackType="invalid"
+          name="shipping"
+          type="radio"
+        />
+        <img className="img-styling" src={Postnord} alt="" />
+        <p className="shipping-info">
+          48h shipping time. Expected delivery on March 11.
+        </p>
+        <p className="shipping-info">
+          Shipping fee: {25} sek. Free if you shop for over 100sek.
+        </p>
+      </div>
+      <div className="dhl-container">
+        <Form.Check
+          required
+          label="Choose shipping option"
+          feedback="You must choose a shipping option"
+          feedbackType="invalid"
+          name="shipping"
+          type="radio"
+        />
+        <img className="img-styling" src={DHL} alt="" />
+        <p className="shipping-info">
+          72h shipping time. Expected delivery on March 12.
+        </p>
+        <p className="shipping-info">Free shipping!</p>
+      </div>
+      <div className="bring-container">
+        <Form.Check
+          required
+          label="Choose shipping option"
+          feedback="You must choose a shipping option"
+          feedbackType="invalid"
+          name="shipping"
+          type="radio"
+        />
+        <img className="img-styling" src={Bring} alt="" />
+        <p className="shipping-info">
+          24h shipping time. Expected delivery March 10.
+        </p>
+        <p className="shipping-info">Shipping fee: {40} sek.</p>
+      </div>
     </div>
   );
 }

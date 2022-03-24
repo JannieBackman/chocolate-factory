@@ -18,67 +18,65 @@ export default function PaymentBasket() {
   return (
     <div>
       <div style={paymentContainer}>
-        <Form noValidate validated={validated} onSubmit={handleSubmit}>
-          <Row className="mb-3">
-            <Form.Group as={Col} controlId="formGridName">
-              <Form.Label>Firstname</Form.Label>
-              <Form.Control required type="name" placeholder="Firstname" />
-              <Form.Control.Feedback type="invalid">
-                Please provide a firstname.
-              </Form.Control.Feedback>
-            </Form.Group>
+        <Row className="mb-3">
+          <Form.Group as={Col} controlId="formGridName">
+            <Form.Label>Firstname</Form.Label>
+            <Form.Control required type="name" placeholder="Firstname" />
+            <Form.Control.Feedback type="invalid">
+              Please provide a firstname.
+            </Form.Control.Feedback>
+          </Form.Group>
 
-            <Form.Group as={Col} controlId="formGridLastname">
-              <Form.Label>Lastname</Form.Label>
-              <Form.Control required type="lastname" placeholder="Lastname" />
-              <Form.Control.Feedback type="invalid">
-                Please provide a lastname.
-              </Form.Control.Feedback>
-            </Form.Group>
-          </Row>
-          <Row>
-            <Form.Group as={Col} className="mb-3" controlId="formGridAddress">
-              <Form.Label>Address</Form.Label>
-              <Form.Control required placeholder="Address" />
-              <Form.Control.Feedback type="invalid">
-                Please provide an adress.
-              </Form.Control.Feedback>
-            </Form.Group>
+          <Form.Group as={Col} controlId="formGridLastname">
+            <Form.Label>Lastname</Form.Label>
+            <Form.Control required type="lastname" placeholder="Lastname" />
+            <Form.Control.Feedback type="invalid">
+              Please provide a lastname.
+            </Form.Control.Feedback>
+          </Form.Group>
+        </Row>
+        <Row>
+          <Form.Group as={Col} className="mb-3" controlId="formGridAddress">
+            <Form.Label>Address</Form.Label>
+            <Form.Control required placeholder="Address" />
+            <Form.Control.Feedback type="invalid">
+              Please provide an adress.
+            </Form.Control.Feedback>
+          </Form.Group>
 
-            <Form.Group as={Col} className="mb-3" controlId="formGridCity">
-              <Form.Label>City</Form.Label>
-              <Form.Control required placeholder="City" />
-              <Form.Control.Feedback type="invalid">
-                Please provide a city.
-              </Form.Control.Feedback>
-            </Form.Group>
+          <Form.Group as={Col} className="mb-3" controlId="formGridCity">
+            <Form.Label>City</Form.Label>
+            <Form.Control required placeholder="City" />
+            <Form.Control.Feedback type="invalid">
+              Please provide a city.
+            </Form.Control.Feedback>
+          </Form.Group>
 
-            <Form.Group as={Col} controlId="formGridZip">
-              <Form.Label>Zip</Form.Label>
-              <Form.Control required placeholder="Zip" />
-              <Form.Control.Feedback type="invalid">
-                Please provide a zip code.
-              </Form.Control.Feedback>
-            </Form.Group>
-          </Row>
-          <Row>
-            <Form.Group as={Col} className="mb-3" controlId="formGridPhone">
-              <Form.Label>Phone number</Form.Label>
-              <Form.Control required placeholder="Phone number" />
-              <Form.Control.Feedback type="invalid">
-                Please provide a phone number.
-              </Form.Control.Feedback>
-            </Form.Group>
+          <Form.Group as={Col} controlId="formGridZip">
+            <Form.Label>Zip</Form.Label>
+            <Form.Control required placeholder="Zip" />
+            <Form.Control.Feedback type="invalid">
+              Please provide a zip code.
+            </Form.Control.Feedback>
+          </Form.Group>
+        </Row>
+        <Row>
+          <Form.Group as={Col} className="mb-3" controlId="formGridPhone">
+            <Form.Label>Phone number</Form.Label>
+            <Form.Control required placeholder="Phone number" />
+            <Form.Control.Feedback type="invalid">
+              Please provide a phone number.
+            </Form.Control.Feedback>
+          </Form.Group>
 
-            <Form.Group as={Col} className="mb-3" controlId="formGridEmail">
-              <Form.Label>Email</Form.Label>
-              <Form.Control required placeholder="Email" />
-              <Form.Control.Feedback type="invalid">
-                Please provide an email.
-              </Form.Control.Feedback>
-            </Form.Group>
-          </Row>
-        </Form>
+          <Form.Group as={Col} className="mb-3" controlId="formGridEmail">
+            <Form.Label>Email</Form.Label>
+            <Form.Control required placeholder="Email" />
+            <Form.Control.Feedback type="invalid">
+              Please provide an email.
+            </Form.Control.Feedback>
+          </Form.Group>
+        </Row>
       </div>
     </div>
   );

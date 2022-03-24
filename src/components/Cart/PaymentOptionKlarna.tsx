@@ -52,39 +52,26 @@ function PaymentOptionKlarna() {
   // } else {
   return (
     <div>
-      <Form
-        name="paymentform"
-        noValidate
-        validated={validated}
-        onSubmit={handleSubmit}
-      >
-        <Form.Group controlId="formGridName">
-          <div>
-            <input
-              defaultChecked
-              type="radio"
-              value="30days"
-              name="pay-klarna"
-            />
-            Pay within 30 days
-          </div>
-          <div>
-            <input type="radio" value="now" name="pay-klarna" /> Pay now
-          </div>
-          <Form.Control
-            required
-            type="personalnumber"
-            placeholder="Personal number (YYMMDD-XXXX)"
-          />
-          <Form.Control.Feedback type="invalid">
-            Please provide a personal number.
-          </Form.Control.Feedback>
-          <Form.Text className="text-muted">
-            Enter your personal number to pay using Klarna.
-          </Form.Text>
-        </Form.Group>
-      </Form>
-      <Button variant="secondary">Close</Button>
+      <Form.Group controlId="formGridName">
+        <div>
+          <input defaultChecked type="radio" value="30days" name="pay-klarna" />
+          Pay within 30 days
+        </div>
+        <div>
+          <input type="radio" value="now" name="pay-klarna" /> Pay now
+        </div>
+        <Form.Control
+          required
+          type="personalnumber"
+          placeholder="Personal number (YYMMDD-XXXX)"
+        />
+        <Form.Control.Feedback type="invalid">
+          Please provide a personal number.
+        </Form.Control.Feedback>
+        <Form.Text className="text-muted">
+          Enter your personal number to pay using Klarna.
+        </Form.Text>
+      </Form.Group>
     </div>
   );
 }

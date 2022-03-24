@@ -58,38 +58,28 @@ function PaymentOptionMastercard() {
   // } else {
   return (
     <div>
-      <Form
-        name="paymentform"
-        noValidate
-        validated={validated}
-        onSubmit={handleSubmit}
-      >
-        <Form.Group className="mb-3" controlId="formGridCardNr">
-          <Form.Control required type="" placeholder="Card number" />
-          <Form.Control.Feedback type="invalid">
-            Please provide a card number.
-          </Form.Control.Feedback>
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formGridCardExpDate">
-          <input required type="date" />
-          <Form.Control.Feedback type="invalid">
-            Please provide an expiration date.
-          </Form.Control.Feedback>
-          <Form.Text className="text-muted"> Expiration date</Form.Text>
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formGridCardExpDate">
-          <Form.Control required type="" placeholder="CVC" />
-          <Form.Control.Feedback type="invalid">
-            Please provide a CVC.
-          </Form.Control.Feedback>
-          <Form.Text className="text-muted">
-            Enter your card information to pay using Mastercard.
-          </Form.Text>
-        </Form.Group>
-      </Form>
-      <Button variant="secondary" onClick={handleChange}>
-        Close
-      </Button>
+      <Form.Group className="mb-3" controlId="formGridCardNr">
+        <Form.Control required type="" placeholder="Card number" />
+        <Form.Control.Feedback type="invalid">
+          Please provide a card number.
+        </Form.Control.Feedback>
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="formGridCardExpDate">
+        <input required type="date" />
+        <Form.Control.Feedback type="invalid">
+          Please provide an expiration date.
+        </Form.Control.Feedback>
+        <Form.Text className="text-muted"> Expiration date</Form.Text>
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="formGridCardExpDate">
+        <Form.Control required type="" placeholder="CVC" />
+        <Form.Control.Feedback type="invalid">
+          Please provide a CVC.
+        </Form.Control.Feedback>
+        <Form.Text className="text-muted">
+          Enter your card information to pay using Mastercard.
+        </Form.Text>
+      </Form.Group>
     </div>
   );
 }
