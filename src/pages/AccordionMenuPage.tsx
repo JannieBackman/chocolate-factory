@@ -20,7 +20,7 @@ import ShippingOptions from "../components/Cart/ShippingOptions";
 
 export default function AccordionMenu() {
   const { buy, isLoading, submit } = useBuy();
-  let { cart, getTotalPrice } = useContext(CartContext);
+  let { cart, getTotalPrice, getMoms } = useContext(CartContext);
   const [validated, setValidated] = useState(false);
 
   const [paymentMethod, setPaymentMethod] = useState("Swish");
@@ -132,8 +132,15 @@ export default function AccordionMenu() {
             </p>
           </div>
         ))}
+
         <div className="orderInfo">
           Shipping: 25 SEK <br /> Total Price: {getTotalPrice()}:-
+
+        <div>
+          Shipping: {25}:- <br /> Moms: {getMoms()}:- <br /> Total price:{" "}
+          {getTotalPrice()}
+          :-
+
         </div>
         <Button className="confirmBtn" variant="dark" type="submit">
           Confirm purchase

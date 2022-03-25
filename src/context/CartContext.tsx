@@ -12,6 +12,7 @@ export interface ContextValue {
   removeFromCart: (id: number) => void;
   clearCart: (id: number) => void;
   getTotalPrice: () => number;
+  getMoms: () => number;
   cart: CartItem[];
 }
 
@@ -26,11 +27,11 @@ export const CartContext = createContext<ContextValue>({
   addToCart: () => {},
   clearCart: () => {},
   getTotalPrice: () => 0,
+  getMoms: () => 0,
 });
 
 const CartProvider: FC = (props) => {
   const [cart, setCart] = useState<CartItem[]>([]);
-  let shippingCost = 25;
 
   let contextData: ContextValue = {
     cart: cart,
@@ -66,9 +67,20 @@ const CartProvider: FC = (props) => {
     getTotalPrice: () => {
       let totalPrice = 0;
       cart.forEach((cartItem) => {
-        totalPrice += cartItem.product.price * cartItem.quantity + shippingCost;
+        totalPrice += cartItem.product.price * cartItem.quantity;
       });
       return totalPrice;
+    },
+
+    getMoms: () => {
+      let totalPrice = 0;
+      let moms = 0;
+      cart.forEach((cartItem) => {
+        totalPrice += cartItem.product.price * cartItem.quantity;
+        moms = totalPrice * 0.12;
+      });
+
+      return moms;
     },
   };
 
