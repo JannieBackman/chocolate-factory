@@ -137,8 +137,12 @@ export default function AccordionMenu() {
         {cart.map((cartItem) => (
           <div key={cartItem.product.id}>
             <p>
-              {cartItem.product.image} {cartItem.product.title}{" "}
-              {cartItem.product.price} {cartItem.product.valuta}
+              <img
+                src={cartItem.product.image}
+                style={{ width: "5rem", margin: "1rem" }}
+              />{" "}
+              {cartItem.product.title} {cartItem.product.price}{" "}
+              {cartItem.product.valuta}
               <AmountCounter
                 product={cartItem.product}
                 quantity={cartItem.quantity}

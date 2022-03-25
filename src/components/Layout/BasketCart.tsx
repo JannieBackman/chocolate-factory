@@ -6,6 +6,7 @@ import { CartContext } from "../../context/CartContext";
 import AmountCounter from "../AmountCounter";
 import { Link } from "react-router-dom";
 import { FaTrashAlt } from "react-icons/fa";
+import { Product } from "../../products";
 
 function Basket() {
   let { cart, getTotalPrice, clearCart } = useContext(CartContext);
@@ -29,7 +30,8 @@ function Basket() {
           {cart.map((cartItem) => (
             <div key={cartItem.product.id}>
               <p>
-                {cartItem.product.image} {cartItem.product.title} {cartItem.product.price}{" "}
+                <img src={cartItem.product.image} style={{ width: "4rem" }} />{" "}
+                {cartItem.product.title} {cartItem.product.price}{" "}
                 {cartItem.product.valuta}
               </p>
               <div style={{ display: "flex", paddingRight: "1rem" }}>
