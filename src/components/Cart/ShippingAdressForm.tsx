@@ -1,6 +1,6 @@
 import React, { CSSProperties, useState } from "react";
 import { Form, Row, Col, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import "./ShippingOptions.css";
 
 export default function PaymentBasket() {
   const [validated, setValidated] = useState(false);
@@ -17,7 +17,7 @@ export default function PaymentBasket() {
 
   return (
     <div>
-      <div style={paymentContainer}>
+      <div className="paymentContainer" style={paymentContainer}>
         <Row className="mb-3">
           <Form.Group as={Col} controlId="formGridName">
             <Form.Label>Firstname</Form.Label>

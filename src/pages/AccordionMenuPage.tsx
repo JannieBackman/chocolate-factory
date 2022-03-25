@@ -1,6 +1,7 @@
 import { Form } from "react-bootstrap";
 import "../components/Cart/ShippingOptions.css";
 import "../components/Layout/Layout.css";
+import "./pages.css";
 import PaymentOptionKlarna from "../components/Cart/PaymentOptionKlarna";
 import PaymentOptionMastercard from "../components/Cart/PaymentOptionMastercard";
 import PaymentOptionSwish from "../components/Cart/PaymentOptionSwish";
@@ -12,10 +13,6 @@ import { Button, Spinner } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useBuy } from "../context/BuyContext";
 import AmountCounter from "../components/AmountCounter";
-import Postnord from "../assets/postnord-logo.png";
-import DHL from "../assets/DHL-logo.png";
-import Bring from "../assets/bring-logo.png";
-import { Link } from "react-router-dom";
 import Klarna from "../assets/klarna-logo.png";
 import Mastercard from "../assets/Mastercard-logo.png";
 import Swish from "../assets/swish-logo.png";
@@ -63,14 +60,18 @@ export default function AccordionMenu() {
 
   return (
     <div>
-      <h1>{paymentMethod}</h1>
+
       <Form noValidate validated={validated} onSubmit={handleSubmit}>
+        <h2 className="paymentPageTitle">Shipping address</h2>
         <PaymentBasket />
+
+        <h2 className="paymentPageTitle">Payment method</h2>
         <div className="payment-button-container">
+
           <Form.Check
             required
             label="Choose payment option"
-            feedback="You must choose a shipping option"
+            feedback="You must choose a payment option"
             feedbackType="invalid"
             name="payment"
             type="radio"
@@ -85,7 +86,7 @@ export default function AccordionMenu() {
           <Form.Check
             required
             label="Choose payment option"
-            feedback="You must choose a shipping option"
+            feedback="You must choose a payment option"
             feedbackType="invalid"
             name="payment"
             type="radio"
@@ -95,11 +96,12 @@ export default function AccordionMenu() {
             <img className="img-style" src={Klarna} alt="" />
           </Button>
         </div>
+
         <div className="payment-button-container">
           <Form.Check
             required
             label="Choose payment option"
-            feedback="You must choose a shipping option"
+            feedback="You must choose a payment option"
             feedbackType="invalid"
             name="payment"
             type="radio"
@@ -114,17 +116,14 @@ export default function AccordionMenu() {
         {paymentMethod === "Mastercard" && mastercard}
         {paymentMethod === "Swish" && swish}
         {paymentMethod === "Klarna" && klarna}
+        <h2 className="paymentPageTitle">Shipping method</h2>
         <ShippingOptions />
-        <div>
-          {/* <Link to="/OrderInformation"> */}
-          {/* </Link> */}
-        </div>
 
         <h2 className="paymentPageTitle">Your order</h2>
         {cart.map((cartItem) => (
-          <div key={cartItem.product.id}>
+          <div  key={cartItem.product.id}>
             <p>
-              {cartItem.product.title} {cartItem.product.price}{" "}
+              {cartItem.product.image} {cartItem.product.title} {cartItem.product.price}{" "}
               {cartItem.product.valuta}
               <AmountCounter
                 product={cartItem.product}
@@ -133,16 +132,21 @@ export default function AccordionMenu() {
             </p>
           </div>
         ))}
+
+        <div className="orderInfo">
+          Shipping: 25 SEK <br /> Total Price: {getTotalPrice()}:-
+
         <div>
           Shipping: {25}:- <br /> Moms: {getMoms()}:- <br /> Total price:{" "}
           {getTotalPrice()}
           :-
+
         </div>
-        <Button variant="dark" type="submit">
+        <Button className="confirmBtn" variant="dark" type="submit">
           Confirm purchase
         </Button>
         {/* <div> */}
-        <div>
+        <div className="conformationInfo">
           {isLoading ? (
             <Spinner animation="border" role="status">
               <span className="visually-hidden">Loading...</span>
