@@ -1,4 +1,4 @@
-import { Form } from "react-bootstrap";
+import { Form, Modal } from "react-bootstrap";
 import "../components/Cart/ShippingOptions.css";
 import "../components/Layout/Layout.css";
 import "./pages.css";
@@ -7,7 +7,7 @@ import PaymentOptionMastercard from "../components/Cart/PaymentOptionMastercard"
 import PaymentOptionSwish from "../components/Cart/PaymentOptionSwish";
 import PaymentBasket from "../components/Cart/ShippingAdressForm";
 import "bootstrap/dist/css/bootstrap.min.css";
-import React, { useContext, useState } from "react";
+import React, { CSSProperties, useContext, useState } from "react";
 import { CartContext } from "../context/CartContext";
 import { Button, Spinner } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -22,6 +22,9 @@ export default function AccordionMenu() {
   const { buy, isLoading, submit } = useBuy();
   let { cart, getTotalPrice, getMoms, printForm } = useContext(CartContext);
 
+  let { cart, getTotalPrice, getMoms, emptyCartOnSubmit } =
+    useContext(CartContext);
+
   const [validated, setValidated] = useState(false);
 
   const [paymentMethod, setPaymentMethod] = useState("Swish");
@@ -35,13 +38,28 @@ export default function AccordionMenu() {
     if (form.checkValidity() === false) {
       event.preventDefault();
       event.stopPropagation();
+    } else if (cart.length === 0) {
+      alert(
+        "You have no products in your cart! Add products to cart before making a purchase."
+      );
+      event.preventDefault();
+      event.stopPropagation();
     } else {
       submit();
       event.preventDefault();
+      emptyCartOnSubmit();
+      handleShow();
     }
 
     setValidated(true);
   };
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => {
+    setShow(false);
+    window.location.reload();
+  };
+  const handleShow = () => setShow(true);
 
   const handleChange = (event: any) => {
     // const name = event.target.name;
@@ -73,14 +91,12 @@ const handleClick = (event: any) => {
 
   return (
     <div>
-
       <Form noValidate validated={validated} onSubmit={handleSubmit}>
         <h2 className="paymentPageTitle">Shipping address</h2>
         <PaymentBasket />
 
         <h2 className="paymentPageTitle">Payment method</h2>
         <div className="payment-button-container">
-
           <Form.Check
             required
             label="Choose payment option"
@@ -134,9 +150,13 @@ const handleClick = (event: any) => {
 
         <h2 className="paymentPageTitle">Your order</h2>
         {cart.map((cartItem) => (
-          <div  key={cartItem.product.id}>
+          <div key={cartItem.product.id}>
             <p>
-              {cartItem.product.image} {cartItem.product.title} {cartItem.product.price}{" "}
+              <img
+                src={cartItem.product.image}
+                style={{ width: "5rem", margin: "1rem" }}
+              />{" "}
+              {cartItem.product.title} {cartItem.product.price}{" "}
               {cartItem.product.valuta}
               <AmountCounter
                 product={cartItem.product}
@@ -146,30 +166,62 @@ const handleClick = (event: any) => {
           </div>
         ))}
 
+
         <div className="orderInfo">
+        <div style={{ paddingBottom: "1.5rem" }} className="orderInfo">
+          
           Shipping: {25}:- <br /> Moms: {getMoms()}:- <br /> Total price:{" "}
           {getTotalPrice()}
           :-
-
         </div>
         <Button onClick={handleClick} className="confirmBtn" variant="dark" type="submit">
           Confirm purchase
         </Button>
-        {/* <div> */}
-        <div className="conformationInfo">
+       
+        <div style={purchaseStyle} className="conformationInfo">
           {isLoading ? (
             <Spinner animation="border" role="status">
               <span className="visually-hidden">Loading...</span>
             </Spinner>
           ) : buy ? (
+
             <span>
 
               {buy.paymentValid} <br /> {buy.confirmation} <br />{" "}
               {buy.yourOrderNumber} {buy.orderNr}
             </span>
+
+            <Modal show={show} onHide={handleClose}>
+              <Modal.Header closeButton>
+                <Modal.Title>{buy.paymentValid}</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                {buy.confirmation} <br /> {buy.yourOrderNumber}
+                {buy.orderNr}
+              </Modal.Body>
+              <Modal.Footer>
+                <Button variant="secondary" onClick={handleClose}>
+                  Done
+                </Button>
+              </Modal.Footer>
+            </Modal>
+
           ) : undefined}
         </div>
       </Form>
     </div>
   );
 }
+
+const purchaseStyle: CSSProperties = {
+  display: "flex",
+  textAlign: "center",
+  justifyContent: "center",
+  paddingTop: "1rem",
+  fontSize: "1.2rem",
+  fontWeight: "bolder",
+
+  paddingBottom: "1rem",
+  marginRight: "1rem",
+  boxSizing: "border-box",
+};

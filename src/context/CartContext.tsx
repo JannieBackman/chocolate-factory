@@ -1,11 +1,6 @@
-import React, {
-  createContext,
-  useContext,
-  useState,
-} from "react";
+import React, { createContext, useContext, useState } from "react";
 import { Product } from "../products";
 import { FC } from "react";
-
 
 export interface ContextValue {
   addToCart: (product: Product) => void;
@@ -13,6 +8,7 @@ export interface ContextValue {
   clearCart: (id: number) => void;
   getTotalPrice: () => number;
   getMoms: () => number;
+  emptyCartOnSubmit: () => void;
   cart: CartItem[];
   printForm: (e: any) => void;
   // userInformation: object;
@@ -41,6 +37,9 @@ export const CartContext = createContext<ContextValue>({
    phoneNumber: '',
    email: '',
  }
+
+  emptyCartOnSubmit: () => {},
+
 });
 
 const CartProvider: FC = (props) => {
@@ -98,6 +97,7 @@ const CartProvider: FC = (props) => {
 
       return moms;
     },
+
     form: '',
 
     printForm: (event:any) => {
@@ -105,6 +105,11 @@ const CartProvider: FC = (props) => {
       console.log(event.target.value)
     },
     // userInformation: {},
+
+    emptyCartOnSubmit: () => {
+      setCart([]);
+    },
+
   };
 
   return (
