@@ -176,7 +176,7 @@ const purchaseStyle: CSSProperties = {
   paddingTop: "1rem",
   fontSize: "1.2rem",
   fontWeight: "bolder",
-  borderStyle: "dotted",
+
   paddingBottom: "1rem",
   marginRight: "1rem",
   boxSizing: "border-box",
