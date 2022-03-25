@@ -133,10 +133,10 @@ export default function AccordionMenu() {
           </div>
         ))}
 
-        <div className="orderInfo">
-          Shipping: 25 SEK <br /> Total Price: {getTotalPrice()}:-
 
-        <div>
+
+
+        <div className="orderInfo">
           Shipping: {25}:- <br /> Moms: {getMoms()}:- <br /> Total price:{" "}
           {getTotalPrice()}
           :-
