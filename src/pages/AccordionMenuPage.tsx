@@ -34,6 +34,10 @@ export default function AccordionMenu() {
     if (form.checkValidity() === false) {
       event.preventDefault();
       event.stopPropagation();
+    } else if (cart.length === 0) {
+      noItemsInCartAlert();
+      event.preventDefault();
+      event.stopPropagation();
     } else {
       submit();
       event.preventDefault();
@@ -52,6 +56,12 @@ export default function AccordionMenu() {
     // setChecked(!checked);
     setPaymentMethod(event);
     console.log(paymentMethod);
+  };
+
+  const noItemsInCartAlert = () => {
+    alert(
+      "You have no products in your cart! Add products to cart before making a purchase."
+    );
   };
 
   let mastercard: JSX.Element = <PaymentOptionMastercard />;
