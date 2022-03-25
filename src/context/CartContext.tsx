@@ -36,7 +36,7 @@ export const CartContext = createContext<ContextValue>({
    zip: '',
    phoneNumber: '',
    email: '',
- }
+ },
 
   emptyCartOnSubmit: () => {},
 
