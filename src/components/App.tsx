@@ -16,6 +16,7 @@ import CartProvider from "../context/CartContext";
 import { CartContext } from "../context/CartContext";
 import OrderInformation from "./Cart/OrderInformation";
 import BuyProvider from "../context/BuyContext";
+import { propTypes } from "react-bootstrap/esm/Image";
 
 function App() {
   return (
@@ -35,7 +36,10 @@ function App() {
                 <Route path="/Chocolates" element={<ProductsPage />} />
                 {/* </ErrorBoundary> ---- if you want to see 404page*/}
                 <Route path="/cart" element={<AccordionMenu />} />
-                <Route path="/OrderInformation" element={<OrderInformation/>} />
+                <Route
+                  path="/OrderInformation"
+                  element={<OrderInformation />}
+                />
                 <Route path="/CheckOut" element={<Checkout />} />
 
                 <Route

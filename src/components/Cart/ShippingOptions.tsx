@@ -6,7 +6,8 @@ import { Button, Form } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useBuy } from "../../context/BuyContext";
 import { Buy, fakeFetch } from "../../components/fakeFetch";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 
 function ShippingOptions() {
   const [validated, setValidated] = useState(false);
@@ -37,7 +38,7 @@ function ShippingOptions() {
           48h shipping time. Expected delivery on March 11.
         </p>
         <p className="shipping-info">
-          Shipping fee: {25} sek. Free if you shop for over 100sek.
+          Shipping fee: 25 sek. Free if you shop for over 100sek.
         </p>
       </div>
       <div className="dhl-container">
