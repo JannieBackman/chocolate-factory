@@ -7,7 +7,7 @@ import PaymentOptionMastercard from "../components/Cart/PaymentOptionMastercard"
 import PaymentOptionSwish from "../components/Cart/PaymentOptionSwish";
 import PaymentBasket from "../components/Cart/ShippingAdressForm";
 import "bootstrap/dist/css/bootstrap.min.css";
-import React, { useContext, useState } from "react";
+import React, { CSSProperties, useContext, useState } from "react";
 import { CartContext } from "../context/CartContext";
 import { Button, Spinner } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -143,7 +143,7 @@ export default function AccordionMenu() {
           </div>
         ))}
 
-        <div className="orderInfo">
+        <div style={{ paddingBottom: "1.5rem" }} className="orderInfo">
           Shipping: {25}:- <br /> Moms: {getMoms()}:- <br /> Total price:{" "}
           {getTotalPrice()}
           :-
@@ -152,7 +152,7 @@ export default function AccordionMenu() {
           Confirm purchase
         </Button>
         {/* <div> */}
-        <div className="conformationInfo">
+        <div style={purchaseStyle} className="conformationInfo">
           {isLoading ? (
             <Spinner animation="border" role="status">
               <span className="visually-hidden">Loading...</span>
@@ -168,3 +168,16 @@ export default function AccordionMenu() {
     </div>
   );
 }
+
+const purchaseStyle: CSSProperties = {
+  display: "flex",
+  textAlign: "center",
+  justifyContent: "center",
+  paddingTop: "1rem",
+  fontSize: "1.2rem",
+  fontWeight: "bolder",
+
+  paddingBottom: "1rem",
+  marginRight: "1rem",
+  boxSizing: "border-box",
+};
