@@ -20,7 +20,8 @@ import ShippingOptions from "../components/Cart/ShippingOptions";
 
 export default function AccordionMenu() {
   const { buy, isLoading, submit } = useBuy();
-  let { cart, getTotalPrice, getMoms } = useContext(CartContext);
+  let { cart, getTotalPrice, getMoms, emptyCartOnSubmit } =
+    useContext(CartContext);
   const [validated, setValidated] = useState(false);
 
   const [paymentMethod, setPaymentMethod] = useState("Swish");
@@ -36,6 +37,7 @@ export default function AccordionMenu() {
     } else {
       submit();
       event.preventDefault();
+      emptyCartOnSubmit();
     }
 
     setValidated(true);
@@ -60,14 +62,12 @@ export default function AccordionMenu() {
 
   return (
     <div>
-
       <Form noValidate validated={validated} onSubmit={handleSubmit}>
         <h2 className="paymentPageTitle">Shipping address</h2>
         <PaymentBasket />
 
         <h2 className="paymentPageTitle">Payment method</h2>
         <div className="payment-button-container">
-
           <Form.Check
             required
             label="Choose payment option"
@@ -121,10 +121,10 @@ export default function AccordionMenu() {
 
         <h2 className="paymentPageTitle">Your order</h2>
         {cart.map((cartItem) => (
-          <div  key={cartItem.product.id}>
+          <div key={cartItem.product.id}>
             <p>
-              {cartItem.product.image} {cartItem.product.title} {cartItem.product.price}{" "}
-              {cartItem.product.valuta}
+              {cartItem.product.image} {cartItem.product.title}{" "}
+              {cartItem.product.price} {cartItem.product.valuta}
               <AmountCounter
                 product={cartItem.product}
                 quantity={cartItem.quantity}
@@ -133,14 +133,10 @@ export default function AccordionMenu() {
           </div>
         ))}
 
-
-
-
         <div className="orderInfo">
           Shipping: {25}:- <br /> Moms: {getMoms()}:- <br /> Total price:{" "}
           {getTotalPrice()}
           :-
-
         </div>
         <Button className="confirmBtn" variant="dark" type="submit">
           Confirm purchase
