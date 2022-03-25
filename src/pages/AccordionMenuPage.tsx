@@ -1,4 +1,4 @@
-import { Form } from "react-bootstrap";
+import { Form, Modal } from "react-bootstrap";
 import "../components/Cart/ShippingOptions.css";
 import "../components/Layout/Layout.css";
 import "./pages.css";
@@ -35,17 +35,27 @@ export default function AccordionMenu() {
       event.preventDefault();
       event.stopPropagation();
     } else if (cart.length === 0) {
-      noItemsInCartAlert();
+      alert(
+        "You have no products in your cart! Add products to cart before making a purchase."
+      );
       event.preventDefault();
       event.stopPropagation();
     } else {
       submit();
       event.preventDefault();
       emptyCartOnSubmit();
+      handleShow();
     }
 
     setValidated(true);
   };
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => {
+    setShow(false);
+    window.location.reload();
+  };
+  const handleShow = () => setShow(true);
 
   const handleChange = (event: any) => {
     // const name = event.target.name;
@@ -56,12 +66,6 @@ export default function AccordionMenu() {
     // setChecked(!checked);
     setPaymentMethod(event);
     console.log(paymentMethod);
-  };
-
-  const noItemsInCartAlert = () => {
-    alert(
-      "You have no products in your cart! Add products to cart before making a purchase."
-    );
   };
 
   let mastercard: JSX.Element = <PaymentOptionMastercard />;
@@ -158,10 +162,20 @@ export default function AccordionMenu() {
               <span className="visually-hidden">Loading...</span>
             </Spinner>
           ) : buy ? (
-            <span>
-              {buy.paymentValid} <br /> {buy.confirmation} <br />{" "}
-              {buy.yourOrderNumber} {buy.orderNr}
-            </span>
+            <Modal show={show} onHide={handleClose}>
+              <Modal.Header closeButton>
+                <Modal.Title>{buy.paymentValid}</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                {buy.confirmation} <br /> {buy.yourOrderNumber}
+                {buy.orderNr}
+              </Modal.Body>
+              <Modal.Footer>
+                <Button variant="secondary" onClick={handleClose}>
+                  Done
+                </Button>
+              </Modal.Footer>
+            </Modal>
           ) : undefined}
         </div>
       </Form>
