@@ -10,6 +10,9 @@ export interface ContextValue {
   getMoms: () => number;
   emptyCartOnSubmit: () => void;
   cart: CartItem[];
+  printForm: (e: any) => void;
+  // userInformation: object;
+  form: {}
 }
 
 export interface CartItem {
@@ -24,11 +27,26 @@ export const CartContext = createContext<ContextValue>({
   clearCart: () => {},
   getTotalPrice: () => 0,
   getMoms: () => 0,
+  printForm: () => '',
+ form: {
+   firstname: '',
+   lastname: '',
+   address: '',
+   city: '',
+   zip: '',
+   phoneNumber: '',
+   email: '',
+ }
+
   emptyCartOnSubmit: () => {},
+
 });
 
 const CartProvider: FC = (props) => {
   const [cart, setCart] = useState<CartItem[]>([]);
+
+  const [form, setForm] = useState({})
+
 
   let contextData: ContextValue = {
     cart: cart,
@@ -79,9 +97,19 @@ const CartProvider: FC = (props) => {
 
       return moms;
     },
+
+    form: '',
+
+    printForm: (event:any) => {
+      setForm({...form, [event.target.name]: event.target.value})
+      console.log(event.target.value)
+    },
+    // userInformation: {},
+
     emptyCartOnSubmit: () => {
       setCart([]);
     },
+
   };
 
   return (

@@ -20,11 +20,15 @@ import ShippingOptions from "../components/Cart/ShippingOptions";
 
 export default function AccordionMenu() {
   const { buy, isLoading, submit } = useBuy();
+  let { cart, getTotalPrice, getMoms, printForm } = useContext(CartContext);
+
   let { cart, getTotalPrice, getMoms, emptyCartOnSubmit } =
     useContext(CartContext);
+
   const [validated, setValidated] = useState(false);
 
   const [paymentMethod, setPaymentMethod] = useState("Swish");
+
 
   const handleSubmit = (event: any) => {
     const form = event.currentTarget;
@@ -73,6 +77,17 @@ export default function AccordionMenu() {
   let swish: JSX.Element = <PaymentOptionSwish />;
 
   let klarna: JSX.Element = <PaymentOptionKlarna />;
+
+  const [form, setFormValue] = useState('')
+
+  const changeHandler = (event: any) => {
+    setFormValue(event.target.value)
+    console.log(event.target.value)
+  }
+
+const handleClick = (event: any) => {
+  console.log('hej')
+}
 
   return (
     <div>
@@ -151,21 +166,31 @@ export default function AccordionMenu() {
           </div>
         ))}
 
+
+        <div className="orderInfo">
         <div style={{ paddingBottom: "1.5rem" }} className="orderInfo">
+          
           Shipping: {25}:- <br /> Moms: {getMoms()}:- <br /> Total price:{" "}
           {getTotalPrice()}
           :-
         </div>
-        <Button className="confirmBtn" variant="dark" type="submit">
+        <Button onClick={handleClick} className="confirmBtn" variant="dark" type="submit">
           Confirm purchase
         </Button>
-        {/* <div> */}
+       
         <div style={purchaseStyle} className="conformationInfo">
           {isLoading ? (
             <Spinner animation="border" role="status">
               <span className="visually-hidden">Loading...</span>
             </Spinner>
           ) : buy ? (
+
+            <span>
+
+              {buy.paymentValid} <br /> {buy.confirmation} <br />{" "}
+              {buy.yourOrderNumber} {buy.orderNr}
+            </span>
+
             <Modal show={show} onHide={handleClose}>
               <Modal.Header closeButton>
                 <Modal.Title>{buy.paymentValid}</Modal.Title>
@@ -180,6 +205,7 @@ export default function AccordionMenu() {
                 </Button>
               </Modal.Footer>
             </Modal>
+
           ) : undefined}
         </div>
       </Form>
