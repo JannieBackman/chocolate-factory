@@ -2,7 +2,7 @@ import { CSSProperties } from "react";
 
 export function Footer() {
   return (
-    <div style={rootStyle}>
+    <div className="footerStyle" style={rootStyle}>
       <div>
         <h3 style={{ margin: "0" }}>Contact us</h3>
         <span>
@@ -17,7 +17,7 @@ export function Footer() {
       </div>
 
       <div>
-        <span style={{ display: "flex", alignItems: "flex-end" }}>
+        <span className="namesFooter" style={{ display: "flex", alignItems: "flex-end" }}>
           ©Anna Özmehak, Ella Larsson, Jannie Bäckman Kuurne
         </span>
       </div>
@@ -27,7 +27,7 @@ export function Footer() {
 
 export function FooterProductPage() {
   return (
-    <div style={footerStyle}>
+    <div className="footerStyle" style={footerStyle}>
       <div>
         <h3 style={{ margin: "0" }}>Contact us</h3>
         <span>
@@ -42,7 +42,7 @@ export function FooterProductPage() {
       </div>
 
       <div>
-        <span style={{ display: "flex", alignItems: "flex-end" }}>
+        <span className="namesFooter" style={{ display: "flex", alignItems: "flex-end" }}>
           ©Anna Özmehak, Ella Larsson, Jannie Bäckman Kuurne
         </span>
       </div>

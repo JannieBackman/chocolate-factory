@@ -40,3 +40,7 @@
   background-color: #395a20;
   margin-bottom: 1rem;
 }
+
+ @media screen and (max-width: 400px) {
+
+ }

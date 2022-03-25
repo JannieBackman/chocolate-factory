@@ -1,9 +1,7 @@
 import { CSSProperties, useContext } from "react";
 import { Button, Card } from "react-bootstrap";
 import { Product } from "../../products";
-import AmountCounter from "../AmountCounter";
 import { Link } from "react-router-dom";
-import Cart from "../Cart/cartIcon";
 import { CartContext } from "../../context/CartContext";
 
 export interface Props {
@@ -12,7 +10,6 @@ export interface Props {
 
 function ChocoCard({ product }: Props) {
   let context = useContext(CartContext);
-  // context.cart[0].title;
 
   return (
     <Card border="dark" style={{ width: "20rem" }}>

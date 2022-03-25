@@ -25,6 +25,26 @@ h3 {
   font-family: "Cormorant Garamond", serif;
 }
 
+.headerTitle {
+  color: whitesmoke;
+  font-size: 3rem;
+  text-decoration: none;
+}
+
 .paymentPageTitle {
-  margin-left: 1rem;
+  margin: 2rem 0 0 1rem;
+}
+
+@media screen and (max-width: 400px) {
+  .headerTitle {
+    font-size: 2rem;
+  }
+
+  .namesFooter {
+    font-size: 0.7rem;
+  }
+
+  .footerStyle {
+    flex-direction: column;
+  }
 }

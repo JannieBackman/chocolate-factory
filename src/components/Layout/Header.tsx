@@ -2,12 +2,13 @@ import { CSSProperties } from "react";
 import { Link } from "react-router-dom";
 import { mockedProducts } from "../../products";
 import Basket from "./BasketCart";
+import "./Layout.css";
 
 function Header() {
   return (
     <div className="header" style={rootStyle}>
       <div>
-        <Link style={linkStyle} to="/">
+        <Link className="headerTitle" to="/">
           Chocolate Factory
         </Link>
       </div>
@@ -25,12 +26,6 @@ const rootStyle: CSSProperties = {
   backgroundColor: "#333",
   color: "whitesmoke",
   height: "7rem",
-};
-
-const linkStyle: CSSProperties = {
-  color: "whitesmoke",
-  fontSize: "3rem",
-  textDecoration: "none",
 };
 
 const cartStyle: CSSProperties = {

@@ -1,15 +1,11 @@
 import { useContext, useState } from "react";
 import { Button, Offcanvas, Badge } from "react-bootstrap";
-import { FaProductHunt, FaShoppingCart } from "react-icons/fa";
-import OrderInformation from "../Cart/OrderInformation";
-import { mockedProducts, Product } from "../../products";
+import { FaShoppingCart } from "react-icons/fa";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { CartContext } from "../../context/CartContext";
 import AmountCounter from "../AmountCounter";
 import { Link } from "react-router-dom";
-
 import { FaTrashAlt } from "react-icons/fa";
-import { createNoSubstitutionTemplateLiteral } from "typescript";
 
 function Basket() {
   let { cart, getTotalPrice, clearCart } = useContext(CartContext);
@@ -33,7 +29,7 @@ function Basket() {
           {cart.map((cartItem) => (
             <div key={cartItem.product.id}>
               <p>
-                {cartItem.product.title} {cartItem.product.price}{" "}
+                {cartItem.product.image} {cartItem.product.title} {cartItem.product.price}{" "}
                 {cartItem.product.valuta}
               </p>
               <div style={{ display: "flex", paddingRight: "1rem" }}>
