@@ -2,6 +2,8 @@ import React, { createContext, useContext, useState } from "react";
 import { Product } from "../products";
 import { FC } from "react";
 import { Next, Prev } from "react-bootstrap/esm/PageItem";
+import ShippingOptions from "../components/Cart/ShippingOptions";
+import { Form } from "react-bootstrap";
 
 export interface ContextValue {
   addToCart: (product: Product) => void;
@@ -9,6 +11,7 @@ export interface ContextValue {
   clearCart: (id: number) => void;
   getTotalPrice: () => number;
   getMoms: () => number;
+  getShippingCost: () => number;
   emptyCartOnSubmit: () => void;
   cart: CartItem[];
   printForm: (e: any) => void;
@@ -44,6 +47,7 @@ export const CartContext = createContext<ContextValue>({
   clearCart: () => {},
   getTotalPrice: () => 0,
   getMoms: () => 0,
+  getShippingCost: () => 0,
   printForm: () => "",
   logForm: () => {},
   getCustomerInfo: () => "",
@@ -135,6 +139,19 @@ const CartProvider: FC = (props) => {
     return moms;
   };
 
+  const getShippingCost = () => {
+    if ((radiobutton = checked)) {
+      shippingcost = 25;
+    }
+    let shippingCost = 10;
+    let totalPrice = 0;
+    cart.forEach((cartItem) => {
+      totalPrice += cartItem.product.price * cartItem.quantity;
+      totalPrice = totalPrice * 0.12 + shippingCost;
+    });
+    return totalPrice;
+  };
+
   // form: {
   //   firstname: "",
   //   lastname: "",
@@ -188,6 +205,7 @@ const CartProvider: FC = (props) => {
         getCustomerInfo,
         logCustomer,
         cartLength,
+        getShippingCost,
         form,
         // customer,
         cart,

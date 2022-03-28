@@ -21,8 +21,15 @@ import ShippingOptions from "../components/Cart/ShippingOptions";
 export default function AccordionMenu() {
   const { buy, isLoading, submit } = useBuy();
 
-  let { cart, getTotalPrice, getMoms, emptyCartOnSubmit, logForm, printForm } =
-    useContext(CartContext);
+  let {
+    cart,
+    getTotalPrice,
+    getMoms,
+    emptyCartOnSubmit,
+    logForm,
+    printForm,
+    getShippingCost,
+  } = useContext(CartContext);
 
   const [validated, setValidated] = useState(false);
   const [customer, setCustomer] = useState<CustomerInfo>({
@@ -178,7 +185,8 @@ export default function AccordionMenu() {
         <div className="orderInfo">
           <div style={{ paddingBottom: "1.5rem" }} className="orderInfo">
             Shipping fee: {25}:- <br /> Moms: {getMoms()}:- <br /> Total price:{" "}
-            {getTotalPrice()}
+            {/* {getTotalPrice()} */}
+            {getShippingCost()}
             :-
           </div>
           <Button

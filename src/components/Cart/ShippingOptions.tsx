@@ -32,6 +32,7 @@ function ShippingOptions() {
           feedbackType="invalid"
           name="shipping"
           type="radio"
+          id="postnord"
         />
         <img className="img-styling" src={Postnord} alt="" />
         <p className="shipping-info">
@@ -49,6 +50,7 @@ function ShippingOptions() {
           feedbackType="invalid"
           name="shipping"
           type="radio"
+          id="dhl"
         />
         <img className="img-styling" src={DHL} alt="" />
         <p className="shipping-info">
@@ -64,6 +66,7 @@ function ShippingOptions() {
           feedbackType="invalid"
           name="shipping"
           type="radio"
+          id="bring"
         />
         <img className="img-styling" src={Bring} alt="" />
         <p className="shipping-info">
