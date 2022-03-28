@@ -1,9 +1,28 @@
 import "./PaymentOptions.css";
 import Swish from "../../assets/swish-logo.png";
 import { Modal, Button, Form } from "react-bootstrap";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { CartContext } from "../../context/CartContext";
+import { CustomerInfo } from "../../context/CartContext";
+import { createNoSubstitutionTemplateLiteral } from "typescript";
+import { setFlagsFromString } from "v8";
 
-function PaymentOptionSwish() {
+interface Props {
+  phoneNumber: string;
+}
+
+function PaymentOptionSwish({ phoneNumber }: Props) {
+  let { form } = useContext(CartContext);
+
+  // const customertest: CustomerInfo = {
+  //   firstname: "",
+  //   lastname: "",
+  //   address: "",
+  //   city: "",
+  //   zip: "",
+  //   phoneNumber: "",
+  //   email: "",
+  // };
   const [show, setShow] = useState(false);
 
   // const [checked, setChecked] = useState(false);
@@ -13,15 +32,15 @@ function PaymentOptionSwish() {
 
   const [validated, setValidated] = useState(false);
 
-  const handleSubmit = (event: any) => {
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
+  // const handleSubmit = (event: any) => {
+  //   const form = event.currentTarget;
+  //   if (form.checkValidity() === false) {
+  //     event.preventDefault();
+  //     event.stopPropagation();
+  //   }
 
-    setValidated(true);
-  };
+  //   setValidated(true);
+  // };
 
   // const handleChange = (event: any) => {
   //   // const name = event.target.name;
@@ -39,11 +58,14 @@ function PaymentOptionSwish() {
   // } else {
   return (
     <div>
+      {console.log(form)}
       <Form.Group className="mb-3" controlId="formGridPhone">
         <Form.Control
           required
-          type="personalnumber"
+          type="phone number"
           placeholder="Phone number"
+          value={phoneNumber}
+          onChange={() => {}}
         />
         <Form.Control.Feedback type="invalid">
           Please provide a phone number.

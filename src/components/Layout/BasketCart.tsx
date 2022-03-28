@@ -9,7 +9,7 @@ import { FaTrashAlt } from "react-icons/fa";
 import { Product } from "../../products";
 
 function Basket() {
-  let { cart, getTotalPrice, clearCart } = useContext(CartContext);
+  let { cart, getTotalPrice, clearCart, cartLength } = useContext(CartContext);
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -19,7 +19,7 @@ function Basket() {
     <>
       <Button variant="dark" onClick={handleShow}>
         <FaShoppingCart />
-        <Badge bg="danger">{cart.length}</Badge>
+        <Badge bg="danger">{cartLength()}</Badge>
       </Button>
 
       <Offcanvas placement="end" show={show} onHide={handleClose}>
