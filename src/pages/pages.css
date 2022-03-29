@@ -1,21 +1,21 @@
 .orderInfo {
-    margin-left: 2rem;
+  margin-top: 0.5rem;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
 }
 
 .confirmBtn {
-    margin-left: 1rem;
-    margin-bottom: 2rem;
+  margin-left: 1rem;
+  margin-bottom: 2rem;
 }
 
 .conformationInfo {
-    margin: 0 0 2rem 1rem;
-
+  margin: 0 0 2rem 1rem;
 }
 
-
 @media screen and (max-width: 400px) {
-    .orderInfo {
-        margin-left: 1rem;
-    }
-
+  .orderInfo {
+    margin-left: 1rem;
+  }
 }

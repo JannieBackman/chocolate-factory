@@ -1,5 +1,5 @@
 import React, { CSSProperties } from "react";
-import { Footer } from "../components/Layout/Footer";
+import { Footer, FooterDetailPage } from "../components/Layout/Footer";
 import ChocoCard from "../components/Products/ProductCard";
 import { mockedProducts, Product } from "../products";
 import background from "../assets/Background.jpg";
@@ -19,7 +19,7 @@ export default function DetailsChocolate({ product }: Props) {
       <Link to="/Chocolates">
         <Button variant="dark">Back</Button>
       </Link>
-      <Footer />
+      <FooterDetailPage />
     </div>
   );
 }
@@ -27,7 +27,7 @@ export default function DetailsChocolate({ product }: Props) {
 const detailsPage: CSSProperties = {
   display: "flex",
   alignItems: "center",
-  margin: "2rem 0",
+  margin: "0 0",
   flexDirection: "column",
   backgroundImage: `url(${background})`,
   backgroundSize: "cover",

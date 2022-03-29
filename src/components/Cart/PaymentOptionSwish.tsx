@@ -59,7 +59,11 @@ function PaymentOptionSwish({ phoneNumber }: Props) {
   return (
     <div>
       {console.log(form)}
-      <Form.Group className="mb-3" controlId="formGridPhone">
+      <Form.Group
+        className="mb-3"
+        controlId="formGridPhone"
+        style={{ padding: "1rem", width: "25%" }}
+      >
         <Form.Control
           required
           type="phone number"

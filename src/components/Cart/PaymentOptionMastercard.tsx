@@ -58,20 +58,32 @@ function PaymentOptionMastercard() {
   // } else {
   return (
     <div>
-      <Form.Group className="mb-3" controlId="formGridCardNr">
+      <Form.Group
+        className="mb-3"
+        controlId="formGridCardNr"
+        style={{ paddingLeft: "1rem", paddingTop: "1rem", width: "25%" }}
+      >
         <Form.Control required type="" placeholder="Card number" />
         <Form.Control.Feedback type="invalid">
           Please provide a card number.
         </Form.Control.Feedback>
       </Form.Group>
-      <Form.Group className="mb-3" controlId="formGridCardExpDate">
+      <Form.Group
+        className="mb-3"
+        controlId="formGridCardExpDate"
+        style={{ paddingLeft: "1rem", width: "25%" }}
+      >
         <input required type="date" />
         <Form.Control.Feedback type="invalid">
           Please provide an expiration date.
         </Form.Control.Feedback>
         <Form.Text className="text-muted"> Expiration date</Form.Text>
       </Form.Group>
-      <Form.Group className="mb-3" controlId="formGridCardExpDate">
+      <Form.Group
+        className="mb-3"
+        controlId="formGridCardExpDate"
+        style={{ paddingLeft: "1rem", width: "25%" }}
+      >
         <Form.Control required type="" placeholder="CVC" />
         <Form.Control.Feedback type="invalid">
           Please provide a CVC.

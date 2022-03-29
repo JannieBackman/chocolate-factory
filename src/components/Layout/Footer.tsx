@@ -2,31 +2,6 @@ import { CSSProperties } from "react";
 
 export function Footer() {
   return (
-    <div className="footerStyle" style={rootStyle}>
-      <div>
-        <h3 style={{ margin: "0" }}>Contact us</h3>
-        <span>
-          Send us an{" "}
-          <a
-            style={{ fontWeight: "bold", color: "white" }}
-            href="mailto:email@example.com"
-          >
-            email!
-          </a>
-        </span>
-      </div>
-
-      <div>
-        <span className="namesFooter" style={{ display: "flex", alignItems: "flex-end" }}>
-          ©Anna Özmehak, Ella Larsson, Jannie Bäckman Kuurne
-        </span>
-      </div>
-    </div>
-  );
-}
-
-export function FooterProductPage() {
-  return (
     <div className="footerStyle" style={footerStyle}>
       <div>
         <h3 style={{ margin: "0" }}>Contact us</h3>
@@ -42,7 +17,10 @@ export function FooterProductPage() {
       </div>
 
       <div>
-        <span className="namesFooter" style={{ display: "flex", alignItems: "flex-end" }}>
+        <span
+          className="namesFooter"
+          style={{ display: "flex", alignItems: "flex-end" }}
+        >
           ©Anna Özmehak, Ella Larsson, Jannie Bäckman Kuurne
         </span>
       </div>
@@ -50,7 +28,35 @@ export function FooterProductPage() {
   );
 }
 
-const rootStyle: CSSProperties = {
+export function FooterDetailPage() {
+  return (
+    <div className="footerStyle" style={footerDetailStyle}>
+      <div>
+        <h3 style={{ margin: "0" }}>Contact us</h3>
+        <span>
+          Send us an{" "}
+          <a
+            style={{ fontWeight: "bold", color: "white" }}
+            href="mailto:email@example.com"
+          >
+            email!
+          </a>
+        </span>
+      </div>
+
+      <div>
+        <span
+          className="namesFooter"
+          style={{ display: "flex", alignItems: "flex-end" }}
+        >
+          ©Anna Özmehak, Ella Larsson, Jannie Bäckman Kuurne
+        </span>
+      </div>
+    </div>
+  );
+}
+
+const footerDetailStyle: CSSProperties = {
   display: "flex",
   justifyContent: "space-between",
   alignItems: "flex-end",

@@ -149,7 +149,7 @@ const CartProvider: FC = (props) => {
     } else if (shipper === "dhl") {
       shippingCost = 19;
     } else if (shipper === "bring") {
-      shippingCost = 40;
+      shippingCost = 39;
     }
     return shippingCost;
   };
@@ -162,7 +162,7 @@ const CartProvider: FC = (props) => {
     } else if (shipper === "dhl") {
       shipperCost = 19;
     } else if (shipper === "bring") {
-      shipperCost = 40;
+      shipperCost = 39;
     }
     return productsCost + shipperCost;
   };
