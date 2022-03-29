@@ -48,7 +48,7 @@ function Basket() {
           <p>Total price: {getTotalPrice()}:-</p>
           <div className="d-grid gap-2">
             <Link to="/cart">
-              <Button variant="dark" size="lg">
+              <Button variant="dark" size="lg" onClick={handleClose}>
                 Checkout
               </Button>
             </Link>
