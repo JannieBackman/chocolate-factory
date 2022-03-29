@@ -11,17 +11,17 @@ export interface ContextValue {
   clearCart: (id: number) => void;
   getTotalPrice: () => number;
   getMoms: () => number;
-  getShippingCost: () => number;
+  getShippingCost: () => void;
   emptyCartOnSubmit: () => void;
   cart: CartItem[];
   printForm: (e: any) => void;
   logForm: (e: any) => void;
-  getCustomerInfo: (e: any) => void;
-  logCustomer: (e: any) => void;
   cartLength: () => number;
+  printShipping: (e: any) => void;
+  getTotalPriceWithShipping: () => void;
 
   form: CustomerInfo;
-  // customer: CustomerInfo[];
+  shipper: string;
 }
 
 export interface CartItem {
@@ -39,20 +39,25 @@ export interface CustomerInfo {
   email: string;
 }
 
+// export interface ShippingInfo {
+//   name: string;
+//   price: string;
+// }
+
 export const CartContext = createContext<ContextValue>({
   cart: [],
-  // customer: [],
+
   removeFromCart: () => {},
   addToCart: () => {},
   clearCart: () => {},
   getTotalPrice: () => 0,
   getMoms: () => 0,
-  getShippingCost: () => 0,
+  getShippingCost: () => {},
   printForm: () => "",
   logForm: () => {},
-  getCustomerInfo: () => "",
-  logCustomer: () => [],
   cartLength: () => 0,
+  printShipping: () => "",
+  getTotalPriceWithShipping: () => {},
   form: {
     firstname: "",
     lastname: "",
@@ -62,7 +67,9 @@ export const CartContext = createContext<ContextValue>({
     phoneNumber: "",
     email: "",
   },
+  shipper: "",
 
+  //TODO: Skapa variabel för fraktsätt
   emptyCartOnSubmit: () => {},
 });
 
@@ -79,17 +86,7 @@ const CartProvider: FC = (props) => {
     email: "",
   });
 
-  const [customer, setCustomer] = useState<CustomerInfo[]>([]);
-
-  // const customertest: CustomerInfo = {
-  //   firstname: "",
-  //   lastname: "",
-  //   address: "",
-  //   city: "",
-  //   zip: "",
-  //   phoneNumber: "",
-  //   email: "",
-  // };
+  const [shipper, setShipper] = useState("");
 
   const addToCart = (product: Product) => {
     let productListToUpdate = [...cart];
@@ -128,6 +125,11 @@ const CartProvider: FC = (props) => {
     return totalPrice;
   };
 
+  // const getPriceWithShipping = () => {
+  //   const total = getTotalPrice()
+  //   return total + shipping
+  // }
+
   const getMoms = () => {
     let totalPrice = 0;
     let moms = 0;
@@ -140,16 +142,29 @@ const CartProvider: FC = (props) => {
   };
 
   const getShippingCost = () => {
-    if ((radiobutton = checked)) {
-      shippingcost = 25;
+    let shippingCost = 0;
+    //console.log("SHIPPER FROM GET SHIPPING COST: ", shipper);
+    if (shipper === "postnord") {
+      shippingCost = 25;
+    } else if (shipper === "dhl") {
+      shippingCost = 19;
+    } else if (shipper === "bring") {
+      shippingCost = 40;
     }
-    let shippingCost = 10;
-    let totalPrice = 0;
-    cart.forEach((cartItem) => {
-      totalPrice += cartItem.product.price * cartItem.quantity;
-      totalPrice = totalPrice * 0.12 + shippingCost;
-    });
-    return totalPrice;
+    return shippingCost;
+  };
+
+  const getTotalPriceWithShipping = () => {
+    let shipperCost = 0;
+    const productsCost = getTotalPrice();
+    if (shipper === "postnord") {
+      shipperCost = 25;
+    } else if (shipper === "dhl") {
+      shipperCost = 19;
+    } else if (shipper === "bring") {
+      shipperCost = 40;
+    }
+    return productsCost + shipperCost;
   };
 
   // form: {
@@ -162,10 +177,15 @@ const CartProvider: FC = (props) => {
   //   email: "",
   // },
 
+  const printShipping = (shipper: string) => {
+    console.log(shipper);
+    setShipper(shipper);
+  };
+
   const printForm = (customer: CustomerInfo) => {
     // setForm({...form, event.target.name, event.target.value});
     // console.log(event.target.value);
-    console.log(customer);
+    // console.log(customer);
     setForm(customer);
   };
   // userInformation: {},
@@ -176,15 +196,6 @@ const CartProvider: FC = (props) => {
 
   const logForm = (e: any) => {
     console.log(form);
-  };
-
-  const getCustomerInfo = (event: any) => {
-    setCustomer({ ...customer, [event.target.name]: event.target.value });
-    // console.log(event.target.value);
-  };
-
-  const logCustomer = (e: any) => {
-    console.log(customer);
   };
 
   const cartLength = () => {
@@ -202,12 +213,12 @@ const CartProvider: FC = (props) => {
         printForm,
         emptyCartOnSubmit,
         logForm,
-        getCustomerInfo,
-        logCustomer,
         cartLength,
         getShippingCost,
+        printShipping,
+        getTotalPriceWithShipping,
         form,
-        // customer,
+        shipper,
         cart,
       }}
     >
