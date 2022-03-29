@@ -35,6 +35,12 @@ h3 {
   margin: 2rem 0 0 1rem;
 }
 
+/* @media screen and (max-width: 1200px) {
+  .main {
+    background-size: auto;
+  }
+} */
+
 @media screen and (max-width: 400px) {
   .headerTitle {
     font-size: 2rem;

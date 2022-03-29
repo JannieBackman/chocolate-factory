@@ -11,7 +11,7 @@ import background from "../assets/Background.jpg";
 
 function Main() {
   return (
-    <div style={rootStyle}>
+    <div className="main" style={rootStyle}>
       <main className="MainContainer">
         <h3 style={pageTitle}>Popular products</h3>
         <Container>
@@ -45,7 +45,7 @@ const rootStyle: CSSProperties = {
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
-  height: "100vh",
+  height: "auto",
   backgroundImage: `url(${background})`,
   backgroundSize: "cover",
   WebkitBackgroundSize: "cover",
