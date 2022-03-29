@@ -7,7 +7,7 @@ import PaymentOptionMastercard from "../components/Cart/PaymentOptionMastercard"
 import PaymentOptionSwish from "../components/Cart/PaymentOptionSwish";
 import PaymentBasket from "../components/Cart/ShippingAdressForm";
 import "bootstrap/dist/css/bootstrap.min.css";
-import React, { CSSProperties, useContext, useState } from "react";
+import React, { CSSProperties, useContext, useState, useEffect } from "react";
 import { CartContext, CustomerInfo } from "../context/CartContext";
 import { Button, Spinner } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -29,6 +29,9 @@ export default function AccordionMenu() {
     logForm,
     printForm,
     getShippingCost,
+    shipper,
+    printShipping,
+    getTotalPriceWithShipping,
   } = useContext(CartContext);
 
   const [validated, setValidated] = useState(false);
@@ -41,13 +44,16 @@ export default function AccordionMenu() {
     phoneNumber: "",
     email: "",
   });
+  //TODO: Skapa state för fraktsätt
+
+  const [shippingMethod, setShippingMethod] = useState("");
 
   const [paymentMethod, setPaymentMethod] = useState("Swish");
 
   const handleSubmit = (event: any) => {
     const form = event.currentTarget;
 
-    console.log(form.checkValidity());
+    // console.log(form.checkValidity());
 
     if (form.checkValidity() === false) {
       event.preventDefault();
@@ -63,7 +69,9 @@ export default function AccordionMenu() {
       event.preventDefault();
       emptyCartOnSubmit();
       handleShow();
-      printForm(customer);
+      // printForm(customer);
+      printShipping(shippingMethod);
+      //TODO: Uppdatera contexten med valt fraktsätt
     }
 
     setValidated(true);
@@ -84,6 +92,7 @@ export default function AccordionMenu() {
     //     : event.target.value;
     // setChecked(!checked);
     setPaymentMethod(event);
+
     console.log(paymentMethod);
   };
 
@@ -103,6 +112,10 @@ export default function AccordionMenu() {
   };
 
   const handleClick = (event: any) => {};
+
+  useEffect(() => {
+    printShipping(shippingMethod);
+  }, [shippingMethod]);
 
   return (
     <div>
@@ -161,8 +174,13 @@ export default function AccordionMenu() {
         {paymentMethod === "Swish" && swish}
         {paymentMethod === "Klarna" && klarna}
         <h2 className="paymentPageTitle">Shipping method</h2>
-        <ShippingOptions />
+        {/* //TODO: Skicka in state (fraktsätt) och setState (uppdatera fraktsätt) */}
+        <ShippingOptions
+          setShippingMethod={setShippingMethod}
+          shippingMethod={shippingMethod}
+        />
 
+        {/* <PaymentBasket setCustomer={setCustomer} customer={customer} /> */}
         <h2 className="paymentPageTitle">Your order</h2>
         {cart.map((cartItem) => (
           <div key={cartItem.product.id}>
@@ -184,10 +202,8 @@ export default function AccordionMenu() {
 
         <div className="orderInfo">
           <div style={{ paddingBottom: "1.5rem" }} className="orderInfo">
-            Shipping fee: {25}:- <br /> Moms: {getMoms()}:- <br /> Total price:{" "}
-            {/* {getTotalPrice()} */}
-            {getShippingCost()}
-            :-
+            Shipping fee: {getShippingCost()}:- <br /> Moms: {getMoms()}:-{" "}
+            <br /> Total price: {getTotalPriceWithShipping()}:-
           </div>
           <Button
             onClick={handleClick}
@@ -214,7 +230,8 @@ export default function AccordionMenu() {
                   {buy.confirmation} {customer.email} <br />{" "}
                   {customer.firstname} {customer.lastname} <br />
                   {customer.address} {customer.zip} {customer.city} <br />
-                  Betalsätt + Fraktsätt
+                  Fraktsätt: {shippingMethod} <br />
+                  Betalsätt: {paymentMethod}
                 </Modal.Body>
                 <Modal.Footer>
                   <Button variant="secondary" onClick={handleClose}>

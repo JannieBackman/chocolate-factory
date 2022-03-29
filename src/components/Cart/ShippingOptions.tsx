@@ -6,11 +6,21 @@ import { Button, Form } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useBuy } from "../../context/BuyContext";
 import { Buy, fakeFetch } from "../../components/fakeFetch";
-import { useState, useContext } from "react";
+import React, { useState, useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 
-function ShippingOptions() {
+interface Props {
+  setShippingMethod: React.Dispatch<React.SetStateAction<string>>;
+  shippingMethod: string;
+}
+
+function ShippingOptions(props: Props) {
   const [validated, setValidated] = useState(false);
+
+  const isSelected = (value: string): boolean => props.shippingMethod === value;
+
+  const handleRadioClick = (e: React.ChangeEvent<HTMLInputElement>): void =>
+    props.setShippingMethod(e.currentTarget.value);
 
   const handleSubmit = (event: any) => {
     const form = event.currentTarget;
@@ -32,7 +42,10 @@ function ShippingOptions() {
           feedbackType="invalid"
           name="shipping"
           type="radio"
-          id="postnord"
+          value="postnord"
+          checked={isSelected("postnord")}
+          //TODO: Använd setState proppen (uppdatera fraktsätt)
+          onChange={handleRadioClick}
         />
         <img className="img-styling" src={Postnord} alt="" />
         <p className="shipping-info">
@@ -50,7 +63,9 @@ function ShippingOptions() {
           feedbackType="invalid"
           name="shipping"
           type="radio"
-          id="dhl"
+          value="dhl"
+          checked={isSelected("dhl")}
+          onChange={handleRadioClick}
         />
         <img className="img-styling" src={DHL} alt="" />
         <p className="shipping-info">
@@ -66,7 +81,9 @@ function ShippingOptions() {
           feedbackType="invalid"
           name="shipping"
           type="radio"
-          id="bring"
+          value="bring"
+          checked={isSelected("bring")}
+          onChange={handleRadioClick}
         />
         <img className="img-styling" src={Bring} alt="" />
         <p className="shipping-info">
