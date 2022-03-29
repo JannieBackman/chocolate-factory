@@ -204,7 +204,7 @@ export default function AccordionMenu() {
         ))}
 
         <div className="orderInfo">
-          <div style={{ paddingBottom: "1.5rem" }} className="orderInfo">
+          <div className="orderInfo">
             Shipping fee: {getShippingCost()}:- <br /> Moms: {getMoms()}:-{" "}
             <br /> Total price: {getTotalPriceWithShipping()}:-
           </div>
