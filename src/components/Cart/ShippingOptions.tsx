@@ -46,14 +46,12 @@ function ShippingOptions(props: Props) {
           checked={isSelected("postnord")}
           //TODO: Använd setState proppen (uppdatera fraktsätt)
           onChange={handleRadioClick}
+          className="input-styling"
         />
         <img className="img-styling" src={Postnord} alt="" />
-        <p className="shipping-info">
-          48h shipping time. Expected delivery on March 11.
-        </p>
-        <p className="shipping-info">
-          Shipping fee: 25 sek. Free if you shop for over 100sek.
-        </p>
+        <p className="shipping-info">48h shipping time.</p>
+        <p className="shipping-info">Expected delivery on April 4.</p>
+        <p className="shipping-info">Shipping fee: {25}:-</p>
       </div>
       <div className="dhl-container">
         <Form.Check
@@ -66,12 +64,12 @@ function ShippingOptions(props: Props) {
           value="dhl"
           checked={isSelected("dhl")}
           onChange={handleRadioClick}
+          className="input-styling"
         />
         <img className="img-styling" src={DHL} alt="" />
-        <p className="shipping-info">
-          72h shipping time. Expected delivery on March 12.
-        </p>
-        <p className="shipping-info">Free shipping!</p>
+        <p className="shipping-info">72h shipping time.</p>
+        <p className="shipping-info">Expected delivery on April 5.</p>
+        <p className="shipping-info">Shipping fee: {19}:-</p>
       </div>
       <div className="bring-container">
         <Form.Check
@@ -84,12 +82,12 @@ function ShippingOptions(props: Props) {
           value="bring"
           checked={isSelected("bring")}
           onChange={handleRadioClick}
+          className="input-styling"
         />
         <img className="img-styling" src={Bring} alt="" />
-        <p className="shipping-info">
-          24h shipping time. Expected delivery March 10.
-        </p>
-        <p className="shipping-info">Shipping fee: {40} sek.</p>
+        <p className="shipping-info">24h shipping time.</p>
+        <p className="shipping-info">Expected delivery April 1.</p>
+        <p className="shipping-info">Shipping fee: {39}:-</p>
       </div>
     </div>
   );

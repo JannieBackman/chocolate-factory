@@ -124,50 +124,52 @@ export default function AccordionMenu() {
         <PaymentBasket setCustomer={setCustomer} customer={customer} />
 
         <h2 className="paymentPageTitle">Payment method</h2>
-        <div className="payment-button-container">
-          <Form.Check
-            required
-            label="Choose payment option"
-            feedback="You must choose a payment option"
-            feedbackType="invalid"
-            name="payment"
-            type="radio"
-            onChange={() => handleChange("Mastercard")}
-          />
-          <Button className="btn btn-light" variant="primary">
-            <img className="img-style" src={Mastercard} alt="" />
-          </Button>
-        </div>
+        <div style={{ display: "flex" }}>
+          <div className="payment-button-container">
+            <Form.Check
+              required
+              label="Choose payment option"
+              feedback="You must choose a payment option"
+              feedbackType="invalid"
+              name="payment"
+              type="radio"
+              onChange={() => handleChange("Mastercard")}
+            />
+            <Button className="btn btn-light" variant="primary">
+              <img className="img-style" src={Mastercard} alt="" />
+            </Button>
+          </div>
 
-        <div className="payment-button-container">
-          <Form.Check
-            required
-            label="Choose payment option"
-            feedback="You must choose a payment option"
-            feedbackType="invalid"
-            name="payment"
-            type="radio"
-            onChange={() => handleChange("Klarna")}
-          />
-          <Button className="btn btn-light" variant="primary">
-            <img className="img-style" src={Klarna} alt="" />
-          </Button>
-        </div>
+          <div className="payment-button-container">
+            <Form.Check
+              required
+              label="Choose payment option"
+              feedback="You must choose a payment option"
+              feedbackType="invalid"
+              name="payment"
+              type="radio"
+              onChange={() => handleChange("Klarna")}
+            />
+            <Button className="btn btn-light" variant="primary">
+              <img className="img-style" src={Klarna} alt="" />
+            </Button>
+          </div>
 
-        <div className="payment-button-container">
-          <Form.Check
-            required
-            label="Choose payment option"
-            feedback="You must choose a payment option"
-            feedbackType="invalid"
-            name="payment"
-            type="radio"
-            defaultChecked
-            onChange={() => handleChange("Swish")}
-          />
-          <Button className="btn btn-light" variant="primary" active>
-            <img className="img-style" src={Swish} alt="" />
-          </Button>
+          <div className="payment-button-container">
+            <Form.Check
+              required
+              label="Choose payment option"
+              feedback="You must choose a payment option"
+              feedbackType="invalid"
+              name="payment"
+              type="radio"
+              defaultChecked
+              onChange={() => handleChange("Swish")}
+            />
+            <Button className="btn btn-light" variant="primary" active>
+              <img className="img-style" src={Swish} alt="" />
+            </Button>
+          </div>
         </div>
 
         {paymentMethod === "Mastercard" && mastercard}
@@ -175,6 +177,7 @@ export default function AccordionMenu() {
         {paymentMethod === "Klarna" && klarna}
         <h2 className="paymentPageTitle">Shipping method</h2>
         {/* //TODO: Skicka in state (fraktsätt) och setState (uppdatera fraktsätt) */}
+
         <ShippingOptions
           setShippingMethod={setShippingMethod}
           shippingMethod={shippingMethod}

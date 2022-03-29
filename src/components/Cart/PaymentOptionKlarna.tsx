@@ -52,7 +52,10 @@ function PaymentOptionKlarna() {
   // } else {
   return (
     <div>
-      <Form.Group controlId="formGridName">
+      <Form.Group
+        controlId="formGridName"
+        style={{ padding: "1rem", width: "25%" }}
+      >
         <div>
           <input defaultChecked type="radio" value="30days" name="pay-klarna" />
           Pay within 30 days
