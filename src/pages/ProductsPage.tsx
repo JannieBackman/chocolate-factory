@@ -1,6 +1,6 @@
-import React, { CSSProperties } from "react";
+import { CSSProperties } from "react";
 import ChocoCard from "../components/Products/ProductCard";
-import { mockedProducts, Product } from "../products";
+import { mockedProducts } from "../products";
 import { Container, Row, Col } from "react-bootstrap";
 import { Footer } from "../components/Layout/Footer";
 import background from "../assets/Background.jpg";

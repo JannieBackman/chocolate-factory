@@ -1,22 +1,17 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-
 import Header from "./Layout/Header";
 import Main from "../pages/MainPage";
 import NavigationBar from "./Layout/Navbar";
-import Chocolates from "../pages/ProductsPage";
-import OrderConfirmation from "./Cart/OrderInformation";
-import Checkout from "../pages/ConfirmationPage";
+import Checkout from "../pages/CheckoutPage";
 import DetailsChocolate from "../pages/DetailProductPage";
 import ErrorBoundary from "./ErrorBoundary";
-import AccordionMenu from "../pages/AccordionMenuPage";
-import { mockedProducts, Product } from "../products";
+import CheckoutPage from "../pages/CheckoutPage";
+import { mockedProducts } from "../products";
 import ProductsPage from "../pages/ProductsPage";
 import CartProvider from "../context/CartContext";
-import { CartContext } from "../context/CartContext";
 import OrderInformation from "./Cart/OrderInformation";
 import BuyProvider from "../context/BuyContext";
-import { propTypes } from "react-bootstrap/esm/Image";
 
 function App() {
   return (
@@ -35,7 +30,7 @@ function App() {
                 <Route path="/" element={<Header />} />
                 <Route path="/Chocolates" element={<ProductsPage />} />
                 {/* </ErrorBoundary> ---- if you want to see 404page*/}
-                <Route path="/cart" element={<AccordionMenu />} />
+                <Route path="/cart" element={<CheckoutPage />} />
                 <Route
                   path="/OrderInformation"
                   element={<OrderInformation />}

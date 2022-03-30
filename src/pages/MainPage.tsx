@@ -1,10 +1,7 @@
 import { CSSProperties } from "react";
-
 import "../components/Layout/Layout.css";
-import { Props } from "../components/Products/ProductCard";
 import ChocoCard from "../components/Products/ProductCard";
 import { mockedProducts } from "../products";
-import AmountCounter from "../components/AmountCounter";
 import { Container, Row, Col } from "react-bootstrap";
 import { Footer } from "../components/Layout/Footer";
 import background from "../assets/Background.jpg";
