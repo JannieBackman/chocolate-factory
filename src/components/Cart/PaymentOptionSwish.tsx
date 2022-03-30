@@ -64,12 +64,14 @@ function PaymentOptionSwish({ phoneNumber }: Props) {
         controlId="formGridPhone"
         style={{ padding: "1rem", width: "25%" }}
       >
+        <Form.Label className="payment-label">Phone Number</Form.Label>
         <Form.Control
           required
           type="phone number"
           placeholder="Phone number"
           value={phoneNumber}
           onChange={() => {}}
+          className="payment-input"
         />
         <Form.Control.Feedback type="invalid">
           Please provide a phone number.

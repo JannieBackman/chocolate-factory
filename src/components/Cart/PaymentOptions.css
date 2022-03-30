@@ -1,6 +1,8 @@
-.payment-container {
+.paymentContainer {
   display: flex;
   flex-direction: column;
+  padding: 1rem 1rem 0 1rem;
+  width: 50%;
 }
 
 .img-style {
@@ -17,4 +19,29 @@
 
 .margin-left {
   margin-left: 0.5rem;
+}
+
+.payment-label {
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .paymentContainer {
+    width: 80%;
+  }
+  .payment-input {
+    width: 12rem;
+  }
+  .text-muted {
+    display: none;
+  }
+  .payment-label {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .paymentContainer {
+    width: auto;
+  }
 }

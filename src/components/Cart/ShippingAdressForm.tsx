@@ -23,7 +23,7 @@ export default function PaymentBasket({ setCustomer, customer }: Props) {
 
   return (
     <div>
-      <div className="paymentContainer" style={paymentContainer}>
+      <div className="paymentContainer">
         <Row className="mb-3">
           <Form.Group as={Col} controlId="formGridName">
             <Form.Label>Firstname</Form.Label>
@@ -41,7 +41,8 @@ export default function PaymentBasket({ setCustomer, customer }: Props) {
               Please provide a firstname.
             </Form.Control.Feedback>
           </Form.Group>
-
+        </Row>
+        <Row className="mb-3">
           <Form.Group as={Col} controlId="formGridLastname">
             <Form.Label>Lastname</Form.Label>
             <Form.Control
@@ -58,8 +59,8 @@ export default function PaymentBasket({ setCustomer, customer }: Props) {
             </Form.Control.Feedback>
           </Form.Group>
         </Row>
-        <Row>
-          <Form.Group as={Col} className="mb-3" controlId="formGridAddress">
+        <Row className="mb-3">
+          <Form.Group as={Col} controlId="formGridAddress">
             <Form.Label>Address</Form.Label>
             <Form.Control
               required
@@ -73,8 +74,9 @@ export default function PaymentBasket({ setCustomer, customer }: Props) {
               Please provide an adress.
             </Form.Control.Feedback>
           </Form.Group>
-
-          <Form.Group as={Col} className="mb-3" controlId="formGridCity">
+        </Row>
+        <Row className="mb-3">
+          <Form.Group as={Col} controlId="formGridCity">
             <Form.Label>City</Form.Label>
             <Form.Control
               required
@@ -88,7 +90,8 @@ export default function PaymentBasket({ setCustomer, customer }: Props) {
               Please provide a city.
             </Form.Control.Feedback>
           </Form.Group>
-
+        </Row>
+        <Row className="mb-3">
           <Form.Group as={Col} controlId="formGridZip">
             <Form.Label>Zip</Form.Label>
             <Form.Control
@@ -104,8 +107,8 @@ export default function PaymentBasket({ setCustomer, customer }: Props) {
             </Form.Control.Feedback>
           </Form.Group>
         </Row>
-        <Row>
-          <Form.Group as={Col} className="mb-3" controlId="formGridPhone">
+        <Row className="mb-3">
+          <Form.Group as={Col} controlId="formGridPhone">
             <Form.Label>Phone number</Form.Label>
             <Form.Control
               required
@@ -119,8 +122,9 @@ export default function PaymentBasket({ setCustomer, customer }: Props) {
               Please provide a phone number.
             </Form.Control.Feedback>
           </Form.Group>
-
-          <Form.Group as={Col} className="mb-3" controlId="formGridEmail">
+        </Row>
+        <Row className="mb-3">
+          <Form.Group as={Col} controlId="formGridEmail">
             <Form.Label>Email</Form.Label>
             <Form.Control
               required
@@ -139,7 +143,3 @@ export default function PaymentBasket({ setCustomer, customer }: Props) {
     </div>
   );
 }
-
-const paymentContainer: CSSProperties = {
-  padding: "1rem 1rem 0 1rem",
-};
