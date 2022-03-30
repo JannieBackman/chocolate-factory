@@ -1,9 +1,6 @@
-import React, { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 import { Product } from "../products";
 import { FC } from "react";
-import { Next, Prev } from "react-bootstrap/esm/PageItem";
-import ShippingOptions from "../components/Cart/ShippingOptions";
-import { Form } from "react-bootstrap";
 
 export interface ContextValue {
   addToCart: (product: Product) => void;
@@ -15,7 +12,6 @@ export interface ContextValue {
   emptyCartOnSubmit: () => void;
   cart: CartItem[];
   printForm: (e: any) => void;
-  logForm: (e: any) => void;
   cartLength: () => number;
   printShipping: (e: any) => void;
   getTotalPriceWithShipping: () => void;
@@ -39,11 +35,6 @@ export interface CustomerInfo {
   email: string;
 }
 
-// export interface ShippingInfo {
-//   name: string;
-//   price: string;
-// }
-
 export const CartContext = createContext<ContextValue>({
   cart: [],
 
@@ -54,10 +45,10 @@ export const CartContext = createContext<ContextValue>({
   getMoms: () => 0,
   getShippingCost: () => {},
   printForm: () => "",
-  logForm: () => {},
   cartLength: () => 0,
   printShipping: () => "",
   getTotalPriceWithShipping: () => {},
+  emptyCartOnSubmit: () => {},
   form: {
     firstname: "",
     lastname: "",
@@ -68,9 +59,6 @@ export const CartContext = createContext<ContextValue>({
     email: "",
   },
   shipper: "",
-
-  //TODO: Skapa variabel för fraktsätt
-  emptyCartOnSubmit: () => {},
 });
 
 const CartProvider: FC = (props) => {
@@ -125,11 +113,6 @@ const CartProvider: FC = (props) => {
     return totalPrice;
   };
 
-  // const getPriceWithShipping = () => {
-  //   const total = getTotalPrice()
-  //   return total + shipping
-  // }
-
   const getMoms = () => {
     let totalPrice = 0;
     let moms = 0;
@@ -143,7 +126,6 @@ const CartProvider: FC = (props) => {
 
   const getShippingCost = () => {
     let shippingCost = 0;
-    //console.log("SHIPPER FROM GET SHIPPING COST: ", shipper);
     if (shipper === "postnord") {
       shippingCost = 25;
     } else if (shipper === "dhl") {
@@ -167,35 +149,17 @@ const CartProvider: FC = (props) => {
     return productsCost + shipperCost;
   };
 
-  // form: {
-  //   firstname: "",
-  //   lastname: "",
-  //   address: "",
-  //   city: "",
-  //   zip: "",
-  //   phoneNumber: "",
-  //   email: "",
-  // },
-
   const printShipping = (shipper: string) => {
     console.log(shipper);
     setShipper(shipper);
   };
 
   const printForm = (customer: CustomerInfo) => {
-    // setForm({...form, event.target.name, event.target.value});
-    // console.log(event.target.value);
-    // console.log(customer);
     setForm(customer);
   };
-  // userInformation: {},
 
   const emptyCartOnSubmit = () => {
     setCart([]);
-  };
-
-  const logForm = (e: any) => {
-    console.log(form);
   };
 
   const cartLength = () => {
@@ -212,7 +176,6 @@ const CartProvider: FC = (props) => {
         getMoms,
         printForm,
         emptyCartOnSubmit,
-        logForm,
         cartLength,
         getShippingCost,
         printShipping,

@@ -1,7 +1,6 @@
-import React, { CSSProperties } from "react";
-import { Footer, FooterDetailPage } from "../components/Layout/Footer";
-import ChocoCard from "../components/Products/ProductCard";
-import { mockedProducts, Product } from "../products";
+import { CSSProperties } from "react";
+import { FooterDetailPage } from "../components/Layout/Footer";
+import { Product } from "../products";
 import background from "../assets/Background.jpg";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";

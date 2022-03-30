@@ -2,12 +2,9 @@ import "./ShippingOptions.css";
 import Postnord from "../../assets/postnord-logo.png";
 import DHL from "../../assets/DHL-logo.png";
 import Bring from "../../assets/bring-logo.png";
-import { Button, Form } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useBuy } from "../../context/BuyContext";
-import { Buy, fakeFetch } from "../../components/fakeFetch";
-import React, { useState, useContext } from "react";
-import { CartContext } from "../../context/CartContext";
+import React from "react";
 
 interface Props {
   setShippingMethod: React.Dispatch<React.SetStateAction<string>>;
@@ -15,22 +12,10 @@ interface Props {
 }
 
 function ShippingOptions(props: Props) {
-  const [validated, setValidated] = useState(false);
-
   const isSelected = (value: string): boolean => props.shippingMethod === value;
 
   const handleRadioClick = (e: React.ChangeEvent<HTMLInputElement>): void =>
     props.setShippingMethod(e.currentTarget.value);
-
-  const handleSubmit = (event: any) => {
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-
-    setValidated(true);
-  };
 
   return (
     <div className="shipping-container">
@@ -44,7 +29,6 @@ function ShippingOptions(props: Props) {
           type="radio"
           value="postnord"
           checked={isSelected("postnord")}
-          //TODO: Använd setState proppen (uppdatera fraktsätt)
           onChange={handleRadioClick}
           className="input-styling"
         />

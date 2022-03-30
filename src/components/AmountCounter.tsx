@@ -1,10 +1,6 @@
-import { useContext, useState } from "react";
-import { FaProductHunt } from "react-icons/fa";
+import { useContext } from "react";
 import "./AmountCounter.css";
-import Cart from "./Cart/cartIcon";
 import { Product } from "../products";
-import { number } from "yup";
-import { propTypes } from "react-bootstrap/esm/Image";
 import { CartContext } from "../context/CartContext";
 
 export interface Props {
@@ -14,23 +10,6 @@ export interface Props {
 
 function AmountCounter({ product, quantity }: Props) {
   const cart = useContext(CartContext);
-
-  const [totalPrice, setTotalPrice] = useState(product.price);
-
-  /* const handleIncrement = () => {
-    setCount(quantity + 1);
-
-    setTotalPrice(quantity * product.price);
-  };
-
-  const handleDecrement = () => {
-    if (quantity > 0) {
-      setCount(quantity - 1);
-    }
-    if (quantity > 1) {
-      setTotalPrice(quantity - product.price);
-    }
-  }; */
 
   return (
     <div className="container">

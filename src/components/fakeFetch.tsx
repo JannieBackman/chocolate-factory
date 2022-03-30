@@ -1,5 +1,3 @@
-import { string } from "yup";
-
 export interface Buy {
   paymentInvalid: string;
   paymentValid: string;

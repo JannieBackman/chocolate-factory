@@ -1,7 +1,7 @@
-import React, { CSSProperties, useContext, useState } from "react";
-import { Form, Row, Col, Button } from "react-bootstrap";
+import React from "react";
+import { Form, Row, Col } from "react-bootstrap";
 import "./ShippingOptions.css";
-import { CartContext, CustomerInfo } from "../../context/CartContext";
+import { CustomerInfo } from "../../context/CartContext";
 
 interface Props {
   setCustomer: React.Dispatch<React.SetStateAction<CustomerInfo>>;
@@ -9,18 +9,6 @@ interface Props {
 }
 
 export default function PaymentBasket({ setCustomer, customer }: Props) {
-  const [validated, setValidated] = useState(false);
-
-  const handleSubmit = () => {
-    // console.log("inne i submit")
-    // const form = event.currentTarget;
-    // if (form.checkValidity() === false) {
-    //   event.preventDefault();
-    //   event.stopPropagation();
-    // }
-    // setValidated(true);
-  };
-
   return (
     <div>
       <div className="paymentContainer">
