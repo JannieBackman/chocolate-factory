@@ -5,6 +5,10 @@
   font-size: 1.3rem;
 }
 
+.payment-options {
+  display: flex;
+}
+
 .confirmBtn {
   margin-left: 1rem;
   margin-bottom: 2rem;
@@ -14,8 +18,13 @@
   margin: 0 0 2rem 1rem;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 768px) {
   .orderInfo {
     margin-left: 1rem;
+  }
+
+  .payment-options {
+    display: flex;
+    flex-direction: column;
   }
 }
