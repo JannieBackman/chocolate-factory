@@ -124,7 +124,7 @@ export default function AccordionMenu() {
         <PaymentBasket setCustomer={setCustomer} customer={customer} />
 
         <h2 className="paymentPageTitle">Payment method</h2>
-        <div style={{ display: "flex" }}>
+        <div className="payment-options">
           <div className="payment-button-container">
             <Form.Check
               required

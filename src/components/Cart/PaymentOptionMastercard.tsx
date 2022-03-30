@@ -63,13 +63,16 @@ function PaymentOptionMastercard() {
         controlId="formGridCardNr"
         style={{ paddingLeft: "1rem", paddingTop: "1rem", width: "25%" }}
       >
-        <Form.Label for="frmCCNum">Card Number</Form.Label>
+        <Form.Label className="payment-label" for="frmCCNum">
+          Card Number
+        </Form.Label>
         <Form.Control
           required
           placeholder="Card number"
           name="cardnumber"
           id="frmCCNum"
           autoComplete="cc-number"
+          className="payment-input"
         />
         <Form.Control.Feedback type="invalid">
           Please provide a card number.
@@ -80,13 +83,17 @@ function PaymentOptionMastercard() {
         controlId="formGridCardExpDate"
         style={{ paddingLeft: "1rem", width: "25%" }}
       >
-        <Form.Label for="frmCCExp">Expiration Date</Form.Label> <br />
+        <Form.Label className="payment-label" for="frmCCExp">
+          Expiration Date
+        </Form.Label>{" "}
+        <br />
         <Form.Control
           placeholder="MM-YYYY"
           name="cc-exp"
           id="frmCCExp"
           required
           autoComplete="cc-exp"
+          className="payment-input"
         />
         <Form.Control.Feedback type="invalid">
           Please provide an expiration date.
@@ -97,13 +104,16 @@ function PaymentOptionMastercard() {
         controlId="formGridCardExpDate"
         style={{ paddingLeft: "1rem", width: "25%" }}
       >
-        <Form.Label for="frmCCCVC">CVC</Form.Label>
+        <Form.Label className="payment-label" for="frmCCCVC">
+          CVC
+        </Form.Label>
         <Form.Control
           name="cvc"
           id="frmCCCVC"
           required
           autoComplete="cc-csc"
           placeholder="CVC"
+          className="payment-input"
         />
         <Form.Control.Feedback type="invalid">
           Please provide a CVC.

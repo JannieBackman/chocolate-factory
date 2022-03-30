@@ -56,21 +56,17 @@ function PaymentOptionKlarna() {
         controlId="formGridName"
         style={{ padding: "1rem", width: "25%" }}
       >
-        <div>
-          <input defaultChecked type="radio" value="30days" name="pay-klarna" />
-          Pay within 30 days
-        </div>
-        <div>
-          <input type="radio" value="now" name="pay-klarna" /> Pay now
-        </div>
+        <Form.Label className="payment-label">Personal Number</Form.Label>
         <Form.Control
           required
           type="personalnumber"
-          placeholder="Personal number (YYMMDD-XXXX)"
+          placeholder="(YYMMDD-XXXX)"
+          className="payment-input"
         />
         <Form.Control.Feedback type="invalid">
           Please provide a personal number.
         </Form.Control.Feedback>
+
         <Form.Text className="text-muted">
           Enter your personal number to pay using Klarna.
         </Form.Text>
