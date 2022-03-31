@@ -9,7 +9,6 @@ export interface ContextValue {
   getTotalPrice: () => number;
   getMoms: () => number;
   getShippingCost: () => void;
-  emptyCartOnSubmit: () => void;
   cart: CartItem[];
   printForm: (e: any) => void;
   cartLength: () => number;
@@ -50,7 +49,7 @@ export const CartContext = createContext<ContextValue>({
   cartLength: () => 0,
   printShipping: () => "",
   getTotalPriceWithShipping: () => {},
-  emptyCartOnSubmit: () => {},
+  // emptyCartOnSubmit: () => {},
   form: {
     firstname: "",
     lastname: "",
@@ -157,16 +156,11 @@ const CartProvider: FC = (props) => {
   };
 
   const printShipping = (shipper: string) => {
-    console.log(shipper);
     setShipper(shipper);
   };
 
   const printForm = (customer: CustomerInfo) => {
     setForm(customer);
-  };
-
-  const emptyCartOnSubmit = () => {
-    setCart([]);
   };
 
   const cartLength = () => {
@@ -182,7 +176,6 @@ const CartProvider: FC = (props) => {
         getTotalPrice,
         getMoms,
         printForm,
-        emptyCartOnSubmit,
         cartLength,
         getShippingCost,
         printShipping,

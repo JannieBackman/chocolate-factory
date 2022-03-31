@@ -24,7 +24,6 @@ export default function CheckoutPage() {
   let {
     cart,
     getMoms,
-    emptyCartOnSubmit,
     getShippingCost,
     printShipping,
     getTotalPriceWithShipping,
@@ -71,7 +70,6 @@ export default function CheckoutPage() {
     } else {
       submit();
       event.preventDefault();
-      emptyCartOnSubmit();
       handleShow();
       printShipping(shippingMethod);
     }
