@@ -14,6 +14,12 @@ npm install
 npm start
 ```
 
+### Netlify link
+[https://chocolatefactory.netlify.app/]
+
+
 ### Made by
 
 [Jannie](https://github.com/Jannie87) [Anna](https://github.com/A-Ozmehak) [Ella](https://github.com/EllaMiri)
+
+
