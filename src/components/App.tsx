@@ -6,10 +6,8 @@ import NavigationBar from "./Layout/Navbar";
 import Checkout from "../pages/CheckoutPage";
 import DetailsChocolate from "../pages/DetailProductPage";
 import ErrorBoundary from "./ErrorBoundary";
-import CheckoutPage from "../pages/CheckoutPage";
 import ProductsPage from "../pages/ProductsPage";
 import CartProvider from "../context/CartContext";
-import OrderInformation from "./Cart/OrderInformation";
 import BuyProvider from "../context/BuyContext";
 
 function App() {
@@ -29,11 +27,6 @@ function App() {
                 <Route path="/" element={<Header />} />
                 <Route path="/Chocolates" element={<ProductsPage />} />
                 {/* </ErrorBoundary> ---- if you want to see 404page*/}
-                <Route path="/cart" element={<CheckoutPage />} />
-                <Route
-                  path="/OrderInformation"
-                  element={<OrderInformation />}
-                />
                 <Route path="/CheckOut" element={<Checkout />} />
 
                 <Route

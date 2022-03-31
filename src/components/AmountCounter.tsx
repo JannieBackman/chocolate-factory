@@ -8,6 +8,7 @@ export interface Props {
   quantity: number;
 }
 
+// Component to increase and decrease quantity of products
 function AmountCounter({ product, quantity }: Props) {
   const cart = useContext(CartContext);
 

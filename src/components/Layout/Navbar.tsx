@@ -1,6 +1,7 @@
 import { Navbar, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
+// Bootstrap navbar component
 export default function NavigationBar() {
   return (
     <Navbar className="NavBarContainer" bg="light" variant="light">

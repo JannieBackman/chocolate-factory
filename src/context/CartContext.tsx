@@ -35,6 +35,8 @@ export interface CustomerInfo {
   email: string;
 }
 
+// Context for adding/removing from cart, getting the price, adding shippingcost/moms,
+// printing out the addressform in checkout
 export const CartContext = createContext<ContextValue>({
   cart: [],
 
@@ -76,6 +78,7 @@ const CartProvider: FC = (props) => {
 
   const [shipper, setShipper] = useState("");
 
+  // Adds a product to the cart
   const addToCart = (product: Product) => {
     let productListToUpdate = [...cart];
     let foundIndex = cart.findIndex(
@@ -88,6 +91,8 @@ const CartProvider: FC = (props) => {
     }
     setCart(productListToUpdate);
   };
+
+  // Removes an product from the cart
   const removeFromCart = (id: number) => {
     let productListToUpdate = [...cart];
     let foundIndex = cart.findIndex((cartItem) => id === cartItem.product.id);
@@ -105,6 +110,7 @@ const CartProvider: FC = (props) => {
     setCart(newCart);
   };
 
+  // The total price depending on the products price and the quantity
   const getTotalPrice = () => {
     let totalPrice = 0;
     cart.forEach((cartItem) => {
@@ -113,12 +119,13 @@ const CartProvider: FC = (props) => {
     return totalPrice;
   };
 
+  // Adds moms to the price
   const getMoms = () => {
     let totalPrice = 0;
     let moms = 0;
     cart.forEach((cartItem) => {
       totalPrice += cartItem.product.price * cartItem.quantity;
-      moms = totalPrice * 0.12;
+      moms = Math.round(totalPrice * 0.12);
     });
 
     return moms;

@@ -6,6 +6,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 import { mockedProducts, Product } from "../products";
 
+// Detail page for each chocolate
 export default function DetailsChocolate() {
   let navigate = useNavigate();
   let context = useContext(CartContext);
@@ -27,9 +28,9 @@ export default function DetailsChocolate() {
 
   return (
     <div style={detailsPage}>
-      <h3>{product?.title}</h3>
-      <img src={product?.image} alt="chocolate" style={{ width: "40rem" }} />
-      <p>{product?.text}</p>
+      <h3 style={{ marginTop: "1rem" }}>{product?.title}</h3>
+      <img className="productImage" src={product?.image} alt="chocolate" />
+      <p className="detailText">{product?.detail}</p>
       {product && (
         <Button
           style={buttonStyle}

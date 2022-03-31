@@ -8,6 +8,7 @@ export interface Props {
   product: Product;
 }
 
+// Displays each product in its own card
 function ChocoCard({ product }: Props) {
   let context = useContext(CartContext);
 

@@ -1,6 +1,7 @@
 import "./PaymentOptions.css";
 import { Form } from "react-bootstrap";
 
+// Form for payment with mastercard
 function PaymentOptionMastercard() {
   return (
     <div>

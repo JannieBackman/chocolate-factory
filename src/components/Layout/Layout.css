@@ -12,6 +12,15 @@
   margin-top: 1.1rem;
 }
 
+.contactUs {
+  margin: 0;
+}
+
+.emailUs {
+  font-weight: bold;
+  color: white;
+}
+
 .navLinks:hover {
   color: #ff0000;
 }
@@ -44,17 +53,25 @@ h3 {
   margin: 2rem 0 0 1rem;
 }
 
-@media screen and (max-width: 470px) {
+.namesFooter {
+  display: flex;
+  align-items: flex-end;
+}
+
+@media screen and (max-width: 480px) {
   .headerTitle {
     font-size: 2.5rem;
+    text-align: center;
   }
 
   .namesFooter {
     font-size: 0.7rem;
+    text-align: center;
   }
 
   .footerStyle {
     flex-direction: column;
+    text-align: center;
   }
 }
 @media screen and (max-width: 380px) {
@@ -62,15 +79,33 @@ h3 {
     font-size: 2rem;
   }
 
-  .namesFooter {
-    font-size: 0.7rem;
-  }
-
   .footerStyle {
+    display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
   .cartButton {
     font-size: 1.2rem;
     margin-bottom: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 590px) {
+  .namesFooter {
+    font-size: 0.8rem;
+  }
+
+  .contactUs {
+    font-size: 1.2rem;
+  }
+  .sendUs {
+    font-size: 0.8rem;
+  }
+  .footerStyle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 }

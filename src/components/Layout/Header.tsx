@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Basket from "./Basket";
 import "./Layout.css";
 
+// Header component
 function Header() {
   return (
     <div className="header" style={rootStyle}>

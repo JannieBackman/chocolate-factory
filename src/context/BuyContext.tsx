@@ -7,11 +7,11 @@ interface ContextValue {
   submit: () => void;
 }
 
+// Context for an fake api fetch
 export const BuyContext = createContext<ContextValue>({
   isLoading: false,
   buy: {
     paymentValid: "",
-    paymentInvalid: "",
     confirmation: "",
     yourOrderNumber: "",
     orderNr: 0,

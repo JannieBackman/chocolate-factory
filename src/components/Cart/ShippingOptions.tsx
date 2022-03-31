@@ -11,6 +11,7 @@ interface Props {
   shippingMethod: string;
 }
 
+// Form for shipping options
 function ShippingOptions(props: Props) {
   const isSelected = (value: string): boolean => props.shippingMethod === value;
 

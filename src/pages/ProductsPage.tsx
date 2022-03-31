@@ -5,6 +5,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import { Footer } from "../components/Layout/Footer";
 import background from "../assets/Background.jpg";
 
+// Maps out all the chocolates from products.ts
 export default function Chocolates() {
   return (
     <div style={productsContainer}>

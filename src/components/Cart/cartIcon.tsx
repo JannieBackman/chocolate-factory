@@ -2,6 +2,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import { CSSProperties } from "react";
 import { Link } from "react-router-dom";
 
+// cart icon
 function Cart() {
   return (
     <div>

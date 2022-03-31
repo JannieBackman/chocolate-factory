@@ -1,26 +1,21 @@
 import { CSSProperties } from "react";
 
+// Footer component
 export function Footer() {
   return (
     <div className="footerStyle" style={footerStyle}>
       <div>
-        <h3 style={{ margin: "0" }}>Contact us</h3>
-        <span>
+        <h3 className="contactUs">Contact us</h3>
+        <span className="sendUs">
           Send us an{" "}
-          <a
-            style={{ fontWeight: "bold", color: "white" }}
-            href="mailto:email@example.com"
-          >
+          <a className="emailUs" href="mailto:email@example.com">
             email!
           </a>
         </span>
       </div>
 
       <div>
-        <span
-          className="namesFooter"
-          style={{ display: "flex", alignItems: "flex-end" }}
-        >
+        <span className="namesFooter">
           ©Anna Özmehak, Ella Larsson, Jannie Bäckman Kuurne
         </span>
       </div>
@@ -28,27 +23,22 @@ export function Footer() {
   );
 }
 
+// Footer component for detailpage
 export function FooterDetailPage() {
   return (
     <div className="footerStyle" style={footerDetailStyle}>
       <div>
-        <h3 style={{ margin: "0" }}>Contact us</h3>
-        <span>
+        <h3 className="contactUs">Contact us</h3>
+        <span className="sendUs">
           Send us an{" "}
-          <a
-            style={{ fontWeight: "bold", color: "white" }}
-            href="mailto:email@example.com"
-          >
+          <a className="emailUs" href="mailto:email@example.com">
             email!
           </a>
         </span>
       </div>
 
       <div>
-        <span
-          className="namesFooter"
-          style={{ display: "flex", alignItems: "flex-end" }}
-        >
+        <span className="namesFooter">
           ©Anna Özmehak, Ella Larsson, Jannie Bäckman Kuurne
         </span>
       </div>
@@ -59,7 +49,7 @@ export function FooterDetailPage() {
 const footerDetailStyle: CSSProperties = {
   display: "flex",
   justifyContent: "space-between",
-  alignItems: "flex-end",
+  alignItems: "center",
   backgroundColor: "#333",
   color: "whitesmoke",
   padding: "1rem",
@@ -72,7 +62,7 @@ const footerStyle: CSSProperties = {
   marginTop: "1rem",
   display: "flex",
   justifyContent: "space-between",
-  alignItems: "flex-end",
+  alignItems: "center",
   backgroundColor: "#333",
   color: "whitesmoke",
   padding: "1rem",
