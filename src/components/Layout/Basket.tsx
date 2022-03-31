@@ -16,9 +16,11 @@ function Basket() {
 
   return (
     <>
-      <Button variant="dark" onClick={handleShow}>
+      <Button className="cartButton" variant="dark" onClick={handleShow}>
         <FaShoppingCart />
-        <Badge bg="danger">{cartLength()}</Badge>
+        <Badge style={{ marginLeft: ".5rem" }} bg="danger">
+          {cartLength()}
+        </Badge>
       </Button>
 
       <Offcanvas placement="end" show={show} onHide={handleClose}>
@@ -43,7 +45,10 @@ function Basket() {
                   quantity={cartItem.quantity}
                 />
                 <span>
-                  <FaTrashAlt onClick={() => clearCart(cartItem.product.id)} />
+                  <FaTrashAlt
+                    style={{ cursor: "pointer" }}
+                    onClick={() => clearCart(cartItem.product.id)}
+                  />
                 </span>
               </div>
             </div>

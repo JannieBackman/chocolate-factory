@@ -26,11 +26,11 @@ function Main() {
       <div style={pageStyle}>
         <h2>About Chocolate Factory</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam
-          necessitatibus quod, ipsum, delectus ex, atque quasi placeat deleniti
+          We are an online chocolate shop where you can buy great quality
+          chocolate.
           <br />
-          quidem maxime repellendus doloribus vero cumque voluptatibus numquam.
-          Voluptas dolorum ratione adipisci!
+          We have many different flavours of chocolate ranging from classic milk
+          chocolate to fancy golden wrapped chocolate.
         </p>
       </div>
       <Footer />

@@ -204,9 +204,11 @@ export default function CheckoutPage() {
                 <Modal.Body>
                   {buy.yourOrderNumber}
                   {buy.orderNr} <br />
-                  {buy.confirmation} {customer.email} <br />{" "}
-                  {customer.firstname} {customer.lastname} <br />
-                  {customer.address} {customer.zip} {customer.city} <br />
+                  {buy.confirmation} <br /> Name: {customer.firstname}{" "}
+                  {customer.lastname}
+                  <br /> Email: {customer.email} <br />
+                  Adress: {customer.address} {customer.zip} {customer.city}{" "}
+                  <br />
                   Shipper: {shippingMethod} <br />
                   Payment method: {paymentMethod}
                 </Modal.Body>
