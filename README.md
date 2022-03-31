@@ -15,7 +15,7 @@ npm start
 ```
 
 ### Netlify link
-[https://chocolatefactory.netlify.app/]
+https://chocolatefactory.netlify.app/
 
 
 ### Made by
