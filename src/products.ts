@@ -4,7 +4,6 @@ import goldenChocolate from "./assets/chocolateGold.jpg";
 import whiteChocolate from "./assets/chocolateWhite.jpg";
 import milkChocolate from "./assets/chocolateMilk.jpg";
 import orangeChocolate from "./assets/chocolateOrange.jpg";
-import { string } from "yup";
 
 export interface Product {
   image: any;
