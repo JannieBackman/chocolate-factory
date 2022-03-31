@@ -6,6 +6,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import { Footer } from "../components/Layout/Footer";
 import background from "../assets/Background.jpg";
 
+// The start page with cards for the different chocolates
 function Main() {
   return (
     <div className="main" style={rootStyle}>

@@ -7,6 +7,7 @@ interface Props {
   phoneNumber: string;
 }
 
+// Form for payment with swish
 function PaymentOptionSwish({ phoneNumber }: Props) {
   let { form } = useContext(CartContext);
   return (

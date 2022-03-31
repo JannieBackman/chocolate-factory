@@ -18,6 +18,20 @@
   margin: 0 0 2rem 1rem;
 }
 
+.productImage {
+  width: 40rem;
+  margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 500px) {
+  .detailText {
+    font-size: 0.9rem;
+    text-align: center;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .orderInfo {
     margin-left: 1rem;
@@ -26,5 +40,10 @@
   .payment-options {
     display: flex;
     flex-direction: column;
+  }
+
+  .productImage {
+    width: 90%;
+    height: auto;
   }
 }

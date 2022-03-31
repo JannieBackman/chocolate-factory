@@ -9,6 +9,7 @@ interface Props {
   children: ReactNode;
 }
 
+// Errorboundary
 class ErrorBoundary extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);

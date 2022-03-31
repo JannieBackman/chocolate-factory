@@ -5,6 +5,7 @@ import { Button } from "react-bootstrap";
 import { CartContext } from "../../context/CartContext";
 import { useBuy } from "../../context/BuyContext";
 
+// Displays the items in your basket, price and fetches the fake API on the button
 export default function OrderInformation() {
   const { buy, isLoading } = useBuy();
   let { cart, getTotalPrice } = useContext(CartContext);

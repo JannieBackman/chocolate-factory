@@ -8,7 +8,8 @@ interface Props {
   customer: CustomerInfo;
 }
 
-export default function PaymentBasket({ setCustomer, customer }: Props) {
+// Form for the shipping address
+export default function ShippingAdressForm({ setCustomer, customer }: Props) {
   return (
     <div>
       <div className="paymentContainer">

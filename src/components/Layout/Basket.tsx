@@ -7,6 +7,8 @@ import AmountCounter from "../AmountCounter";
 import { Link } from "react-router-dom";
 import { FaTrashAlt } from "react-icons/fa";
 
+// Shows basket as an offcanvas sidebar that slides in when pressing the cart icon
+
 function Basket() {
   let { cart, getTotalPrice, clearCart, cartLength } = useContext(CartContext);
   const [show, setShow] = useState(false);
@@ -55,7 +57,7 @@ function Basket() {
           ))}
           <p>Total price: {getTotalPrice()}:-</p>
           <div className="d-grid gap-2">
-            <Link to="/cart">
+            <Link to="/Checkout">
               <Button variant="dark" size="lg" onClick={handleClose}>
                 Checkout
               </Button>

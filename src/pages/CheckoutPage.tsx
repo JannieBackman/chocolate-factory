@@ -5,7 +5,7 @@ import "./pages.css";
 import PaymentOptionKlarna from "../components/Cart/PaymentOptionKlarna";
 import PaymentOptionMastercard from "../components/Cart/PaymentOptionMastercard";
 import PaymentOptionSwish from "../components/Cart/PaymentOptionSwish";
-import PaymentBasket from "../components/Cart/ShippingAdressForm";
+import ShippingAdressForm from "../components/Cart/ShippingAdressForm";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { CSSProperties, useContext, useState, useEffect } from "react";
 import { CartContext, CustomerInfo } from "../context/CartContext";
@@ -24,13 +24,15 @@ export default function CheckoutPage() {
   let {
     cart,
     getMoms,
-    emptyCartOnSubmit,
     getShippingCost,
     printShipping,
     getTotalPriceWithShipping,
   } = useContext(CartContext);
 
+  // State for form validation
   const [validated, setValidated] = useState(false);
+
+  // State for customer info
   const [customer, setCustomer] = useState<CustomerInfo>({
     firstname: "",
     lastname: "",
@@ -41,34 +43,44 @@ export default function CheckoutPage() {
     email: "",
   });
 
+  // State for shipping method
   const [shippingMethod, setShippingMethod] = useState("");
 
+  // State for payment method, swish is default
   const [paymentMethod, setPaymentMethod] = useState("Swish");
 
+  // Handles the confirm purchase button
   const handleSubmit = (event: any) => {
     const form = event.currentTarget;
 
+    // If the form is not valid it doesn't allow the customer to complete the purchase
     if (form.checkValidity() === false) {
       event.preventDefault();
       event.stopPropagation();
+
+      // If the cart is empty an alert tells you it's empty
     } else if (cart.length === 0) {
       alert(
         "You have no products in your cart! Add products to cart before making a purchase."
       );
       event.preventDefault();
       event.stopPropagation();
+
+      // If all the information is filed in correctly the purchase goes through
     } else {
       submit();
       event.preventDefault();
-      emptyCartOnSubmit();
       handleShow();
       printShipping(shippingMethod);
     }
 
     setValidated(true);
   };
+
+  // State to show or hide modal
   const [show, setShow] = useState(false);
 
+  // Close button for modal
   const handleClose = () => {
     setShow(false);
     window.location.reload();
@@ -93,11 +105,12 @@ export default function CheckoutPage() {
     printShipping(shippingMethod);
   }, [printShipping, shippingMethod]);
 
+  // Form for the different payment options
   return (
     <div>
       <Form noValidate validated={validated} onSubmit={handleSubmit}>
         <h2 className="paymentPageTitle">Shipping address</h2>
-        <PaymentBasket setCustomer={setCustomer} customer={customer} />
+        <ShippingAdressForm setCustomer={setCustomer} customer={customer} />
 
         <h2 className="paymentPageTitle">Payment method</h2>
         <div className="payment-options">
@@ -158,6 +171,7 @@ export default function CheckoutPage() {
           shippingMethod={shippingMethod}
         />
 
+        {/* Prints out order information */}
         <h2 className="paymentPageTitle">Your order</h2>
         {cart.map((cartItem) => (
           <div key={cartItem.product.id}>
@@ -177,6 +191,7 @@ export default function CheckoutPage() {
           </div>
         ))}
 
+        {/* Prints out the total price with shipping fee */}
         <div className="orderInfo">
           <div className="orderInfo">
             Shipping fee: {getShippingCost()}:- <br /> Moms: {getMoms()}:-{" "}
@@ -191,6 +206,7 @@ export default function CheckoutPage() {
             Confirm purchase
           </Button>
 
+          {/* Bootstrap modal for the order confirmation  */}
           <div style={purchaseStyle} className="conformationInfo">
             {isLoading ? (
               <Spinner animation="border" role="status">

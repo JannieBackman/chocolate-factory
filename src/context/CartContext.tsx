@@ -9,7 +9,6 @@ export interface ContextValue {
   getTotalPrice: () => number;
   getMoms: () => number;
   getShippingCost: () => void;
-  emptyCartOnSubmit: () => void;
   cart: CartItem[];
   printForm: (e: any) => void;
   cartLength: () => number;
@@ -35,6 +34,8 @@ export interface CustomerInfo {
   email: string;
 }
 
+// Context for adding/removing from cart, getting the price, adding shippingcost/moms,
+// printing out the addressform in checkout
 export const CartContext = createContext<ContextValue>({
   cart: [],
 
@@ -48,7 +49,7 @@ export const CartContext = createContext<ContextValue>({
   cartLength: () => 0,
   printShipping: () => "",
   getTotalPriceWithShipping: () => {},
-  emptyCartOnSubmit: () => {},
+  // emptyCartOnSubmit: () => {},
   form: {
     firstname: "",
     lastname: "",
@@ -76,6 +77,7 @@ const CartProvider: FC = (props) => {
 
   const [shipper, setShipper] = useState("");
 
+  // Adds a product to the cart
   const addToCart = (product: Product) => {
     let productListToUpdate = [...cart];
     let foundIndex = cart.findIndex(
@@ -88,6 +90,8 @@ const CartProvider: FC = (props) => {
     }
     setCart(productListToUpdate);
   };
+
+  // Removes an product from the cart
   const removeFromCart = (id: number) => {
     let productListToUpdate = [...cart];
     let foundIndex = cart.findIndex((cartItem) => id === cartItem.product.id);
@@ -105,6 +109,7 @@ const CartProvider: FC = (props) => {
     setCart(newCart);
   };
 
+  // The total price depending on the products price and the quantity
   const getTotalPrice = () => {
     let totalPrice = 0;
     cart.forEach((cartItem) => {
@@ -113,12 +118,13 @@ const CartProvider: FC = (props) => {
     return totalPrice;
   };
 
+  // Adds moms to the price
   const getMoms = () => {
     let totalPrice = 0;
     let moms = 0;
     cart.forEach((cartItem) => {
       totalPrice += cartItem.product.price * cartItem.quantity;
-      moms = totalPrice * 0.12;
+      moms = Math.round(totalPrice * 0.12);
     });
 
     return moms;
@@ -150,16 +156,11 @@ const CartProvider: FC = (props) => {
   };
 
   const printShipping = (shipper: string) => {
-    console.log(shipper);
     setShipper(shipper);
   };
 
   const printForm = (customer: CustomerInfo) => {
     setForm(customer);
-  };
-
-  const emptyCartOnSubmit = () => {
-    setCart([]);
   };
 
   const cartLength = () => {
@@ -175,7 +176,6 @@ const CartProvider: FC = (props) => {
         getTotalPrice,
         getMoms,
         printForm,
-        emptyCartOnSubmit,
         cartLength,
         getShippingCost,
         printShipping,
