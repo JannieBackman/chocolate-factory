@@ -7,6 +7,11 @@
   font-size: 1.5rem;
 }
 
+.cartButton {
+  font-size: 1.3rem;
+  margin-top: 1.1rem;
+}
+
 .navLinks:hover {
   color: #ff0000;
 }
@@ -31,17 +36,28 @@ h3 {
   text-decoration: none;
 }
 
+.headerTitle:hover {
+  color: #ff0000;
+}
+
 .paymentPageTitle {
   margin: 2rem 0 0 1rem;
 }
 
-/* @media screen and (max-width: 1200px) {
-  .main {
-    background-size: auto;
+@media screen and (max-width: 470px) {
+  .headerTitle {
+    font-size: 2.5rem;
   }
-} */
 
-@media screen and (max-width: 400px) {
+  .namesFooter {
+    font-size: 0.7rem;
+  }
+
+  .footerStyle {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 380px) {
   .headerTitle {
     font-size: 2rem;
   }
@@ -52,5 +68,9 @@ h3 {
 
   .footerStyle {
     flex-direction: column;
+  }
+  .cartButton {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
   }
 }
