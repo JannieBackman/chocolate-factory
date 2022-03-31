@@ -7,7 +7,6 @@ import Checkout from "../pages/CheckoutPage";
 import DetailsChocolate from "../pages/DetailProductPage";
 import ErrorBoundary from "./ErrorBoundary";
 import CheckoutPage from "../pages/CheckoutPage";
-import { mockedProducts } from "../products";
 import ProductsPage from "../pages/ProductsPage";
 import CartProvider from "../context/CartContext";
 import OrderInformation from "./Cart/OrderInformation";
@@ -38,8 +37,8 @@ function App() {
                 <Route path="/CheckOut" element={<Checkout />} />
 
                 <Route
-                  path="/DetailsChocolate"
-                  element={<DetailsChocolate product={mockedProducts[1]} />}
+                  path="/DetailsChocolate/:productId"
+                  element={<DetailsChocolate />}
                 />
               </Routes>
             </ErrorBoundary>

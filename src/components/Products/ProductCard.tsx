@@ -21,7 +21,7 @@ function ChocoCard({ product }: Props) {
       <Card.Body style={cardBody}>
         <Card.Title>{product.title}</Card.Title>
         <Card.Text style={{ textAlign: "center" }}>{product.text}</Card.Text>
-        <Link to="/DetailsChocolate">
+        <Link to={`/DetailsChocolate/${product.id}`}>
           <Button style={infoBtn} variant="dark">
             More info
           </Button>
